@@ -35,6 +35,25 @@ ul li input{
     margin-bottom: 7%;
 }
 
+::-webkit-input-placeholder { /* WebKit browsers (Safari, Google Chrome, Opera 15+) */
+    color: #A9A9A9;
+    padding: 3%;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #A9A9A9;
+   opacity: 1;
+   padding: 3%;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #A9A9A9;
+   opacity: 1;
+   padding: 3%;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #A9A9A9;
+    padding: 3%;
+}
+
 ul li:last-child input{
     background-color: #31B294;
     margin-left: 73%;
