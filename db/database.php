@@ -12,4 +12,7 @@ class DatabaseHelper{
 
     //metodi per query
 
+    public function checkLogin($username, $password){
+        
+    }
 }
