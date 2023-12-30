@@ -35,6 +35,10 @@ ul li input{
     margin-bottom: 7%;
 }
 
+ul li input:focus{
+    color:#A9A9A9
+}
+
 ::-webkit-input-placeholder { /* WebKit browsers (Safari, Google Chrome, Opera 15+) */
     color: #A9A9A9;
     padding: 3%;
@@ -54,7 +58,16 @@ ul li input{
     padding: 3%;
 }
 
-ul li:last-child input{
+ul li button{
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
     background-color: #31B294;
+    margin-left: 73%;
+    border: none;
+    outline: none;
+}
+
+ul li button:hover{
+    background-color: #299279;
     margin-left: 73%;
 }

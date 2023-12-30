@@ -8,12 +8,22 @@ if(isset($_POST['Login'])){
 
         $enc_password = password_hash($password, PASSWORD_DEFAULT);
 
-        $dbh->checkLogin($username, $enc_password);
+        $login_result = $dbh->checkLogin($username, $enc_password);
+        if(count($login_result)==0){
+            //Login fallito
+            $templateParams["errorelogin"] = "Errore! Controllare username o password!";
+        }
+        else{
+            registerLoggedUser($login_result[0]);
+        }
     }
 }
 
+if(isUserLoggedIn()){
+    //TO DO
+}else{
+    //TO DO
+}
 
-
-
-require 'template/login-form.php'
+require 'template/login-form.php';
 ?>

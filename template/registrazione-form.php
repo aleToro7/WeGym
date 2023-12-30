@@ -20,15 +20,9 @@
                     <input type="text" id="username" name="username" placeholder="Username:"/>
                 </li>
                 <li>
-                    <input type="password" id="password" name="password" placeholder="Password:"/>
-                </li>
-                <li>
-                    <button type="submit" name="Login">Login</button>
+                    <button name="Login">Login</button>
                 </li>
             </ul>
-            <div>
-                <p>Non hai un account? <a href="../registrazione.php">Registrati</a></p>
-            </div>
         </form>
   </div>
 </div>

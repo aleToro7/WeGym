@@ -15,7 +15,12 @@ class DatabaseHelper{
     public function checkLogin($username, $enc_password){
         $salt = "asd832jiaiodsjioa";
         $salted_pwd = $salt + $enc_password;
+        $query = "SELECT nomeUtente, nome, cognome FROM utente WHERE nomeUtente = ? AND password = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss',$username, $salted_pwd);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        // TO DO
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 }
