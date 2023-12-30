@@ -12,7 +12,10 @@ class DatabaseHelper{
 
     //metodi per query
 
-    public function checkLogin($username, $password){
-        
+    public function checkLogin($username, $enc_password){
+        $salt = "asd832jiaiodsjioa";
+        $salted_pwd = $salt + $enc_password;
+
+        // TO DO
     }
 }
