@@ -21,7 +21,7 @@
                     <input type="password" id="password" name="password" placeholder="Password:"/>
                 </li>
                 <li>
-                    <input type="submit" name="Submit" value="Login" />
+                    <input type="submit" name="Login" value="Login" />
                 </li>
             </ul>
         </form>
