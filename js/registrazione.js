@@ -66,23 +66,29 @@ $(document).ready(function () {
 
     $("#mail").focusout(function() {
         mail = $("#mail").val();
-        $.ajax({
-            type:'POST',
-            url:'../registrazione.php',
-            data: 'mail=' + mail,
-            success: function(data) {
-                $("#mail-availability-status").html(data);
-                if(data == "Mail available"){
-                    alert
-                    $("#mail").removeClass("border border-3 border-danger");
-                    $("#mail").addClass("border border-3 border-success");
-                }else if(data == "Mail not available" || $("#mail").val() == ""){
-                    $("#mail").removeClass("border border-3 border-success");
-                    $("#mail").addClass("border border-3 border-danger");
-                }
-            },
-            error: function() { }
-        });
+        if(emailIsValid(mail)){
+            $.ajax({
+                type:'POST',
+                url:'../registrazione.php',
+                data: 'mail=' + mail,
+                success: function(data) {
+                    $("#mail-availability-status").html(data);
+                    if(data == "Mail available"){
+                        alert
+                        $("#mail").removeClass("border border-3 border-danger");
+                        $("#mail").addClass("border border-3 border-success");
+                    }else if(data == "Mail not available" || $("#mail").val() == ""){
+                        $("#mail").removeClass("border border-3 border-success");
+                        $("#mail").addClass("border border-3 border-danger");
+                    }
+                },
+                error: function() { }
+            });
+        }else{
+            $("#mail-availability-status").html("Formato mail non valido");
+            $("#mail").removeClass("border border-3 border-success");
+            $("#mail").addClass("border border-3 border-danger");
+        }
     });
 
     function manageBtnContinua(){
@@ -92,6 +98,11 @@ $(document).ready(function () {
             $("#continua").attr('disabled','disabled');
         }
     }
+
+    function emailIsValid(email) {
+        var regex_email_valida = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return regex_email_valida.test(email);
+      }
 
 });
 
