@@ -20,12 +20,12 @@ if(isset($_POST['Login'])){
         }
     }
 
+    
     if(isUserLoggedIn()){
-        echo "si";
         header("location: ../home.php");
         exit;
     }else{
-        echo "no";
+
     }
 
 }
@@ -35,7 +35,7 @@ if(isUserLoggedIn()){
     header("location: ../home.php");
     exit;
 }else{
-    echo "no";
+
 }
 
 ?>
