@@ -23,11 +23,11 @@
                     <input type="password" id="password" name="password" placeholder="Password:"/>
                 </li>
                 <li>
-                    <button type="submit" name="Login">Login</button>
+                    <button class="btn-login" type="submit" name="Login">Login</button>
                 </li>
             </ul>
             <div>
-                <p>Non hai un account? <a href="../registrazione.php">Registrati</a></p>
+                <p>Non hai un account? <a href="registrazione-form.php">Registrati</a></p>
             </div>
         </form>
   </div>
