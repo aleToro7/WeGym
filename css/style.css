@@ -1,4 +1,4 @@
-.bgbody{
+.bgbody {
     background-color: #434343;
 }
 
@@ -23,7 +23,7 @@
     margin-left: 30%;
 }
 
-form > h1 {
+form>h1 {
     font-family: "Mustard Smile";
     color: #A9A9A9;
     text-align: center;
@@ -34,39 +34,47 @@ ul {
     list-style: none;
 }
 
-ul li input{
+ul li input {
     -moz-border-radius: 30px 30px 30px 30px;
     -webkit-border-radius: 30px 30px 30px 30px;
     background-color: #636363;
+    color: #A9A9A9;
     border: none;
     outline: none;
     margin-bottom: 7%;
 }
 
-ul li input:focus{
-    color:#A9A9A9
+ul li input:focus {
+    color: #A9A9A9
 }
 
-::-webkit-input-placeholder { /* WebKit browsers (Safari, Google Chrome, Opera 15+) */
-    color: #A9A9A9;
-    padding: 3%;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #A9A9A9;
-   opacity: 1;
-   padding: 3%;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #A9A9A9;
-   opacity: 1;
-   padding: 3%;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
+::-webkit-input-placeholder {
+    /* WebKit browsers (Safari, Google Chrome, Opera 15+) */
     color: #A9A9A9;
     padding: 3%;
 }
 
-ul li button{
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #A9A9A9;
+    opacity: 1;
+    padding: 3%;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #A9A9A9;
+    opacity: 1;
+    padding: 3%;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #A9A9A9;
+    padding: 3%;
+}
+
+ul li button {
     -moz-border-radius: 30px 30px 30px 30px;
     -webkit-border-radius: 30px 30px 30px 30px;
     background-color: #31B294;
@@ -74,6 +82,10 @@ ul li button{
     outline: none;
 }
 
-ul li button:hover{
+ul li button:hover {
     background-color: #299279;
+}
+
+ul>div {
+    color: #A9A9A9;
 }
