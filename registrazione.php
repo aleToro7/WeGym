@@ -16,8 +16,4 @@ if(isset($_POST['username']) || !empty($_POST['username']))
       }
    }
 }
-
-if(isset($_POST['continua'])){
-   //TO DO
-}
 ?>
