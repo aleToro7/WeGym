@@ -65,7 +65,5 @@ $(document).ready(function () {
         }
     }
 
-    function manage
-
 });
 
