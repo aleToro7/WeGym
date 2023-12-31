@@ -16,4 +16,16 @@ if(isset($_POST['username']) || !empty($_POST['username']))
       }
    }
 }
+
+$mail = "";
+if(isset($_POST['mail']) || !empty($_POST['mail']))
+{
+   $mail = strip_tags(trim($_POST['mail']));
+   $already_used = $dbh->checkMail($mail);
+   if (count($already_used) > 0) {
+      echo "Mail not available";
+   } else {
+      echo "Mail available";
+   }
+}
 ?>

@@ -34,4 +34,14 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function checkMail($mail){
+        $query = "SELECT nomeUtente, nome, cognome FROM utente WHERE mail = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$mail);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }

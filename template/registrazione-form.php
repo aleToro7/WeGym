@@ -30,10 +30,11 @@
                 </li>
                 <li>
                     <input class="hide" type="text" id="mail" name="mail" placeholder="Mail:"/>
+                    <div class="hide" id="mail-availability-status"></div>
                 </li>
                 <li>
                     <input class="hide" type="text" id="username" name="username" placeholder="Username:"/>
-                    <div id="user-availability-status"></div>
+                    <div class="hide" id="user-availability-status"></div>
                 </li>
                 <li>
                     <input class="hide" type="text" id="pwd" name="pwd" placeholder="Password:"/>

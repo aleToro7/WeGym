@@ -26,6 +26,14 @@ $(document).ready(function () {
         manageBtnContinua();
     });
 
+    $("#dataNascita").keyup(function() {
+        manageBtnContinua();
+    });
+
+    $("#dataNascita").change(function() {
+        manageBtnContinua();
+    });
+
     $("#username").keyup(function() {
         username = $("#username").val();
         if(username.length > 3){
@@ -54,11 +62,31 @@ $(document).ready(function () {
             $("#username").removeClass("border border-3 border-success");
             $("#username").addClass("border border-3 border-danger");
         }
-        
+    });
+
+    $("#mail").focusout(function() {
+        mail = $("#mail").val();
+        $.ajax({
+            type:'POST',
+            url:'../registrazione.php',
+            data: 'mail=' + mail,
+            success: function(data) {
+                $("#mail-availability-status").html(data);
+                if(data == "Mail available"){
+                    alert
+                    $("#mail").removeClass("border border-3 border-danger");
+                    $("#mail").addClass("border border-3 border-success");
+                }else if(data == "Mail not available" || $("#mail").val() == ""){
+                    $("#mail").removeClass("border border-3 border-success");
+                    $("#mail").addClass("border border-3 border-danger");
+                }
+            },
+            error: function() { }
+        });
     });
 
     function manageBtnContinua(){
-        if($("#username").hasClass("border-success") && $("#nome").val() != "" && $("#cognome").val() != ""){
+        if($("#nome").val() != "" && $("#cognome").val() != "" && $("#dataNascita").val()){
             $("#continua").removeAttr("disabled");
         }else{
             $("#continua").attr('disabled','disabled');
