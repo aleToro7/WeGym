@@ -34,3 +34,7 @@
 </div>
 </body>
 </html>
+
+<?php
+    require_once '../login.php';
+?>

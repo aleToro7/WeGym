@@ -10,8 +10,7 @@ if(isset($_POST['Login'])){
 
         $login_result = $dbh->checkLogin($username, $password);
         //$login_result = $dbh->checkLogin($username, $enc_password);
-
-
+    
         if(count($login_result)==0){
             //Login fallito
             $templateParams["errorelogin"] = "Errore! Controllare username o password!";
@@ -20,13 +19,23 @@ if(isset($_POST['Login'])){
             registerLoggedUser($login_result[0]);
         }
     }
+
+    if(isUserLoggedIn()){
+        echo "si";
+        header("location: ../home.php");
+        exit;
+    }else{
+        echo "no";
+    }
+
 }
 
 if(isUserLoggedIn()){
-    header("location: /home.php");
+    echo "si";
+    header("location: ../home.php");
+    exit;
 }else{
-    //TO DO
+    echo "no";
 }
 
-require 'template/index.php';
 ?>
