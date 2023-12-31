@@ -24,7 +24,7 @@
                     <input type="text" id="cognome" name="cognome" placeholder="Cognome:"/>
                 </li>
                 <li>
-                    <button class="btn-continua" name="Continua">Continua</button>
+                    <button class="btn-continua" id="continua" disabled>Continua</button>
                 </li>
             </ul>
         </form>

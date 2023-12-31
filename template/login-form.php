@@ -27,7 +27,7 @@
                 </li>
             </ul>
             <div>
-                <p>Non hai un account? <a href="registrazione-form.php">Registrati</a></p>
+                <p>Non hai un account? <a href="../template/registrazione-form.php">Registrati</a></p>
             </div>
         </form>
   </div>
