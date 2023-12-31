@@ -20,20 +20,20 @@
             <h1>WeGym</h1>
             <ul>
                 <li>
-                    <input type="text" id="username" name="username" placeholder="Username:"/>
-                </li>
-                <div id="user-availability-status"></div>
-                <li>
                     <input type="text" id="nome" name="nome" placeholder="Nome:"/>
                 </li>
                 <li>
                     <input type="text" id="cognome" name="cognome" placeholder="Cognome:"/>
                 </li>
                 <li>
-                    <input class="hide" type="date" id="dataNascita" name="dataNascita"/>
+                    <input type="date" id="dataNascita" name="dataNascita"/>
                 </li>
                 <li>
                     <input class="hide" type="text" id="mail" name="mail" placeholder="Mail:"/>
+                </li>
+                <li>
+                    <input class="hide" type="text" id="username" name="username" placeholder="Username:"/>
+                    <div id="user-availability-status"></div>
                 </li>
                 <li>
                     <input class="hide" type="text" id="pwd" name="pwd" placeholder="Password:"/>
