@@ -28,5 +28,5 @@ if(isUserLoggedIn()){
     //TO DO
 }
 
-require 'template/login-form.php';
+require 'template/index.php';
 ?>
