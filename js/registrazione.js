@@ -1,14 +1,22 @@
 $(document).ready(function () {
     var username = "";
 
-    /*$("#form").submit(function(){
-        $.ajax({
-            type:'POST',
-            url:''
-        })
-        
-
-    });*/
+    $("#continua, #indietro").click(function(){
+        $("#form-registrazione input[id], div[id], button[id]").map(function(){
+            if($('#'+this.id).hasClass("hide")){
+                $('#'+this.id).removeClass("hide");
+            }else{
+                $('#'+this.id).addClass("hide");
+            }
+        });
+        $("li[id]").map(function(){
+            if($('#'+this.id).hasClass("active")){
+                $('#'+this.id).removeClass("active");
+            }else{
+                $('#'+this.id).addClass("active");
+            }
+        });
+    });
 
     $("#nome").keyup(function() {
         manageBtnContinua();
@@ -21,7 +29,7 @@ $(document).ready(function () {
     $("#username").keyup(function() {
         username = $("#username").val();
         if(username.length > 3){
-            jQuery.ajax({
+            $.ajax({
                 type:'POST',
                 url:'../registrazione.php',
                 data: 'username=' + username,
@@ -38,6 +46,9 @@ $(document).ready(function () {
                 },
                 error: function() { }
             });
+        }else if(username.length == 0){
+            $("#user-availability-status").html("");
+            $("#username").removeClass("border border-3 border-danger");
         }else{
             $("#user-availability-status").html("Il nome utente deve avere un numero di caratteri compreso tra 4 e 25");
             $("#username").removeClass("border border-3 border-success");
@@ -53,6 +64,8 @@ $(document).ready(function () {
             $("#continua").attr('disabled','disabled');
         }
     }
+
+    function manage
 
 });
 

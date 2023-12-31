@@ -9,8 +9,14 @@
     <script src="../js/registrazione.js"></script>
 <body class="bgbody">
 <div class="my-container">
+    <div>
+        <ol class="carousel-indicators">
+            <li id="firstIndicator" class="active"></li>
+            <li id="secondIndicator"></li>
+        </ol>
+    </div>
   <div class="child">
-    <form action="#" method="POST">
+    <form action="#" method="POST" id="form-registrazione">
             <h1>WeGym</h1>
             <ul>
                 <li>
@@ -24,7 +30,21 @@
                     <input type="text" id="cognome" name="cognome" placeholder="Cognome:"/>
                 </li>
                 <li>
-                    <button class="btn-continua" id="continua" disabled>Continua</button>
+                    <input class="hide" type="date" id="dataNascita" name="dataNascita"/>
+                </li>
+                <li>
+                    <input class="hide" type="text" id="mail" name="mail" placeholder="Mail:"/>
+                </li>
+                <li>
+                    <input class="hide" type="text" id="pwd" name="pwd" placeholder="Password:"/>
+                </li>
+                <li>
+                    <input class="hide" type="text" id="confermaPwd" name="confermaPwd" placeholder="Conferma password:"/>
+                </li>
+                <li>
+                    <button type="button" class="hide" id="indietro">Indietro</button>
+                    <button type="button" class="btn-continua" id="continua" disabled>Continua</button>
+                    <button type="button" class="hide" id="registrati" disabled>Registrati</button>
                 </li>
             </ul>
         </form>
