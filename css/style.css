@@ -31,6 +31,15 @@
     display: none;
 }
 
+.nav {
+    background-color: #31B294;
+    height: 100%;
+}
+
+nav {
+
+}
+
 .carousel-indicators li {
     box-sizing: content-box;
     width: 10px; /* change width */
@@ -121,4 +130,7 @@ ul>div {
     color: #A9A9A9;
 }
 
-/* base.php */
+a i {
+    margin-left: 48%;
+    color: #434343;
+}
