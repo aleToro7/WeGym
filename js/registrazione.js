@@ -13,7 +13,7 @@ $(document).ready(function () {
             $.ajax({
                 type:'POST',
                 url:'../registrazione.php',
-                data: 'username=' + username,
+                data: 'usernameFromAjax=' + username,
                 success: function(data) {
                     $("#user-availability-status").html(data);
                     if(data == "Username available"){
@@ -42,7 +42,7 @@ $(document).ready(function () {
             $.ajax({
                 type:'POST',
                 url:'../registrazione.php',
-                data: 'mail=' + mail,
+                data: 'mailFromAjax=' + mail,
                 success: function(data) {
                     $("#mail-availability-status").html(data);
                     if(data == "Mail available"){

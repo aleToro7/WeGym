@@ -44,4 +44,12 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function register($username, $mail, $nome, $cognome, $dataNascita, $password){
+        $query = "INSERT INTO utente VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssssss',$username, $mail, $password, $nome, $cognome, $dataNascita);
+        $stmt->execute();
+        return $stmt->error;
+    }
 }
