@@ -52,4 +52,13 @@ class DatabaseHelper{
         $stmt->execute();
         return $stmt->error;
     }
+
+    public function searchUser($username) {
+        $query = "SELECT nomeUtente FROM utente WHERE nomeUtente LIKE '".$username."%' LIMIT 4";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }

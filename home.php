@@ -6,7 +6,14 @@ require_once 'bootstrap.php';
         header("location: index.php");
         exit;
     }
-    echo '<a class="btn-getstarted scrollto" href="../logout.php">Disconnettiti</a>';
-    echo $_SESSION["username"],  $_SESSION["nome"], $_SESSION["cognome"];
 
+    if(isset($_POST["cercaFromAjax"])) {
+        $userCercato = strip_tags(trim($_POST['cercaFromAjax']));
+        $results = $dbh->searchUser($userCercato);
+        if (count($results) > 0) {
+            echo json_encode($results);
+        }else {
+            echo "Nessun utente trovato";
+        }
+    }
 ?>

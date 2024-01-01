@@ -7,22 +7,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="../js/base.js"></script>
-    <title>Home</title>
+
+    <title>Profilo</title>
 </head>
 <body class="bgbody">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 inner-addon left-addon">
-                <i class="glyphicon glyphicon-user bi bi-search" id="lente"><span style="font-style:normal"> Cerca</span></i>
-                <input class="cerca" id="cerca" name="cerca" type="text"/>
-            </div>
-        </div>
-    </div>
-    <ul class="user-list"></ul>
-    <div id="risultatoRicerca"></div>
-    <a class="btn-getstarted scrollto" href="../logout.php">Disconnettiti</a>
-
     <div>
         <nav class=" d-flex bd-highlight fixed-bottom">
             <a class="nav p-2 flex-fill bd-highlight " href="base.php">
@@ -40,5 +28,5 @@
 </html>
 
 <?php
-    require_once '../home.php';
+    
 ?>
