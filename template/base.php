@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 inner-addon left-addon">
-                <i class="glyphicon glyphicon-user bi bi-search"><i">Cerca</i></i>
+                <i class="glyphicon glyphicon-user bi bi-search"><span style="font-style:normal"> Cerca</span></i>
                 <input class="cerca" type="text"/>
             </div>
         </div>
