@@ -19,6 +19,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         registerLoggedUser($login_result[0]);
         echo "ok";
     }
+
 }
 
 if(isUserLoggedIn()){

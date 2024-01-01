@@ -15,11 +15,11 @@ $(document).ready(function(){
                     if(data == "Errore! Username o password non corretti."){
                         $("#login-error").html(data);
                     }
-                    else{
-                        window.location.href="../template/base.php";
-                    }
                 },
-                error: function() { }
+                error: function() {
+                    //da sistemare
+                    window.location.reload();
+                }
         });
     });
 

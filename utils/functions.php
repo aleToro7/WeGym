@@ -1,4 +1,5 @@
 <?php
+
 function registerLoggedUser($user){
     $_SESSION["username"] = $user["nomeUtente"];
     $_SESSION["nome"] = $user["nome"];
@@ -6,6 +7,6 @@ function registerLoggedUser($user){
 }
 
 function isUserLoggedIn(){
-    return !empty($_SESSION['username']);
+    return !empty($_SESSION['username']) && !empty($_SESSION['nome']) && !empty($_SESSION['nome']);
 }
 ?>
