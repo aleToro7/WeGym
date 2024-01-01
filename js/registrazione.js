@@ -5,13 +5,6 @@ $(document).ready(function () {
         $("#form-registrazione input[id], div[id], button[id], i").map(function(){
             $(this).toggleClass("hide");
         });
-        /*$("li[id]").map(function(){
-            if($('#'+this.id).hasClass("active")){
-                $('#'+this.id).removeClass("active");
-            }else{
-                $('#'+this.id).addClass("active");
-            }
-        });*/
     });
 
     $("#username").keyup(function() {
@@ -53,17 +46,19 @@ $(document).ready(function () {
                 success: function(data) {
                     $("#mail-availability-status").html(data);
                     if(data == "Mail available"){
-                        $("#mail").toggleClass("border-danger border-success");
+                        $("#mail").removeClass("border border-3 border-danger");
+                        $("#mail").addClass("border border-3 border-success");
                     }else if(data == "Mail not available" || $("#mail").val() == ""){
-                        $("#mail").toggleClass("border-success border-danger");
+                        $("#mail").removeClass("border border-3 border-success");
+                        $("#mail").addClass("border border-3 border-danger");
                     }
                 },
                 error: function() { }
             });
         }else{
             $("#mail-availability-status").html("Formato mail non valido");
-            $("#mail").removeClass("border-success");
-            $("#mail").addClass("border-danger");
+            $("#mail").removeClass("border border-3 border-success");
+            $("#mail").addClass("border border-3 border-danger");
         }
     });
 
@@ -88,11 +83,11 @@ $(document).ready(function () {
     });
 
     $('#showConfermaPwd').click(function(){
-        if($('#pwd').attr('type') == 'password') {
-            $('#pwd').attr('type', 'text');
+        if($('#confermaPwd').attr('type') == 'password') {
+            $('#confermaPwd').attr('type', 'text');
             $('#showConfermaPwd').toggleClass("bi-eye-slash bi-eye");
         }else {
-            $('#pwd').attr('type', 'password');
+            $('#confermaPwd').attr('type', 'password');
             $('#showConfermaPwd').toggleClass("bi-eye bi-eye-slash");
         }
     });
