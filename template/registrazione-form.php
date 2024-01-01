@@ -49,7 +49,7 @@
                 <li>
                     <button type="button" class="hide" id="indietro">Indietro</button>
                     <button type="button" class="btn-continua" id="continua" disabled>Continua</button>
-                    <button type="button" class="hide" id="registrati" disabled>Registrati</button>
+                    <button type="submit" class="hide" id="registrati" name="registrati" disabled>Registrati</button>
                 </li>
             </ul>
         </form>
@@ -57,3 +57,7 @@
 </div>
 </body>
 </html>
+
+<?php 
+    require_once '../registrazione.php';
+?>
