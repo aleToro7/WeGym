@@ -145,6 +145,24 @@ a i {
     color: #434343;
 }
 
-::placeholder {
-    font-family:
+div > i {
+    color: #A9A9A9;
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  {
+    left:  3%;
+    margin: 10.5px auto;
 }
