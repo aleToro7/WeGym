@@ -2,36 +2,16 @@ $(document).ready(function () {
     var username = "";
 
     $("#continua, #indietro").click(function(){
-        $("#form-registrazione input[id], div[id], button[id]").map(function(){
-            if($('#'+this.id).hasClass("hide")){
-                $('#'+this.id).removeClass("hide");
-            }else{
-                $('#'+this.id).addClass("hide");
-            }
+        $("#form-registrazione input[id], div[id], button[id], i").map(function(){
+            $(this).toggleClass("hide");
         });
-        $("li[id]").map(function(){
+        /*$("li[id]").map(function(){
             if($('#'+this.id).hasClass("active")){
                 $('#'+this.id).removeClass("active");
             }else{
                 $('#'+this.id).addClass("active");
             }
-        });
-    });
-
-    $("#nome").keyup(function() {
-        manageBtnContinua();
-    });
-
-    $("#cognome").keyup(function() {
-        manageBtnContinua();
-    });
-
-    $("#dataNascita").keyup(function() {
-        manageBtnContinua();
-    });
-
-    $("#dataNascita").change(function() {
-        manageBtnContinua();
+        });*/
     });
 
     $("#username").keyup(function() {
@@ -50,7 +30,6 @@ $(document).ready(function () {
                         $("#username").removeClass("border border-3 border-success");
                         $("#username").addClass("border border-3 border-danger");
                     }
-                    manageBtnContinua();
                 },
                 error: function() { }
             });
@@ -74,35 +53,69 @@ $(document).ready(function () {
                 success: function(data) {
                     $("#mail-availability-status").html(data);
                     if(data == "Mail available"){
-                        alert
-                        $("#mail").removeClass("border border-3 border-danger");
-                        $("#mail").addClass("border border-3 border-success");
+                        $("#mail").toggleClass("border-danger border-success");
                     }else if(data == "Mail not available" || $("#mail").val() == ""){
-                        $("#mail").removeClass("border border-3 border-success");
-                        $("#mail").addClass("border border-3 border-danger");
+                        $("#mail").toggleClass("border-success border-danger");
                     }
                 },
                 error: function() { }
             });
         }else{
             $("#mail-availability-status").html("Formato mail non valido");
-            $("#mail").removeClass("border border-3 border-success");
-            $("#mail").addClass("border border-3 border-danger");
+            $("#mail").removeClass("border-success");
+            $("#mail").addClass("border-danger");
         }
     });
 
-    function manageBtnContinua(){
-        if($("#nome").val() != "" && $("#cognome").val() != "" && $("#dataNascita").val()){
+    $("#form-registrazione input").keyup(function(){
+        if(!$('#'+this.id).hasClass("hide")){
+            if($("#continua").hasClass("hide")) {
+                manageBtnRegistrati();
+            }else{
+                manageBtnContinua();
+            }
+        }
+    });
+
+    $('#showPwd').click(function(){
+        if($('#pwd').attr('type') == 'password') {
+            $('#pwd').attr('type', 'text');
+            $('#showPwd').toggleClass("bi-eye-slash bi-eye");
+        }else {
+            $('#pwd').attr('type', 'password');
+            $('#showPwd').toggleClass("bi-eye bi-eye-slash");
+        }
+    });
+
+    $('#showConfermaPwd').click(function(){
+        if($('#pwd').attr('type') == 'password') {
+            $('#pwd').attr('type', 'text');
+            $('#showConfermaPwd').toggleClass("bi-eye-slash bi-eye");
+        }else {
+            $('#pwd').attr('type', 'password');
+            $('#showConfermaPwd').toggleClass("bi-eye bi-eye-slash");
+        }
+    });
+
+    function manageBtnContinua() {
+        if($("#nome").val() != "" && $("#cognome").val() != "" && $("#dataNascita").val() != ""){
             $("#continua").removeAttr("disabled");
         }else{
             $("#continua").attr('disabled','disabled');
         }
     }
 
+    function manageBtnRegistrati() {
+        if($("#mail").hasClass("border-success") && $("#username").hasClass("border-success") && $("#pwd").val() != "" && $("#confermaPwd").val() != "" && $("#pwd").val() == $("#confermaPwd").val()) {
+            $("#registrati").removeAttr("disabled");
+        }else{
+            $("#registrati").attr('disabled','disabled');
+        }
+    }
+    
     function emailIsValid(email) {
         var regex_email_valida = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return regex_email_valida.test(email);
-      }
-
+    }
 });
 

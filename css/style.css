@@ -113,6 +113,10 @@ ul li button:hover {
     background-color: #299279;
 }
 
+li i {
+    color: #A9A9A9;
+}
+
 ul>div {
     color: #A9A9A9;
 }
