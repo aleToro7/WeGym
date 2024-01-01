@@ -36,9 +36,19 @@
     height: 100%;
 }
 
-nav {
-
+.cerca {
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    background-color: #636363;
+    color:#A9A9A9;
+    border: none;
+    outline: none;
+    width: 96%;
+    display: block;
+    margin: 12px auto;
+    height: 40px;
 }
+
 
 .carousel-indicators li {
     box-sizing: content-box;
@@ -133,4 +143,8 @@ ul>div {
 a i {
     margin-left: 48%;
     color: #434343;
+}
+
+::placeholder {
+    font-family:
 }
