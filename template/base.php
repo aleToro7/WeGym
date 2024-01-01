@@ -11,7 +11,7 @@
     <title>Home</title>
 </head>
 <body class="bgbody">
-    <div class="full-container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12 inner-addon left-addon">
                 <i class="glyphicon glyphicon-user bi bi-search"></i>
