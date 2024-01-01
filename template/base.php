@@ -11,11 +11,11 @@
     <title>Home</title>
 </head>
 <body class="bgbody">
-    <div class="full-container">
+    <div class="container">
         <div class="row">
             <div class="col-12 inner-addon left-addon">
-                <i class="glyphicon glyphicon-user bi bi-search"></i>
-                <input class="cerca" type="text" placeholder="Cerca" />
+                <i class="glyphicon glyphicon-user bi bi-search"><i">Cerca</i></i>
+                <input class="cerca" type="text"/>
             </div>
         </div>
     </div>
