@@ -3,6 +3,7 @@ $(document).ready(function () {
     $("#cerca").keyup(function(){
         $(".user-list").empty();
         valCercato = $("#cerca").val();
+        $("#risultatoRicerca").html("");
         if(valCercato!="") {
             $.ajax({
                 type:'POST',
@@ -15,7 +16,7 @@ $(document).ready(function () {
                         users = JSON.parse(data);
                         var sub_ul = $('<ul/>');
                         $(users).each(function (val) {
-                            var sub_li = $('<li/>').html(users[val]["nomeUtente"]);
+                            var sub_li = $('<li id="'+users[val]["nomeUtente"]+'" class="prova"/>').html(users[val]["nomeUtente"]);
                             sub_ul.append(sub_li);
                         });
                         $(".user-list").append(sub_ul);

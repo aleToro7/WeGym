@@ -9,6 +9,7 @@
     <script src="../js/login.js"></script>
 
     <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="../altro/favicon.PNG">
 </head>
 <body class="bgbody">
 <div class="my-container">
