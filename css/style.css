@@ -36,6 +36,14 @@
     height: 100%;
 }
 
+.selected {
+    color:#A9A9A9
+}
+
+.middle-nav {
+    background-color: #636363;
+}
+
 .cerca {
     -moz-border-radius: 30px 30px 30px 30px;
     -webkit-border-radius: 30px 30px 30px 30px;

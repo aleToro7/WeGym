@@ -27,6 +27,42 @@ $(document).ready(function () {
         }
     });
 
+    $("#nav-upload").click(function(){
+        if($("#upload").hasClass("bi-plus-square")) {
+            $("#upload").toggleClass("bi-plus-square bi-plus-square-fill");
+            $("#profile").removeClass("bi-person-fill");
+            $("#profile").addClass("bi-person");
+            $("#home").removeClass("bi-house-door-fill");
+            $("#home").addClass("bi-house-door");
+            $("#load").empty();
+            $("#load").load('./carica-post.php');
+        }
+    });
+
+    $("#nav-profile").click(function(){
+        if($("#profile").hasClass("bi-person")) {
+            $("#profile").toggleClass("bi-person bi-person-fill");
+            $("#upload").removeClass("bi-plus-square-fill");
+            $("#upload").addClass("bi-plus-square");
+            $("#home").removeClass("bi-house-door-fill");
+            $("#home").addClass("bi-house-door");
+            $("#load").empty();
+            $("#load").load('./profilo.php');
+        }
+    });
+
+    $("#nav-home").click(function(){
+        if($("#home").hasClass("bi-house-door")) {
+            $("#home").toggleClass("bi-house-door bi-house-door-fill");
+            $("#upload").removeClass("bi-plus-square-fill");
+            $("#upload").addClass("bi-plus-square");
+            $("#profile").removeClass("bi-person-fill");
+            $("#profile").addClass("bi-person");
+            $("#load").empty();
+            $("#load").load('./home-page.php');
+        }
+    });
+
     $("#cerca").focus(function(){
         if(!$("#cerca").val() != "") {
             $("#lente").toggleClass("hide");
