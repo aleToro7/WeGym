@@ -20,15 +20,15 @@ $(document).ready(function () {
         if(!$(this).hasClass("bottom-selection")){
             id = this.id.split("-")[1];
             $("#nav a[id]").map(function(){
-                idR = this.id.split("-")
+                idR = this.id.split("-")[1];
                 $(this).removeClass("bottom-selection");
-                $(idR).removeClass("selected filter-grey")
+                $('#'+idR).removeClass("selected filter-grey");
             });
             $(this).addClass("bottom-selection");
             if(id == "info") {
-                $(id).toggleClass("filter-dark-grey filter-grey");
+                $('#'+id).toggleClass("filter-dark-grey filter-grey");
             }else {
-                $(id).addClass("selected");
+                $('#'+id).addClass("selected");
             }
         }
     });
