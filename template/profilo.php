@@ -7,16 +7,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+    <script src="../js/profilo.js"></script>
     <title>Profilo</title>
 </head>
 <body class="bgbody">
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4 bg-primary">
+                    <p>prova</p>
+                </div>
+                <div class="col-4 bg-secondary">
+                    
+                </div>
+                <div class="col-4 bg-success">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     <div>
         <nav class=" d-flex bd-highlight fixed-bottom">
             <a class="nav p-2 flex-fill bd-highlight " href="base.php">
                 <i class="bi bi-house-door-fill fa-2x" id="home"></i>
             </a>
-            <a class="nav p-2 flex-fill bd-highlight" href="caricaPost.php">
+            <a class="nav p-2 flex-fill bd-highlight" href="carica-post.php">
                 <i class="bi bi-plus-square fa-2x" id="upload"></i>
             </a>
             <a class="nav p-2 flex-fill bd-highlight" href="profilo.php">
