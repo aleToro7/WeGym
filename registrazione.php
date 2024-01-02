@@ -14,6 +14,9 @@ if(isset($_POST["registrati"])) {
       $_SESSION["username"] = $username;
       $_SESSION["nome"] = $nome;
       $_SESSION["cognome"] = $cognome;
+      $_SESSION["mail"] = $mail;
+      $_SESSION["password"] = $password;
+      $_SESSION["dataNascita"] = $dataNascita;
       header("location: base.php");
    }else {
       $templateParams["erroreRegistrazione"] = "Errore durante la registrazione";

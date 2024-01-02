@@ -15,7 +15,7 @@ class DatabaseHelper{
     public function checkLogin($username, $enc_password){
         //$salt = "asd832jiaiodsjioa";
         //$salted_pwd = $salt + $enc_password;
-        $query = "SELECT nomeUtente, nome, cognome FROM utente WHERE nomeUtente = ? AND password = ?";
+        $query = "SELECT * FROM utente WHERE nomeUtente = ? AND password = ?";  //bisogna avere tutti i parametri dell'utente
         $stmt = $this->db->prepare($query);
         //$stmt->bind_param('ss',$username, $salted_pwd);
         $stmt->bind_param('ss',$username, $enc_password);
@@ -46,7 +46,7 @@ class DatabaseHelper{
     }
 
     public function register($username, $mail, $nome, $cognome, $dataNascita, $password){
-        $query = "INSERT INTO utente VALUES (?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO utente (nomeUtente, mail, password, nome, cognome, dataNascita) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssssss',$username, $mail, $password, $nome, $cognome, $dataNascita);
         $stmt->execute();

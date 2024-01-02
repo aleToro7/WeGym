@@ -28,7 +28,7 @@
             <a class="nav p-2 flex-fill bd-highlight " href="base.php">
                 <i class="bi bi-house-door-fill fa-2x" id="home"></i>
             </a>
-            <a class="nav p-2 flex-fill bd-highlight" href="caricaPost.php">
+            <a class="nav p-2 flex-fill bd-highlight" href="carica-post.php">
                 <i class="bi bi-plus-square fa-2x" id="upload"></i>
             </a>
             <a class="nav p-2 flex-fill bd-highlight" href="profilo.php">
