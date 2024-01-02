@@ -1,3 +1,6 @@
+<?php
+    require_once '../profili.php';
+?>
 <!DOCTYPE html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,14 +17,40 @@
     <div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4 bg-primary">
-                    <p>prova</p>
+                <div class="col-4 nome-utente">
+                    <p><span class="logo">W</span>&nbsp&nbsp<?php echo $_SESSION["username"];?></p>
                 </div>
-                <div class="col-4 bg-secondary">
-                    
+            </div>
+            <div class="row">
+                <div class="col-1">   
                 </div>
-                <div class="col-4 bg-success">
-                    
+                <div class="col-1" name="stats">
+                    <span>13</span><br>
+                    <span>Post</span>
+                </div>
+                <div class="col-2">
+                    <p></p>
+                </div>
+                <div class="col-1"  name="stats">
+                    <span>10K</span><br>
+                    <span>Follower</span>
+                </div>
+                <div class="col-2">
+                    <p></p>
+                </div>
+                <div class="col-4">
+                    <div class="img-container"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">   
+                </div>
+                <div class="col-6 bio">
+                    <span class="bio-title">BIOGRAFIA<br></span>
+                    <span><?php  if(isset($_SESSION["biografia"])) echo $_SESSION["biografia"];?><br></span>
+                </div>
+                <div class="col-4">
+                    <button type="button" class="button" id="segui">Segui</button>  
                 </div>
             </div>
         </div>
@@ -41,7 +70,3 @@
     </div>
 </body>
 </html>
-
-<?php
-    
-?>
