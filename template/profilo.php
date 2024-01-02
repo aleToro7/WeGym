@@ -7,7 +7,7 @@
             <p><span class="logo">W</span>&nbsp&nbsp<?php echo $_SESSION["username"];?></p>
         </div>
         <div class="col">
-            <i class="bi bi-box-arrow-right logout-button"></i>
+            <a href="../logout.php"><i class="bi bi-box-arrow-right logout-button"  title="Disconnetti"></i></a>
         </div>
     </div>
     <div class="row">
@@ -20,7 +20,7 @@
         <div class="col-2">
             <p></p>
         </div>
-        <div class="col-1"  name="stats">
+        <div class="col-1" name="stats">
             <span>10K</span><br>
             <span>Follower</span>
         </div>
@@ -39,7 +39,7 @@
             <span><?php  if(isset($_SESSION["biografia"])) echo $_SESSION["biografia"];?><br></span>
         </div>
         <div class="col-4">
-            <button type="button" class="button" id="segui">Segui</button>  
+            <button type="button" class="button segui" id="segui">Segui</button>  
         </div>
     </div>
 </div>

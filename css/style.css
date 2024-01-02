@@ -103,17 +103,16 @@
     outline: none;
 }
 
-#segui {
-    -moz-border-radius: 30px 30px 30px 30px;
-    -webkit-border-radius: 30px 30px 30px 30px;
-    background-color: #31B294;
+.segui {
     width: 100px;
     height: 27px;
-    border: none;
-    outline: none;
     margin-top: 10%;
     margin-left: 19.3%;
     font-size: large;
+}
+
+.segui:hover {
+    background-color: #299279;
 }
 
 .button:hover {
@@ -140,7 +139,7 @@
 
 .logout-button:hover {
     cursor: pointer;
-    color: #31B294;
+    color: #299279;
 }
 
 
@@ -264,6 +263,7 @@ div[name="stats"] {
     margin-left: 3%;
     text-align: center;
 }
+  
 
 @media screen and (min-width:768px){
     .left-addon .glyphicon  {
@@ -276,7 +276,11 @@ div[name="stats"] {
         height: 150px;
     }
 
-    #segui {
+    .logout-button {
+        margin-right: 1.5%;
+    }
+
+    .segui {
         margin-top: 5%;
         width: 150px;
         height: 40px;

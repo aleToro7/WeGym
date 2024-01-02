@@ -9,7 +9,6 @@
 </div>
 <ul class="user-list"></ul>
 <div id="risultatoRicerca"></div>
-<a class="btn-getstarted scrollto" href="../logout.php">Disconnettiti</a>
 <?php
     require_once '../home.php';
 ?>
