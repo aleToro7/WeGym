@@ -1,20 +1,5 @@
 $(document).ready(function () {
-    /*$("#nav-posted").click(function(){
-        if(!$("#posted").hasClass("selected")) {
-            $("i[id], img[id]").map(function(){
-                
-                if(this.val() == "info") {
-                    $(this).removeClass("selected filter-grey");
-                }else {
-                    $(this).removeClass("selected");
-                }
-            });
-            $("#posted").addClass("selected");
-            $("a[id]").hasClass("bottom-selection", function(){
-                $(this).toggleClass("bottom-selection");
-            });
-        }
-    });*/
+
 
     $("a").click(function(){
         if(!$(this).hasClass("bottom-selection") && $(this).hasClass("middle-nav")){
@@ -36,7 +21,7 @@ $(document).ready(function () {
     $("#segui").click(function(){
         esegui=$("#segui").val() == "seguito" ? "smetti di seguire" : "segui";
         $("#segui").toggleClass("segui seguito");
-        $("#segui").hasClass("segui") ? $("#segui").html("segui") : $("#segui").html("seguito");
+        $("#segui").hasClass("segui") ? $("#segui").html("Segui") : $("#segui").html("Seguito");
         $.ajax({
             type:'POST',
             url:'../segui.php',
