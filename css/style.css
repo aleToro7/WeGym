@@ -37,8 +37,10 @@
 }
 
 .selected {
-    color:#A9A9A9
+    color:#A9A9A9;
 }
+
+
 
 .middle-nav {
     background-color: #636363;
@@ -110,10 +112,8 @@
     margin-top: 10%;
     margin-left: 19.3%;
     font-size: large;
-}
-
-.segui:hover {
-    background-color: #299279;
+    padding: 0;
+    vertical-align: middle;
 }
 
 .button:hover {
@@ -168,6 +168,20 @@
     height: 36px;
     margin-left: 15%;
     margin-top: 5px;
+}
+
+.seguito {
+    background-color: #434343;
+    border: solid 2px;
+    border-color: #31B294;
+    color: #31B294;
+    width: 100px;
+    height: 27px;
+    margin-top: 10%;
+    margin-left: 19.3%;
+    font-size: large;
+    padding: 0;
+    vertical-align: middle;
 }
 
 form>h1 {
@@ -292,6 +306,11 @@ div[name="stats"] {
     position: relative;
     right:20px; 
 }
+
+.bottom-selection {
+    border-bottom: solid 2px;
+    border-color: #31B294;
+}
   
 
 @media screen and (min-width:768px){
@@ -310,6 +329,12 @@ div[name="stats"] {
     }
 
     .segui {
+        margin-top: 5%;
+        width: 150px;
+        height: 40px;
+    }
+
+    .seguito {
         margin-top: 5%;
         width: 150px;
         height: 40px;

@@ -39,7 +39,7 @@
             <span class="bio-title">BIOGRAFIA<br></span>
         </div>
         <div class="col-4">
-            <button type="button" class="button segui" id="segui">Segui</button>  
+            <button type="button" class="button seguito" id="segui">Segui</button>  
         </div>
     </div>
     <div class="row">
@@ -53,7 +53,7 @@
 <div>
     <br>
     <nav class=" d-flex bd-highlight">
-        <a class="middle-nav p-2 flex-fill bd-highlight" id="nav-posted">
+        <a class="middle-nav bottom-selection p-2 flex-fill bd-highlight" id="nav-posted">
             <i class="selected bi bi-image fa-2x" id="posted"></i>
         </a>
         <?php ?>
