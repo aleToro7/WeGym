@@ -69,8 +69,19 @@
 <div>
     <br>
     <nav class=" d-flex bd-highlight">
+        <?php
+            if($templateParams["username"] == $_SESSION["username"]){
+                echo '<a class="middle-nav p-2 flex-fill bd-highlight" id="nav-notify">
+                        <i class="selected bi bi-stopwatch-fill fa-2x" id="notify"></i>
+                    </a>';
+            }
+        ?>
         <a class="middle-nav p-2 flex-fill bd-highlight" id="nav-posted">
-            <i class="selected bi bi-image fa-2x" id="posted"></i>
+            <i class="<?php 
+                if($templateParams["username"] != $_SESSION["username"]){
+                    echo 'selected ';
+                }
+            ?> bi bi-image fa-2x" id="posted"></i>
         </a>
         <?php 
             if($templateParams["username"] == $_SESSION["username"]){
