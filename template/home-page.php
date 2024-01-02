@@ -1,4 +1,4 @@
-<script src="../js/base.js"></script>
+<script src="../js/home.js"></script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 inner-addon left-addon">
