@@ -34,7 +34,13 @@
     </div>
     <?php
         if($templateParams["username"] == $_SESSION["username"]){
-
+            echo '<div class="row">
+                    <div class="col-1">   
+                    </div>
+                    <div class="col-6 d-grid gap-2">
+                        <button type="button" class="modifica-profilo " id="modificaProfilo">Modifica profilo</button>  
+                    </div>
+                </div>';
         }
 
     ?>
@@ -63,13 +69,31 @@
 <div>
     <br>
     <nav class=" d-flex bd-highlight">
+        <?php
+            if($templateParams["username"] == $_SESSION["username"]){
+                echo '<a class="middle-nav p-2 flex-fill bd-highlight" id="nav-notify">
+                        <i class="selected bi bi-stopwatch-fill fa-2x" id="notify"></i>
+                    </a>';
+            }
+        ?>
         <a class="middle-nav p-2 flex-fill bd-highlight" id="nav-posted">
-            <i class="selected bi bi-image fa-2x" id="posted"></i>
+            <i class="<?php 
+                if($templateParams["username"] != $_SESSION["username"]){
+                    echo 'selected ';
+                }
+            ?> bi bi-image fa-2x" id="posted"></i>
         </a>
-        <?php ?>
-        <a class="middle-nav p-2 flex-fill bd-highlight" id="nav-info">
-            <img src="../altro/dumbbell-solid.svg" alt="" class="barrell filter-dark-grey" id="info"/>
-        </a>
+        <?php 
+            if($templateParams["username"] == $_SESSION["username"]){
+                echo '<a class="middle-nav p-2 flex-fill bd-highlight" id="nav-likes">
+                        <i class="bi bi-heart-pulse-fill fa-2x" id="likes"></i>
+                    </a>';
+            } else{
+                echo '<a class="middle-nav p-2 flex-fill bd-highlight" id="nav-info">
+                        <img src="../altro/dumbbell-solid.svg" alt="" class="barrell filter-dark-grey" id="info"/>
+                    </a>';
+            }
+        ?>
     </nav>
     <div id="load-profile-view"></div>
 </div>
