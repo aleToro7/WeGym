@@ -68,7 +68,7 @@
 </div>
 <div>
     <br>
-    <nav class=" d-flex bd-highlight" id="nav">
+    <nav class="d-flex bd-highlight" id="nav">
         <?php
             if($templateParams["username"] == $_SESSION["username"]){
                 echo '<a class="middle-nav bottom-selection p-2 flex-fill bd-highlight" id="nav-notify">

@@ -17,7 +17,7 @@ $(document).ready(function () {
     });*/
 
     $("a").click(function(){
-        if(!$(this).hasClass("bottom-selection")){
+        if(!$(this).hasClass("bottom-selection") && $(this).hasClass("middle-nav")){
             id = this.id.split("-")[1];
             $("#nav a[id]").map(function(){
                 idR = this.id.split("-")[1];
@@ -26,7 +26,7 @@ $(document).ready(function () {
             });
             $(this).addClass("bottom-selection");
             if(id == "info") {
-                $('#'+id).toggleClass("filter-dark-grey filter-grey");
+                $('#'+id).addClass("filter-grey");
             }else {
                 $('#'+id).addClass("selected");
             }
