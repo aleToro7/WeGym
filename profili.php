@@ -5,7 +5,7 @@ if(!isset($_SESSION["username"])){
     header("location: index.php");
     exit;
 }else {
-    $templateParams["username"] = $_SESSION["username"];
+    $templateParams["username"] = "cipolla";//$_SESSION["username"];
     $templateParams["nome"] = $_SESSION["nome"];
     $templateParams["cognome"] = $_SESSION["cognome"];
     $templateParams["mail"] = $_SESSION["mail"];

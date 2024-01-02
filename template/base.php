@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="../altro/favicon.png">
 </head>
 <body class="bgbody">
-    <div id="load"><?php require 'profilo.php';?></div>
+    <div id="load"><?php require 'home-page.php';?></div>
     <div>
         <nav class=" d-flex bd-highlight fixed-bottom">
             <a class="nav p-2 flex-fill bd-highlight" id="nav-home">
