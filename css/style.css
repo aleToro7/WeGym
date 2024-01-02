@@ -120,15 +120,24 @@
     background-color: #299279;
 }
 
+
 .bio-title {
     font-weight: bold;
+    font-size: x-large;
+    position: relative;
+    top: 15%;
 }
 
 .bio {
-    font-size: x-large;
     color: #A9A9A9;
     padding-top: 1%;
     margin-left: 3%;
+    position: relative;
+    right:20px; 
+}
+
+.biobio{
+    font-size: medium;
 }
 
 .logout-button {
@@ -280,6 +289,8 @@ div[name="stats"] {
     padding-top: 1%;
     margin-left: 3%;
     text-align: center;
+    position: relative;
+    right:20px; 
 }
   
 
@@ -303,4 +314,30 @@ div[name="stats"] {
         width: 150px;
         height: 40px;
     }
+
+    .counter{
+        position: relative;
+        left: 3%;
+        top: 25px;
+    }
+
+    .bio-title{
+        top:20%;
+    }
+
+    .biobio {
+        font-size: large;
+    }
+    
+}
+
+@media screen and (min-width:1500px){
+    .bio-title{
+        top:40%;
+    }
+    
+    .biobio {
+        font-size: x-large;
+    }
+    
 }
