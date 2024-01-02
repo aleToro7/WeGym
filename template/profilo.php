@@ -31,15 +31,25 @@
             <div class="img-container"></div>
         </div>
     </div>
+    <?php
+        if($templateParams["username"] == $_SESSION["username"]){
+
+        }
+
+    ?>
     <div class="row">
         <div class="col-1">   
         </div>
         <div class="col-6 bio">
             <span class="bio-title">BIOGRAFIA<br></span>
         </div>
-        <div class="col-4">
-            <button type="button" class="button segui" id="segui">Segui</button>  
-        </div>
+        <?php
+            if($templateParams["username"] != $_SESSION["username"]){
+                echo '<div class="col-4">
+                <button type="button" class="button segui" id="segui">Segui</button>  
+                </div>';
+            }
+        ?>
     </div>
     <div class="row">
         <div class="col-1">   
