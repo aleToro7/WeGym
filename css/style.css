@@ -47,6 +47,7 @@
     display: block;
     margin: 12px auto;
     height: 40px;
+    padding-left: 22px;
 }
 
 
@@ -100,6 +101,7 @@ ul li input {
     border: none;
     outline: none;
     margin-bottom: 7%;
+    padding-left: 18px;
 }
 
 ul li input:focus {
@@ -109,27 +111,23 @@ ul li input:focus {
 ::-webkit-input-placeholder {
     /* WebKit browsers (Safari, Google Chrome, Opera 15+) */
     color: #A9A9A9;
-    padding: 3%;
 }
 
 :-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
     color: #A9A9A9;
     opacity: 1;
-    padding: 3%;
 }
 
 ::-moz-placeholder {
     /* Mozilla Firefox 19+ */
     color: #A9A9A9;
     opacity: 1;
-    padding: 3%;
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10+ */
     color: #A9A9A9;
-    padding: 3%;
 }
 
 ul li button {
