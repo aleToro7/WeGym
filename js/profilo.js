@@ -33,21 +33,10 @@ $(document).ready(function () {
         }
     });
 
-    /*
-    $("#nav-info").click(function(){
-        if(!$("#info").hasClass("selected")) {
-            $("#posted").removeClass("selected");
-            $("#info").addClass("selected filter-grey");
-            $("#nav-posted").removeClass("bottom-selection");
-            $("#nav-info").addClass("bottom-selection");
-            $("#load-profile-view").empty();
-            $("#load-profile-view").load('./info.php');
-        }
-    });*/
-
     $("#segui").click(function(){
         esegui=$("#segui").val() == "seguito" ? "smetti di seguire" : "segui";
         $("#segui").toggleClass("segui seguito");
+        $("#segui").hasClass("segui") ? $("#segui").html("segui") : $("#segui").html("seguito");
         $.ajax({
             type:'POST',
             url:'../segui.php',
