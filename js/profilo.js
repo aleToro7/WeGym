@@ -1,15 +1,39 @@
 $(document).ready(function () {
-    $("#nav-posted").click(function(){
+    /*$("#nav-posted").click(function(){
         if(!$("#posted").hasClass("selected")) {
-            $("#info").removeClass("selected filter-grey");
+            $("i[id], img[id]").map(function(){
+                
+                if(this.val() == "info") {
+                    $(this).removeClass("selected filter-grey");
+                }else {
+                    $(this).removeClass("selected");
+                }
+            });
             $("#posted").addClass("selected");
-            $("#nav-info").removeClass("bottom-selection");
-            $("#nav-posted").addClass("bottom-selection");
-            $("#load-profile-view").empty();
-            $("#load-profile-view").load('./lista-post.php');
+            $("a[id]").hasClass("bottom-selection", function(){
+                $(this).toggleClass("bottom-selection");
+            });
+        }
+    });*/
+
+    $("a").click(function(){
+        if(!$(this).hasClass("bottom-selection")){
+            id = this.id.split("-")[1];
+            $("#nav a[id]").map(function(){
+                idR = this.id.split("-")
+                $(this).removeClass("bottom-selection");
+                $(idR).removeClass("selected filter-grey")
+            });
+            $(this).addClass("bottom-selection");
+            if(id == "info") {
+                $(id).toggleClass("filter-dark-grey filter-grey");
+            }else {
+                $(id).addClass("selected");
+            }
         }
     });
 
+    /*
     $("#nav-info").click(function(){
         if(!$("#info").hasClass("selected")) {
             $("#posted").removeClass("selected");
@@ -19,7 +43,7 @@ $(document).ready(function () {
             $("#load-profile-view").empty();
             $("#load-profile-view").load('./info.php');
         }
-    });
+    });*/
 
     $("#segui").click(function(){
         esegui=$("#segui").val() == "seguito" ? "smetti di seguire" : "segui";
