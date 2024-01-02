@@ -1,3 +1,6 @@
+<?php
+    require_once '../profili.php';
+?>
 <!DOCTYPE html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,14 +17,31 @@
     <div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4 bg-primary">
-                    <p>prova</p>
+                <div class="col-4 nome-utente">
+                    <p><span class="logo">W</span>&nbsp&nbsp<?php echo $_SESSION["username"];?></p>
                 </div>
-                <div class="col-4 bg-secondary">
-                    
+            </div>
+            <div class="row">
+                <div class="col-1" style="text-align: center;">   
                 </div>
-                <div class="col-4 bg-success">
-                    
+                <div class="col-1 nome-utente" style="text-align: center;">
+                    <span>13</span><br>
+                    <span>Post</span>
+                </div>
+                <div class="col-2">
+                    <p></p>
+                </div>
+                <div class="col-1 nome-utente" style="text-align: center;">
+                    <span>10K</span><br>
+                    <span>Follower</span>
+                </div>
+                <div class="col-2">
+                    <p></p>
+                </div>
+                <div class="col-4">
+                    <div class="img-container">
+                        <!--<img src="../altro/img_avatar.png">-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,7 +61,3 @@
     </div>
 </body>
 </html>
-
-<?php
-    
-?>

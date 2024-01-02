@@ -69,6 +69,18 @@
     display: flex;
 }
 
+.nome-utente {
+    font-weight: bold;
+    font-size: x-large;
+    color: #A9A9A9;
+    padding-top: 1%;
+    margin-left: 3%;
+}
+
+.logo {
+    font-family: "Mustard Smile";
+}
+
 form>h1 {
     font-family: "Mustard Smile";
     color: #A9A9A9;
@@ -167,9 +179,33 @@ div > i {
     margin: 10.5px auto;
 }
 
+.img-container img {
+    object-fit: contain;
+    height: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.img-container {
+    background: url(../altro/img_avatar.png) no-repeat center center;
+    border-radius: 50%;
+    background-size: 130%; /*dovrebbe essere dinamico in base alla dimensione dell'immagine*/
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
 @media screen and (min-width:768px){
     .left-addon .glyphicon  {
         left:  3%;
         margin: 10.5px auto;
+    }
+    
+    .img-container {
+        
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
     }
 }

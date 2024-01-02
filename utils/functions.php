@@ -5,8 +5,8 @@ function registerLoggedUser($user){
     $_SESSION["nome"] = $user["nome"];
     $_SESSION["cognome"] = $user["cognome"];
     $_SESSION["mail"] = $user["mail"];
-    $_SESSION["password"] = $user["password"];
     $_SESSION["dataNascita"] = $user["dataNascita"];
+    //anche img profilo
 }
 
 function isUserLoggedIn(){
