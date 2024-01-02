@@ -42,6 +42,7 @@
 
 .middle-nav {
     background-color: #636363;
+    cursor: pointer;
 }
 
 .cerca {
@@ -142,6 +143,23 @@
     color: #299279;
 }
 
+
+.filter-dark-grey{
+    filter: invert(14%) sepia(1%) saturate(0%) hue-rotate(317deg) brightness(96%) contrast(102%);
+}
+
+.filter-grey{
+    filter: invert(84%) sepia(0%) saturate(0%) hue-rotate(220deg) brightness(82%) contrast(86%);
+}
+
+.barrell {
+    position: absolute;
+    object-fit: contain;
+    width: 36px;
+    height: 36px;
+    margin-left: 15%;
+    margin-top: 5px;
+}
 
 form>h1 {
     font-family: "Mustard Smile";

@@ -1,6 +1,7 @@
 <?php
     require_once '../profili.php';
 ?>
+<script src="../js/profilo.js"></script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-4 nome-utente">
@@ -46,11 +47,13 @@
 <div>
     <br>
     <nav class=" d-flex bd-highlight">
-        <a class="middle-nav p-2 flex-fill bd-highlight " href="base.php">
-            <i class="selected bi bi-house-door-fill fa-2x"></i>
+        <a class="middle-nav p-2 flex-fill bd-highlight" id="nav-posted">
+            <i class="selected bi bi-image fa-2x" id="posted"></i>
         </a>
-        <a class="middle-nav p-2 flex-fill bd-highlight" href="carica-post.php">
-            <i class="bi bi-plus-square fa-2x"></i>
+        <?php ?>
+        <a class="middle-nav p-2 flex-fill bd-highlight" id="nav-info">
+            <img src="../altro/dumbbell-solid.svg" alt="" class="barrell filter-dark-grey" id="info"/>
         </a>
     </nav>
+    <div id="load-profile-view"></div>
 </div>
