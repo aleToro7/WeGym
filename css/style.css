@@ -82,6 +82,43 @@
     font-family: "Mustard Smile";
 }
 
+.button {
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    background-color: #31B294;
+    border: none;
+    outline: none;
+}
+
+#segui {
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    background-color: #31B294;
+    width: 100px;
+    height: 27px;
+    border: none;
+    outline: none;
+    margin-top: 10%;
+    margin-left: 19.3%;
+    font-size: large;
+}
+
+.button:hover {
+    background-color: #299279;
+}
+
+.bio-title {
+    font-weight: bold;
+}
+
+.bio {
+    font-size: x-large;
+    color: #A9A9A9;
+    padding-top: 1%;
+    margin-left: 3%;
+}
+
+
 form>h1 {
     font-family: "Mustard Smile";
     color: #A9A9A9;
@@ -191,6 +228,16 @@ div > i {
     width: 100px;
     height: 100px;
     overflow: hidden;
+    margin-left: 10%;
+}
+
+div[name="stats"] {
+    font-weight: bold;
+    font-size: x-large;
+    color: #A9A9A9;
+    padding-top: 1%;
+    margin-left: 3%;
+    text-align: center;
 }
 
 @media screen and (min-width:768px){
@@ -200,10 +247,13 @@ div > i {
     }
     
     .img-container {
-        
-        border-radius: 50%;
         width: 150px;
         height: 150px;
-        overflow: hidden;
+    }
+
+    #segui {
+        margin-top: 5%;
+        width: 150px;
+        height: 40px;
     }
 }

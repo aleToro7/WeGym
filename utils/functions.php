@@ -6,6 +6,7 @@ function registerLoggedUser($user){
     $_SESSION["cognome"] = $user["cognome"];
     $_SESSION["mail"] = $user["mail"];
     $_SESSION["dataNascita"] = $user["dataNascita"];
+    $_SESSION["biografia"] = $user["biografia"];
     //anche img profilo
 }
 

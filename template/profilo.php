@@ -22,16 +22,16 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-1" style="text-align: center;">   
+                <div class="col-1">   
                 </div>
-                <div class="col-1 nome-utente" style="text-align: center;">
+                <div class="col-1" name="stats">
                     <span>13</span><br>
                     <span>Post</span>
                 </div>
                 <div class="col-2">
                     <p></p>
                 </div>
-                <div class="col-1 nome-utente" style="text-align: center;">
+                <div class="col-1"  name="stats">
                     <span>10K</span><br>
                     <span>Follower</span>
                 </div>
@@ -39,9 +39,18 @@
                     <p></p>
                 </div>
                 <div class="col-4">
-                    <div class="img-container">
-                        <!--<img src="../altro/img_avatar.png">-->
-                    </div>
+                    <div class="img-container"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">   
+                </div>
+                <div class="col-6 bio">
+                    <span class="bio-title">BIOGRAFIA<br></span>
+                    <span><?php  if(isset($_SESSION["biografia"])) echo $_SESSION["biografia"];?><br></span>
+                </div>
+                <div class="col-4">
+                    <button type="button" class="button" id="segui">Segui</button>  
                 </div>
             </div>
         </div>
