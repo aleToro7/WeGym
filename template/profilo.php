@@ -6,8 +6,8 @@
         <div class="col-4 nome-utente">
             <p><span class="logo">W</span>&nbsp&nbsp<?php echo $_SESSION["username"];?></p>
         </div>
-        <div class="col bg-primary">
-            <i style="float: right;" class="bi bi-box-arrow-right"></i>
+        <div class="col">
+            <i class="bi bi-box-arrow-right logout-button"></i>
         </div>
     </div>
     <div class="row">

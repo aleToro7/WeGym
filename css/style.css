@@ -131,6 +131,18 @@
     margin-left: 3%;
 }
 
+.logout-button {
+    float: right;
+    font-size: x-large;
+    padding-top: 1%;
+    color: #31B294;
+}
+
+.logout-button:hover {
+    cursor: pointer;
+    color: #31B294;
+}
+
 
 form>h1 {
     font-family: "Mustard Smile";
