@@ -2,15 +2,31 @@ $(document).ready(function () {
     if(sessionStorage.getItem("load")!=null) {
         $("#load").load(sessionStorage.getItem("load"));
         $(sessionStorage.getItem("id")).toggleClass(sessionStorage.getItem("class"));
-
+        if(sessionStorage.getItem("id")=="#upload"){
+            eventiCaricaPost();
+        }else if(sessionStorage.getItem("id")=="#profile") {
+            eventiProfilo();
+        }else {
+            eventiHomePage();
+        }
     }else {
         sessionStorage.setItem("load", "./home-page.php");
         sessionStorage.setItem("id", "#home");
         sessionStorage.setItem("class", "bi-house-door bi-house-door-fill");
         $("#home").toggleClass("bi-house-door bi-house-door-fill");
-        $("#load").load('./home-page.php');
+        $("#load").load('./home-page.php', eventiHomePage());
     }
 });
+
+var waitForEl = function(selector, callback) {
+    if (jQuery(selector).length) {
+      callback();
+    } else {
+      setTimeout(function() {
+        waitForEl(selector, callback);
+      }, 100);
+    }
+};
 
 $("#nav-upload").click(function(){
     if($("#upload").hasClass("bi-plus-square")) {
@@ -23,7 +39,7 @@ $("#nav-upload").click(function(){
         sessionStorage.setItem("load", "./carica-post.php");
         sessionStorage.setItem("id", "#upload");
         sessionStorage.setItem("class", "bi-plus-square bi-plus-square-fill");
-        $("#load").load('./carica-post.php');
+        $("#load").load('./carica-post.php', eventiCaricaPost());
     }
 });
 
@@ -38,7 +54,7 @@ $("#nav-profile").click(function(){
         sessionStorage.setItem("load", "./profilo.php");
         sessionStorage.setItem("id", "#profile");
         sessionStorage.setItem("class", "bi-person bi-person-fill");
-        $("#load").load('./profilo.php');
+        $("#load").load('./profilo.php', eventiProfilo());
     }
 });
 
@@ -53,6 +69,6 @@ $("#nav-home").click(function(){
         sessionStorage.setItem("load", "./home-page.php");
         sessionStorage.setItem("id", "#home");
         sessionStorage.setItem("class", "bi-house-door bi-house-door-fill");
-        $("#load").load('./home-page.php');
+        $("#load").load('./home-page.php', eventiHomePage());
     }
 });

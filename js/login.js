@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     var username = "";
     var password = "";
 
@@ -9,18 +8,16 @@ $(document).ready(function(){
 
         $.ajax({
             type:'POST',
-                url:'../login.php',
-                data: {username: username, password: password},
-                success: function(data) {
-                    if(data == "ok"){
-                        window.location.replace("./base.php");
-                    }else {
-                        $("#login-error").html(data);
-                    }
-                },
-                error: function() {}
+            url:'../login.php',
+            data: {username: username, password: password},
+            success: function(data) {
+                if(data == "ok"){
+                    window.location.replace("./base.php");
+                }else {
+                    $("#login-error").html(data);
+                }
+            },
+            error: function() {}
         });
     });
-
-
 });

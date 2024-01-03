@@ -12,9 +12,9 @@ if(!isset($_SESSION["username"])){
     $templateParams["dataNascita"] = $_SESSION["dataNascita"];
     $templateParams["biografia"] = $_SESSION["biografia"];
 }
-
+/*
 if(isset($_POST["loginFomAjax"])) {
     
-}
+}*/
 
 ?>

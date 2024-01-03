@@ -1,4 +1,3 @@
-<script src="../js/home.js"></script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 inner-addon left-addon">
@@ -7,8 +6,5 @@
         </div>
     </div>
 </div>
-<ul class="user-list"></ul>
+<div class="user-list"></div>
 <div id="risultatoRicerca"></div>
-<?php
-    require_once '../home.php';
-?>

@@ -1,5 +1,5 @@
 .bgbody {
-    background-color: #434343;
+    background-color: #373737;
 }
 
 .my-container {
@@ -129,18 +129,16 @@
     border: solid 2px;
     border-color: #31B294;
     color: #31B294;
-    background-color: #434343;
+    background-color: #373737;
     padding: 0;
     vertical-align: middle;
     height: 35px;
 }
 
 .modifica-profilo:hover {
-    color: #434343;
+    color: #373737;
     background-color: #31B294;
 }
-
-
 
 .bio-title {
     font-weight: bold;
@@ -192,7 +190,7 @@
 }
 
 .seguito {
-    background-color: #434343;
+    background-color: #373737;
     border: solid 2px;
     border-color: #31B294;
     color: #31B294;
@@ -208,8 +206,8 @@
 .close {
     float: right;
     font-size: xx-large;
-    padding-top: 1%;
     cursor: pointer;
+    margin-bottom: 1%;
 }
 
 form>h1 {
@@ -282,7 +280,7 @@ ul>div {
 
 a i {
     margin-left: 48%;
-    color: #434343;
+    color: #373737;
 }
 
 div > i {
@@ -307,14 +305,14 @@ div > i {
     margin: 10.5px auto;
 }
 
-.img-container img {
+.profile-img-container img {
     object-fit: contain;
     height: 100%;
     overflow: hidden;
     margin: auto;
 }
 
-.img-container {
+.profile-img-container {
     background: url(../altro/img_avatar.png) no-repeat center center;
     border-radius: 50%;
     background-size: 130%; /*dovrebbe essere dinamico in base alla dimensione dell'immagine*/
@@ -322,6 +320,18 @@ div > i {
     height: 100px;
     overflow: hidden;
     margin-left: 10%;
+}
+
+.img-crop {
+    display: block;
+    max-width: 100%;
+}
+.preview {
+    overflow: hidden;
+    width: 160px; 
+    height: 160px;
+    margin: 10px;
+    border: 1px solid;
 }
 
 div[name="stats"] {
@@ -347,7 +357,7 @@ div[name="stats"] {
         margin: 10.5px auto;
     }
     
-    .img-container {
+    .profile-img-container {
         width: 150px;
         height: 150px;
     }

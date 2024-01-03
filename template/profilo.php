@@ -1,7 +1,7 @@
 <?php
     require_once '../profili.php';
 ?>
-<script src="../js/profilo.js"></script>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-4 nome-utente">
@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-1">   
+        <div class="col-1">
         </div>
         <div class="col-1 counter" name="stats">
             <span>13</span><br>
@@ -29,7 +29,7 @@
             <p></p>
         </div>
         <div class="col-4">
-            <div class="img-container"></div>
+            <div class="profile-img-container"></div>
         </div>
     </div>
     <?php

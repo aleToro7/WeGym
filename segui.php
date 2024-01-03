@@ -1,6 +1,4 @@
 <?php
 require_once 'bootstrap.php';
-if(isset($_POST["eseguiFromAjax"])) {
-
-}
+//if(isset($_POST["eseguiFromAjax"])) {}
 ?>
