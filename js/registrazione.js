@@ -1,12 +1,11 @@
 $(document).ready(function () {
-    var username = "";
-
     $("#continua, #indietro").click(function(){
         $("#form-registrazione input[id], div[id], button[id], i").map(function(){
             $(this).toggleClass("hide");
         });
     });
 
+    var username = "";
     $("#username").keyup(function() {
         username = $("#username").val();
         if(username.length > 3){

@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="it">
+<?php
+    //tenere qui o mettere i file separato?
+    require_once '../bootstrap.php';
+    if(isUserLoggedIn()){
+        header("location: base.php");
+        exit;
+    }
+?>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
@@ -29,7 +37,7 @@
                 </li>
                 <div id="login-error"></div>
                 <li>
-                    <button class="btn-login" type="button" id="login">Login</button>
+                    <button class="btn-login" type="button" id="login" name="login">Login</button>
                 </li>
             </ul>
             <div>
@@ -40,7 +48,3 @@
 </div>
 </body>
 </html>
-
-<?php
-    require_once '../login.php';
-?>

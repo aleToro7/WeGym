@@ -22,8 +22,4 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 
 }
 
-if(isUserLoggedIn()){
-    header("location: base.php");
-    exit;
-}
 ?>

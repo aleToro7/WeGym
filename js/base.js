@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     if(sessionStorage.getItem("load")!=null) {
         $("#load").load(sessionStorage.getItem("load"));
@@ -57,7 +56,3 @@ $("#nav-home").click(function(){
         $("#load").load('./home-page.php');
     }
 });
-
-function u(){
-
-}

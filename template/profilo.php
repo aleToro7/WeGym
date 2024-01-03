@@ -8,7 +8,7 @@
             <p><span class="logo">W</span>&nbsp&nbsp<?php echo $_SESSION["username"];?></p>
         </div>
         <div class="col">
-            <a href="../logout.php"><i class="bi bi-box-arrow-right logout-button"  title="Disconnetti"></i></a>
+            <a href="../logout.php"><i class="bi bi-box-arrow-right logout-button"  title="Disconnetti" id="logout"></i></a>
         </div>
     </div>
     <div class="row">
