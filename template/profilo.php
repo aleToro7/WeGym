@@ -62,7 +62,7 @@
         <div class="col-1">   
         </div>
         <div class="col bio biobio">
-            <span><?php  if(isset($_SESSION["biografia"])) echo $_SESSION["biografia"];?><br></span>
+            <span><?php  if(isset($_SESSION["biografia"]) && $_SESSION["biografia"]!= '') echo $_SESSION["biografia"];?><br></span>
         </div>
     </div>
 </div>

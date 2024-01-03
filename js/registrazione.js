@@ -1,4 +1,3 @@
-$(document).ready(function () {});
 $("#continua, #indietro").click(function(){
     $("#form-registrazione input[id], div[id], button[id], i").map(function(){
         $(this).toggleClass("hide");
@@ -7,7 +6,7 @@ $("#continua, #indietro").click(function(){
 
 var username = "";
 $("#username").keyup(function() {
-    username = $("#username").val();
+    var username = $("#username").val();
     if(username.length > 3){
         $.ajax({
             type:'POST',
@@ -36,7 +35,7 @@ $("#username").keyup(function() {
 });
 
 $("#mail").focusout(function() {
-    mail = $("#mail").val();
+    var mail = $("#mail").val();
     if(emailIsValid(mail)){
         $.ajax({
             type:'POST',
@@ -61,8 +60,8 @@ $("#mail").focusout(function() {
     }
 });
 
-$("#form-registrazione input").keyup(function(){
-    if(!$('#'+this.id).hasClass("hide")){
+$("input").keyup(function(){
+    if(!$(this).hasClass("hide")){
         if($("#continua").hasClass("hide")) {
             manageBtnRegistrati();
         }else{
@@ -111,5 +110,3 @@ function emailIsValid(email) {
     var regex_email_valida = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex_email_valida.test(email);
 }
-
-
