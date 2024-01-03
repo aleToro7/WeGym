@@ -205,6 +205,13 @@
     vertical-align: middle;
 }
 
+.close {
+    float: right;
+    font-size: xx-large;
+    padding-top: 1%;
+    cursor: pointer;
+}
+
 form>h1 {
     font-family: "Mustard Smile";
     color: #A9A9A9;

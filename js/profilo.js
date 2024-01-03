@@ -34,3 +34,8 @@ $("#logout").click(function(){
     sessionStorage.removeItem("id");
     sessionStorage.removeItem("class");
 });
+
+$("#modificaProfilo").click(function(){
+    $("#load").empty();
+    $("#load").load('./modifica-profilo.php');
+});
