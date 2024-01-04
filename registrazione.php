@@ -8,7 +8,8 @@ if(isset($_POST["registrati"])) {
    $dataNascita = $_POST["dataNascita"];
    $password = $_POST["pwd"];
 
-   $error = $dbh->register($username, $mail, $nome, $cognome, $dataNascita, $password);
+   $hash = password_hash($password, PASSWORD_BCRYPT);
+   $error = $dbh->register($username, $mail, $nome, $cognome, $dataNascita, $hash);
    
    if($error==''){
       $_SESSION["username"] = $username;
@@ -16,7 +17,7 @@ if(isset($_POST["registrati"])) {
       $_SESSION["cognome"] = $cognome;
       $_SESSION["mail"] = $mail;
       $_SESSION["dataNascita"] = $dataNascita;
-      //anche img profilo
+
       header("location: base.php");
    }else {
       $templateParams["erroreRegistrazione"] = "Errore durante la registrazione";

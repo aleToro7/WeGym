@@ -12,13 +12,10 @@ class DatabaseHelper{
 
     //metodi per query
 
-    public function checkLogin($username, $enc_password){
-        //$salt = "asd832jiaiodsjioa";
-        //$salted_pwd = $salt + $enc_password;
-        $query = "SELECT * FROM utente WHERE nomeUtente = ? AND password = ?";  //bisogna avere tutti i parametri dell'utente
+    public function checkLogin($username){
+        $query = "SELECT * FROM utente WHERE nomeUtente = ?";  //bisogna avere tutti i parametri dell'utente
         $stmt = $this->db->prepare($query);
-        //$stmt->bind_param('ss',$username, $salted_pwd);
-        $stmt->bind_param('ss',$username, $enc_password);
+        $stmt->bind_param('s',$username);
         $stmt->execute();
         $result = $stmt->get_result();
 
