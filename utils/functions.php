@@ -6,7 +6,11 @@ function registerLoggedUser($user){
     $_SESSION["cognome"] = $user["cognome"];
     $_SESSION["mail"] = $user["mail"];
     $_SESSION["dataNascita"] = $user["dataNascita"];
-    $_SESSION["biografia"] = $user["biografia"];
+    if($user["biografia"] != '') {
+        $_SESSION["biografia"] = $user["biografia"];
+    }else {
+        $_SESSION["biografia"] = '';
+    }
     if($user["imgProfilo"] != '') {
         $_SESSION["imgProfilo"] = $user["imgProfilo"];
     }else {

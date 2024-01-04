@@ -10,17 +10,15 @@ if(!isset($_SESSION["username"])){
     $templateParams["cognome"] = $_SESSION["cognome"];
     $templateParams["mail"] = $_SESSION["mail"];
     $templateParams["dataNascita"] = $_SESSION["dataNascita"];
-    $templateParams["biografia"] = $_SESSION["biografia"];
-    $templateParams["imgProfilo"] = $_SESSION["imgProfilo"];
-    if($_SESSION["imgProfilo"] != '') {
+    if(isset($_SESSION["biografia"])) {
+        $templateParams["biografia"] = $_SESSION["biografia"];
+    }else {
+        $templateParams["biografia"] = '';
+    }
+    if(isset($_SESSION["imgProfilo"])) {
         $templateParams["imgProfilo"] = $_SESSION["imgProfilo"];
     }else {
         $templateParams["imgProfilo"] = "";
     }
 }
-/*
-if(isset($_POST["loginFomAjax"])) {
-    
-}*/
-
 ?>
