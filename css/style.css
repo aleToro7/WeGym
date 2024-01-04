@@ -34,6 +34,7 @@
 .nav {
     background-color: #31B294;
     height: 100%;
+    cursor: pointer;
 }
 
 .centra-icona {
@@ -44,10 +45,13 @@
     color:#A9A9A9;
 }
 
-
 .middle-nav {
     background-color: #636363;
     cursor: pointer;
+}
+
+.img-nav {
+    left: 58.5%;
 }
 
 .cerca {
