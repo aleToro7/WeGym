@@ -36,10 +36,13 @@
     height: 100%;
 }
 
+.centra-icona {
+    margin: 0 auto;
+}
+
 .selected {
     color:#A9A9A9;
 }
-
 
 
 .middle-nav {

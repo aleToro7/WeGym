@@ -51,6 +51,7 @@
                     <button type="button" class="hide" id="indietro">Indietro</button>
                     <button type="button" class="btn-continua" id="continua" disabled>Continua</button>
                     <button type="submit" class="hide" id="registrati" name="registrati" disabled>Registrati</button>
+                    <span><?php if(isset($templateParams['erroreRegistrazione'])) echo $templateParams['erroreRegistrazione'];?></span>
                 </li>
             </ul>
         </form>
