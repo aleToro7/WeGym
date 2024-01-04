@@ -3,6 +3,9 @@
 ?>
 <div class="container-fluid">
     <div class="row">
+        <div class="col-2">
+            <span class="cambia-password" id="cambiaPassword">Cambia password</span>
+        </div>
         <div class="col">
             <i class="close bi bi-x" id="close"></i>
         </div>
@@ -20,6 +23,18 @@
                 <input type="file" name="button image" class="image" value="Scegli immagine profilo">
             </form>
         </div>
+    <div class="row">
+        <div class="col">
+            <span>Nome utente</span>
+            <input type="text" class="" name="newUsername" id="newUsername" value="<?php echo $templateParams["username"];?>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col hide">
+            <span>Nuova password</span>
+            <input type="text" class="" name="newPassword" id="newPassword">
+        </div>
+    </div>
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">

@@ -23,13 +23,13 @@
     <div id="load"></div>
     <div>
         <nav class=" d-flex bd-highlight fixed-bottom">
-            <a class="nav p-2 flex-fill bd-highlight" id="nav-home">
+            <a class="nav bottom-nav p-2 flex-fill bd-highlight" id="nav-home">
                 <i class="centra-icona bi bi-house-door fa-2x" id="home"></i>
             </a>
-            <a class="nav p-2 flex-fill bd-highlight" id="nav-upload">
+            <a class="nav bottom-nav p-2 flex-fill bd-highlight" id="nav-upload">
                 <i class="centra-icona bi bi-plus-square fa-2x" id="upload"></i>
             </a>
-            <a class=" nav p-2 flex-fill bd-highlight" id="nav-profile">
+            <a class=" nav bottom-nav p-2 flex-fill bd-highlight" id="nav-profile">
                 <i class="centra-icona bi bi-person fa-2x" id="profile"></i>
             </a>
         </nav>

@@ -31,23 +31,27 @@
     display: none;
 }
 
-.nav {
+.bottom-nav {
     background-color: #31B294;
     height: 100%;
+    cursor: pointer;
+}
+
+.middle-nav {
+    background-color: #636363;
+    cursor: pointer;
 }
 
 .centra-icona {
     margin: 0 auto;
 }
 
-.selected {
-    color:#A9A9A9;
+.img-nav {
+    left: 58.5%;
 }
 
-
-.middle-nav {
-    background-color: #636363;
-    cursor: pointer;
+.selected {
+    color:#A9A9A9;
 }
 
 .cerca {
@@ -211,6 +215,16 @@
     font-size: xx-large;
     cursor: pointer;
     margin-bottom: 1%;
+}
+
+.cambia-password {
+    color: #31B294;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cambia-password:hover {
+    color: #299279;
 }
 
 form>h1 {
