@@ -39,7 +39,7 @@ function eventiProfilo() {
     
         $("#modificaProfilo").click(function(){
             $("#load").empty();
-            $("#load").load('./modifica-profilo.php');
+            $("#load").load('./modifica-profilo.php', eventiModificaProfilo());
         });
     });
 }

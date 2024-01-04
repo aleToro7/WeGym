@@ -9,7 +9,7 @@ if(isset($_POST["registrati"])) {
    $password = $_POST["pwd"];
 
    $error = $dbh->register($username, $mail, $nome, $cognome, $dataNascita, $password);
-   echo $error;
+   
    if($error==''){
       $_SESSION["username"] = $username;
       $_SESSION["nome"] = $nome;

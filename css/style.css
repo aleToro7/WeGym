@@ -316,7 +316,8 @@ div > i {
 }
 
 .profile-img-container {
-    background: url(../altro/img_avatar.png) no-repeat center center;
+    /*background: url(../altro/img_avatar.png) no-repeat center center;*/
+    background: #373737;
     border-radius: 50%;
     background-size: 130%; /*dovrebbe essere dinamico in base alla dimensione dell'immagine*/
     width: 100px;
@@ -331,8 +332,6 @@ div > i {
 }
 .preview {
     overflow: hidden;
-    width: 160px; 
-    height: 160px;
     margin: 10px;
     border: 1px solid;
 }

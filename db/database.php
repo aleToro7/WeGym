@@ -61,4 +61,11 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function addImage($imgProfilo, $username){
+        $query = "UPDATE utente SET imgProfilo='".$imgProfilo."' WHERE nomeUtente='".$username."'";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->error;
+    }
 }

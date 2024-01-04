@@ -1,5 +1,6 @@
-<script src="../js/modifica-profilo.js"></script>
-<script src="../js/crop.js"></script>
+<?php
+    require_once '../profili.php';
+?>
 <div class="container-fluid">
     <div class="row">
         <div class="col">
@@ -8,9 +9,15 @@
     </div>
     <div class="row">
         <div class="col">
-            <div class="profile-img-container"></div>
+            <img class="profile-img-container" src="<?php 
+                if($_SESSION["imgProfilo"]!='') {
+                    echo $templateParams["imgProfilo"];
+                }else {
+                    echo "../altro/img_avatar.png";
+                }
+            ?>"/>
             <form method="post">
-                <input type="file" name="image button" class="image" value="Scegli immagine profilo">
+                <input type="file" name="button image" class="image" value="Scegli immagine profilo">
             </form>
         </div>
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -39,6 +46,7 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="button" class="btn btn-primary" id="crop">Crop</button>
                     </div>
+                    <span><?php if(isset($templateParams['erroreImmagine'])) echo $templateParams['erroreImmagine'];?></span>
                 </div>
             </div>
         </div>

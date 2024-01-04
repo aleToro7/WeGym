@@ -7,7 +7,11 @@ function registerLoggedUser($user){
     $_SESSION["mail"] = $user["mail"];
     $_SESSION["dataNascita"] = $user["dataNascita"];
     $_SESSION["biografia"] = $user["biografia"];
-    //anche img profilo
+    if($user["imgProfilo"] != '') {
+        $_SESSION["imgProfilo"] = $user["imgProfilo"];
+    }else {
+        $_SESSION["imgProfilo"] = "";
+    }
 }
 
 function isUserLoggedIn(){

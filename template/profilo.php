@@ -29,7 +29,13 @@
             <p></p>
         </div>
         <div class="col-4">
-            <div class="profile-img-container"></div>
+            <img class="profile-img-container" id="img-profile" src="<?php 
+                if($_SESSION["imgProfilo"]!='') {
+                    echo $templateParams["imgProfilo"];
+                }else {
+                    echo "../altro/img_avatar.png";
+                }
+            ?>"/>
         </div>
     </div>
     <?php

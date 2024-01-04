@@ -14,12 +14,10 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     if(count($login_result)==0){
         //Login fallito
         echo "Errore! Username o password non corretti.";
-    }
-    else{
+    }else {
         registerLoggedUser($login_result[0]);
         echo "ok";
     }
-
 }
 
 ?>

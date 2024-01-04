@@ -11,6 +11,12 @@ if(!isset($_SESSION["username"])){
     $templateParams["mail"] = $_SESSION["mail"];
     $templateParams["dataNascita"] = $_SESSION["dataNascita"];
     $templateParams["biografia"] = $_SESSION["biografia"];
+    $templateParams["imgProfilo"] = $_SESSION["imgProfilo"];
+    if($_SESSION["imgProfilo"] != '') {
+        $templateParams["imgProfilo"] = $_SESSION["imgProfilo"];
+    }else {
+        $templateParams["imgProfilo"] = "";
+    }
 }
 /*
 if(isset($_POST["loginFomAjax"])) {
