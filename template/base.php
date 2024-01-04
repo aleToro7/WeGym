@@ -38,4 +38,5 @@
 <script src="../js/base.js"></script>
 <script src="../js/home.js"></script>
 <script src="../js/profilo.js"></script>
+<script src="../js/carica-post.js"></script>
 </html>
