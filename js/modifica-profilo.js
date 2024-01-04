@@ -1,11 +1,6 @@
 
 function eventiModificaProfilo() {
     waitForEl("input.image", function() {
-        /*
-        $("#modificaImg").click(function(){
-            $("#load").empty();
-            $("#load").load('./crop-image.php');
-        });*/
         $(document).ready(function () {
             $("#close").click(function(){
                 $("#load").empty();
@@ -13,14 +8,17 @@ function eventiModificaProfilo() {
             });
         });
 
+        $("#close-crop").click(function(){
+            bs_modal.modal('hide');
+        });
+
         var bs_modal = $('#modal');
         var image = document.getElementById('image');
         var cropper,reader,file;
 
-        $("body").on("change", ".image", function(e) {
+        $(".image").on("change", function(e) {
             var files = e.target.files;
             var done = function(url) {
-                alert(url);
                 image.src = url;
                 bs_modal.modal('show');
             };
@@ -53,7 +51,6 @@ function eventiModificaProfilo() {
         });
 
         $("#crop").click(function() {
-            alert("click");
             canvas = cropper.getCroppedCanvas({
                 width: 160,
                 height: 160,
@@ -73,12 +70,11 @@ function eventiModificaProfilo() {
                         success: function(data) {
                             if(data == "ok") {
                                 bs_modal.modal('hide');
-                                alert("success upload image");
                                 $("#img-profile").attr('src', base64data); 
                             }
-                        },
+                        }
                     });
-                };
+                }
             });
         });
     });
