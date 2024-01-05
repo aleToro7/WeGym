@@ -20,7 +20,7 @@ if(!isset($_SESSION["username"])){
             }else {
                 $templateParams["biografia"] = '';
             }
-            if(isset($user["imgProfilo"])) {
+            if(isset($user[0]["imgProfilo"])) {
                 $templateParams["imgProfilo"] = $user[0]["imgProfilo"];
             }else {
                 $templateParams["imgProfilo"] = "";
