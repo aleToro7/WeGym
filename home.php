@@ -10,4 +10,10 @@ if(isset($_POST["cercaFromAjax"])) {
         echo "Nessun utente trovato";
     }
 }
+
+if(isset($_POST["idCercatoFromAjax"])) {
+    $userCercato = $_POST['idCercatoFromAjax'];
+    $_SESSION["usernameCercato"] = $userCercato;
+    echo "ok";
+}
 ?>

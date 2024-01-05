@@ -6,7 +6,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     $username = strip_tags(trim($_POST['username']));
     $password = strip_tags(trim($_POST['password']));
 
-    $login_result = $dbh->checkLogin($username);
+    $login_result = $dbh->getUser($username);
     
     if(count($login_result)==0){
         //Login fallito

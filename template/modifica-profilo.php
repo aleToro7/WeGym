@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col">
             <img class="profile-img-container" src="<?php 
-                if($_SESSION["imgProfilo"]!='') {
+                if($templateParams["imgProfilo"]!='') {
                     echo $templateParams["imgProfilo"];
                 }else {
                     echo "../altro/img_avatar.png";

@@ -12,7 +12,7 @@ class DatabaseHelper{
 
     //metodi per query
 
-    public function checkLogin($username){
+    public function getUser($username){
         $query = "SELECT * FROM utente WHERE nomeUtente = ?";  //bisogna avere tutti i parametri dell'utente
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s',$username);

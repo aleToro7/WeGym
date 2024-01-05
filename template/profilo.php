@@ -5,10 +5,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-4 nome-utente">
-            <p><span class="logo">W</span>&nbsp&nbsp<?php echo $_SESSION["username"];?></p>
+            <p><span class="logo">W</span>&nbsp&nbsp<?php echo $templateParams["username"];?></p>
         </div>
         <div class="col">
-            <a href="../logout.php"><i class="bi bi-box-arrow-right logout-button"  title="Disconnetti" id="logout"></i></a>
+            <?php if($templateParams["username"] != $_SESSION["username"]) {
+                echo '<i class="close bi bi-x" id="close"></i>';
+            }else {
+                echo '<a href="../logout.php"><i class="bi bi-box-arrow-right logout-button"  title="Disconnetti" id="logout"></i></a>';
+            } ?>
         </div>
     </div>
     <div class="row">
@@ -30,7 +34,7 @@
         </div>
         <div class="col-4">
             <img class="profile-img-container" id="img-profile" src="<?php 
-                if($_SESSION["imgProfilo"]!='') {
+                if($templateParams["imgProfilo"]!='') {
                     echo $templateParams["imgProfilo"];
                 }else {
                     echo "../altro/img_avatar.png";
@@ -68,7 +72,7 @@
         <div class="col-1">   
         </div>
         <div class="col bio biobio">
-            <span><?php  if(isset($_SESSION["biografia"]) && $_SESSION["biografia"]!= '') echo $_SESSION["biografia"];?><br></span>
+            <span><?php  if(isset($templateParams["biografia"]) && $templateParams["biografia"]!= '') echo $templateParams["biografia"];?><br></span>
         </div>
     </div>
 </div>

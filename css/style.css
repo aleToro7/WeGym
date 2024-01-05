@@ -68,11 +68,15 @@
     padding-left: 22px;
 }
 
-.prova{
+.search-result{
     color: #fff;
-    background-color: #299279;
+    background-color: #636363;
+    cursor: pointer;
 }
 
+.search-result:hover {
+    background-color: #757575;
+}
 
 .carousel-indicators li {
     box-sizing: content-box;

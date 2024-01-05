@@ -41,5 +41,10 @@ function eventiProfilo() {
             $("#load").empty();
             $("#load").load('./modifica-profilo.php', eventiModificaProfilo());
         });
+
+        $("#close").click(function(){
+            $("#load").empty();
+            $("#load").load('./home-page.php', eventiHomePage());
+        });
     });
 }

@@ -70,7 +70,8 @@ function eventiModificaProfilo() {
                         success: function(data) {
                             if(data == "ok") {
                                 bs_modal.modal('hide');
-                                $("#img-profile").attr('src', base64data); 
+                                $("#img-profile").attr('src', base64data);
+                                $(".profile-img-container").attr('src', base64data); 
                             }
                         }
                     });
