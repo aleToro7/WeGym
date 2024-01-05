@@ -48,6 +48,7 @@ function eventiModificaProfilo() {
         }).on('hidden.bs.modal', function() {
             cropper.destroy();
             cropper = null;
+            //bs_modal.modal('hide');
         });
 
         $("#crop").click(function() {
