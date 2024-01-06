@@ -63,7 +63,6 @@
         <?php
             if($templateParams["username"] != $_SESSION["username"]){
                 $templateParams['seguito'] == false ? $class = "Segui" : $class = "Seguito";
-                echo $templateParams['seguito'];
                 echo '<div class="col-4">
                 <button type="button" class="button '.$class.'" id="segui">'.$class.'</button>  
                 </div>';
