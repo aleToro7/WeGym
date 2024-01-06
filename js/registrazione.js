@@ -70,6 +70,10 @@ $("input").keyup(function(){
     }
 });
 
+$("#dataNascita").change(function(){
+    manageBtnContinua();
+});
+
 $('#showPwd').click(function(){
     if($('#pwd').attr('type') == 'password') {
         $('#pwd').attr('type', 'text');

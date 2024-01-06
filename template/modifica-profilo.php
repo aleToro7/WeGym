@@ -39,7 +39,8 @@
     <div class="row">
         <div class="col">
             <span>Biografia</span>
-            <input type="text" class="" name="newBio" id="newBio" value="<?php echo $templateParams["biografia"];?>" multiple size="50"><br><br>
+            <textarea class="span6"  name="newBio" id="newBio" rows="3" placeholder="<?php echo $templateParams["biografia"];?>" required></textarea>
+            <!--<input type="text" class="" name="newBio" id="newBio" value="" multiple size="50"><br><br>-->
         </div>
     </div>
 

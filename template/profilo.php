@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-4 nome-utente">
-            <p><span class="logo">W</span>&nbsp&nbsp<?php echo $templateParams["username"];?></p>
+            <p id="username" ><span class="logo">W</span>&nbsp&nbsp<?php echo $templateParams["username"];?></p>
         </div>
         <div class="col">
             <?php if($templateParams["username"] != $_SESSION["username"]) {
@@ -26,7 +26,7 @@
             <p></p>
         </div>
         <div class="col-1 counter" name="stats">
-            <span>10K</span><br>
+            <span><?php echo $templateParams["follower"];?></span><br>
             <span>Follower</span>
         </div>
         <div class="col-2">
@@ -62,8 +62,10 @@
         </div>
         <?php
             if($templateParams["username"] != $_SESSION["username"]){
+                $templateParams['seguito'] == false ? $class = "Segui" : $class = "Seguito";
+                echo $templateParams['seguito'];
                 echo '<div class="col-4">
-                <button type="button" class="button segui" id="segui">Segui</button>  
+                <button type="button" class="button '.$class.'" id="segui">'.$class.'</button>  
                 </div>';
             }
         ?>

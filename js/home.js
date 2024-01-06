@@ -29,16 +29,22 @@ function eventiHomePage(){
         });
 
         $(".user-list").on('click', '.search-result', function() {
-            
+            var idCercato = this.id
             $.ajax({
                 type:'POST',
                 url:'../home.php',
-                data: 'idCercatoFromAjax=' + this.id,
+                data: 'idCercatoFromAjax=' + idCercato,
                 success: function(data) {
-                    if(data == "ok"){
-                        $("#load").empty();
-                        $("#load").load('./profilo.php', eventiProfilo());
+                    if(data == idCercato){
+                        $("#home").removeClass("bi-house-door-fill");
+                        $("#home").addClass("bi-house-door");
+                        $("#profile").toggleClass("bi-person bi-person-fill");
+                        sessionStorage.setItem("load", "./profilo.php");
+                        sessionStorage.setItem("id", "#profile");
+                        sessionStorage.setItem("class", "bi-person bi-person-fill");
                     }
+                    $("#load").empty();
+                    $("#load").load('./profilo.php', eventiProfilo());
                 },
                 error: function() { }
             });

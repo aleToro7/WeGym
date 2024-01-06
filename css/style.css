@@ -121,7 +121,7 @@
     background-color: #299279;
 }
 
-.segui {
+.Segui {
     width: 100px;
     height: 30px;
     margin-top: 10%;
@@ -200,7 +200,7 @@
     margin-top: 5px;
 }
 
-.seguito {
+.Seguito {
     background-color: #373737;
     border: solid 2px;
     border-color: #31B294;
@@ -386,13 +386,13 @@ div[name="stats"] {
         margin-right: 1.5%;
     }
 
-    .segui {
+    .Segui {
         margin-top: 5%;
         width: 150px;
         height: 40px;
     }
 
-    .seguito {
+    .Seguito {
         margin-top: 5%;
         width: 150px;
         height: 40px;

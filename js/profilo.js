@@ -18,17 +18,18 @@ function eventiProfilo() {
         });
     
         $("#segui").click(function(){
-            esegui=$("#segui").val() == "seguito" ? "smetti di seguire" : "segui";
-            $("#segui").toggleClass("segui seguito");
-            $("#segui").hasClass("segui") ? $("#segui").html("Segui") : $("#segui").html("Seguito");
-            /*$.ajax({
+            var esegui=$("#segui").val() == "Seguito" ? "smetti di seguire" : "segui";
+            $("#segui").toggleClass("Segui Seguito");
+            var utenteSeguito = $("#username").text().substr(3);
+            $("#segui").hasClass("Segui") ? $("#segui").html("Segui") : $("#segui").html("Seguito");
+            $.ajax({
                 type:'POST',
                 url:'../segui.php',
-                data: 'eseguiFromAjax=' + esegui,
+                data: {eseguiFromAjax: esegui, seguitoFromAjax: utenteSeguito},
                 success: function(data) {
-    
+                    alert(data);
                 }
-            });*/
+            });
         });
     
         $("#logout").click(function(){

@@ -65,4 +65,40 @@ class DatabaseHelper{
         $stmt->execute();
         return $stmt->error;
     }
+
+    public function seguiUtente($utenteSeguito, $utenteSeguente) {
+        $query = "INSERT INTO segue (idUtenteSeguente, idUtenteSeguito) VALUES (?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $utenteSeguente, $utenteSeguito);
+        $stmt->execute();
+        return $stmt->error;
+    }
+
+    public function nonSeguireUtente($utenteSeguito, $utenteSeguente) {
+        $query = "DELETE FROM segue WHERE idUtenteSeguente=? AND idUtenteSeguito=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $utenteSeguente, $utenteSeguito);
+        $stmt->execute();
+        return $stmt->error;
+    }
+
+    public function contaFollower($utente) {
+        $query = "SELECT COUNT(*) as numeroFollower FROM segue WHERE idUtenteSeguito=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $utente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function controllaFollow($utenteSeguito, $utenteSeguente) {
+        $query = "SELECT COUNT(*) as follow FROM segue WHERE idUtenteSeguente=? AND idUtenteSeguito=? ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $utenteSeguente, $utenteSeguito);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
