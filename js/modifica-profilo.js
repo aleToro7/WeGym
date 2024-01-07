@@ -1,22 +1,17 @@
 
 function eventiModificaProfilo() {
-    waitForEl("input.image", function() {
-        $(document).ready(function () {
-            $("#close").click(function(){
-                $("#load").empty();
-                $("#load").load('./profilo.php', eventiProfilo());
-            });
-        });
-
+    waitForEl("input.getImage", function() {
+        
         $("#close-crop").click(function(){
             bs_modal.modal('hide');
+            $(".getImage").val('');
         });
 
         var bs_modal = $('#modal');
         var image = document.getElementById('image');
         var cropper,reader,file;
 
-        $(".image").on("change", function(e) {
+        $(".getImage").on("change", function(e) {
             var files = e.target.files;
             var done = function(url) {
                 image.src = url;
@@ -48,7 +43,8 @@ function eventiModificaProfilo() {
         }).on('hidden.bs.modal', function() {
             cropper.destroy();
             cropper = null;
-            //bs_modal.modal('hide');
+            bs_modal.modal('hide');
+            $(".getImage").val('');
         });
 
         $("#crop").click(function() {
@@ -71,6 +67,7 @@ function eventiModificaProfilo() {
                         success: function(data) {
                             if(data == "ok") {
                                 bs_modal.modal('hide');
+                                $(".getImage").val('');
                                 $("#img-profile").attr('src', base64data);
                                 $(".profile-img-container").attr('src', base64data); 
                             }

@@ -20,7 +20,7 @@
                 }
             ?>"/>
             <form method="post">
-                <input type="file" name="button image" class="image" value="Scegli immagine profilo">
+                <input type="file" name="button image" class="getImage" value="Scegli immagine profilo">
             </form>
         </div>
     <div class="row">
