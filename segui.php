@@ -8,9 +8,9 @@ if(isset($_POST["eseguiFromAjax"]) && isset($_POST["seguitoFromAjax"])) {
     if($azione == "segui") {
         $err = $dbh->seguiUtente($utenteSeguito, $utenteSeguente);
         $followers = $dbh->contaFollower($utenteSeguito);
-        echo $utenteSeguito;
         if(count($followers) > 0) {
             $_SESSION["followerUsernameCercato"] = $followers[0]['numeroFollower'];
+            echo $_SESSION["followerUsernameCercato"];
         }
         
     }else {

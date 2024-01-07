@@ -27,7 +27,7 @@ function eventiProfilo() {
                 url:'../segui.php',
                 data: {eseguiFromAjax: esegui, seguitoFromAjax: utenteSeguito},
                 success: function(data) {
-                    alert(data);
+                    $("#follower").html(data);
                 }
             });
         });

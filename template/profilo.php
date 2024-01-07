@@ -26,7 +26,7 @@
             <p></p>
         </div>
         <div class="col-1 counter" name="stats">
-            <span><?php echo $templateParams["follower"];?></span><br>
+            <span id="follower"><?php echo $templateParams["follower"];?></span><br>
             <span>Follower</span>
         </div>
         <div class="col-2">

@@ -92,7 +92,7 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function controllaFollow($utenteSeguito, $utenteSeguente) {
+    public function controllaFollow($utenteSeguente, $utenteSeguito) {
         $query = "SELECT COUNT(*) as follow FROM segue WHERE idUtenteSeguente=? AND idUtenteSeguito=? ";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ss', $utenteSeguente, $utenteSeguito);
