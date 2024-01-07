@@ -18,8 +18,8 @@
             <li id="secondIndicator"></li>
         </ol>
     </div>
-  <div class="child">
-    <form action="#" method="POST" id="form-registrazione">
+    <div class="child">
+        <form action="#" method="POST" id="form-registrazione">
             <h1>WeGym</h1>
             <ul>
                 <li>

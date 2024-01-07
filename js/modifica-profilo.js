@@ -2,6 +2,11 @@
 function eventiModificaProfilo() {
     waitForEl("input.getImage", function() {
         
+        $("#close").click(function(){
+            $("#load").empty();
+            $("#load").load('./profilo.php', eventiProfilo());
+        });
+
         $("#close-crop").click(function(){
             bs_modal.modal('hide');
             $(".getImage").val('');
