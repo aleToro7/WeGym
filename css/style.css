@@ -2,12 +2,6 @@
     background-color: #373737;
 }
 
-.my-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .child {
     position: absolute;
     top: 50%;
@@ -107,6 +101,12 @@
 
 .logo {
     font-family: "Mustard Smile";
+}
+
+.logo-centrato {
+    font-family: "Mustard Smile";
+    color: #A9A9A9;
+    margin-left: 25%;
 }
 
 .button {
@@ -231,11 +231,25 @@
     color: #299279;
 }
 
-form>h1 {
-    font-family: "Mustard Smile";
+.text {
     color: #A9A9A9;
-    text-align: center;
-    margin-left: 15%;
+}
+
+.green-row {
+    height: 1px;
+    background: #31B294;
+    width: 95%;
+}
+
+.campo {
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    background-color: #636363;
+    color: #A9A9A9;
+    border: none;
+    outline: none;
+    margin-bottom: 2%;
+    padding-left: 18px;
 }
 
 ul {
@@ -326,22 +340,23 @@ div > i {
     margin: 10.5px auto;
 }
 
-.profile-img-container img {
-    object-fit: contain;
-    height: 100%;
-    overflow: hidden;
-    margin: auto;
-}
-
 .profile-img-container {
-    /*background: url(../altro/img_avatar.png) no-repeat center center;*/
     background: #373737;
     border-radius: 50%;
-    background-size: 130%; /*dovrebbe essere dinamico in base alla dimensione dell'immagine*/
+    background-size: 130%;
     width: 100px;
     height: 100px;
     overflow: hidden;
     margin-left: 10%;
+}
+
+.preview-img-container {
+    background: #373737;
+    border-radius: 50%;
+    background-size: 130%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
 }
 
 .img-crop {
@@ -352,6 +367,10 @@ div > i {
     overflow: hidden;
     margin: 10px;
     border: 1px solid;
+}
+
+.input-label {
+    margin-right: 1%;
 }
 
 div[name="stats"] {
@@ -369,7 +388,42 @@ div[name="stats"] {
     border-bottom: solid 2px;
     border-color: #31B294;
 }
+
+.input-file-label {
+    border: 1px solid #636363;
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    text-align: center;
+    width: 110%;
+    margin: 15px 5px;
+    margin-bottom: 20%;
+}
   
+  /* file upload button hover state */
+.input-file-label:hover {
+    background-color: #299279;
+    color: #373737;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment  {
+    height: 10px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-track-piece  {
+    background-color: #eeeeee;
+    -webkit-border-radius: 16px;
+}
+::-webkit-scrollbar-thumb:vertical {
+    height: 10px;
+    background-color: #666;
+    border: 1px solid #eee;
+    -webkit-border-radius: 16px;
+}
 
 @media screen and (min-width:768px){
     .left-addon .glyphicon  {
@@ -426,5 +480,9 @@ div[name="stats"] {
     .modifica-profilo {
         font-size: large;
         height: 45px;
+    }
+
+    .input-file-label {
+        margin: 1% 8px;
     }
 }

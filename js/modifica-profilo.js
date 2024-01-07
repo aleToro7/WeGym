@@ -1,6 +1,6 @@
 
 function eventiModificaProfilo() {
-    waitForEl("input.getImage", function() {
+    waitForEl("#getImage", function() {
         
         $("#close").click(function(){
             $("#load").empty();
@@ -9,14 +9,14 @@ function eventiModificaProfilo() {
 
         $("#close-crop").click(function(){
             bs_modal.modal('hide');
-            $(".getImage").val('');
+            $("#getImage").val('');
         });
 
         var bs_modal = $('#modal');
         var image = document.getElementById('image');
         var cropper,reader,file;
 
-        $(".getImage").on("change", function(e) {
+        $("#getImage").on("change", function(e) {
             var files = e.target.files;
             var done = function(url) {
                 image.src = url;
@@ -49,7 +49,7 @@ function eventiModificaProfilo() {
             cropper.destroy();
             cropper = null;
             bs_modal.modal('hide');
-            $(".getImage").val('');
+            $("#getImage").val('');
         });
 
         $("#crop").click(function() {
@@ -72,15 +72,78 @@ function eventiModificaProfilo() {
                         success: function(data) {
                             if(data == "ok") {
                                 bs_modal.modal('hide');
-                                $(".getImage").val('');
+                                $("#getImage").val('');
                                 $("#img-profile").attr('src', base64data);
-                                $(".profile-img-container").attr('src', base64data); 
+                                $(".preview-img-container").attr('src', base64data); 
                             }
                         }
                     });
                 }
             });
         });
+
+        $("#newBio").keyup(function(){
+            manageBtnSalva();
+        });
+
+        let username = $("#newUsername").val();
+        let biografia = $("#newBio").val();
+
+        $("#salva").click(function(){
+            username = $("#newUsername").val();
+            biografia = $("#newBio").val();
+            $.ajax({
+                type: "POST",
+                url: "../modificaProfilo.php",
+                data: {usernameFromAjax: username, biografiaFromAjax: biografia},
+                success: function(data) {
+                    if(data == "ok") {
+                        $("#salva").attr('disabled','disabled');
+                    }
+                }
+            });
+            
+        });
+
+        $("#newUsername").keyup(function() {
+            let newUsername = $("#newUsername").val();
+            if(newUsername.length > 3 && newUsername != username){
+                $.ajax({
+                    type:'POST',
+                    url:'../registrazione.php',
+                    data: 'usernameFromAjax=' + newUsername,
+                    success: function(data) {
+                        $("#new-user-availability-status").html(data);
+                        if(data == "Username available"){
+                            $("#newUsername").removeClass("border border-3 border-danger");
+                            $("#newUsername").addClass("border border-3 border-success");
+                            manageBtnSalva();
+                        }else if(data == "Username not available" || $("#username").val() == ""){
+                            $("#newUsername").removeClass("border border-3 border-success");
+                            $("#newUsername").addClass("border border-3 border-danger");
+                        }
+                    },
+                    error: function() { }
+                });
+            }else if(newUsername == username){
+                $("#new-user-availability-status").html("");
+                $("#newUsername").removeClass("border border-3 border-danger");
+            }else{
+                $("#user-availability-status").html("Il nome utente deve avere un numero di caratteri compreso tra 4 e 25");
+                $("#newUsername").removeClass("border border-3 border-success");
+                $("#newUsername").addClass("border border-3 border-danger");
+            }
+            manageBtnSalva();
+        });
+
+
+        function manageBtnSalva() {
+            if(($("#newUsername").hasClass("border-success") && $("#newUsername").val() != username) || $("#newBio").val() != biografia) {
+                $("#salva").removeAttr("disabled");
+            }else {
+                $("#salva").attr('disabled','disabled');
+            }
+        }
     });
     
 }

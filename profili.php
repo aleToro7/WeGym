@@ -7,11 +7,6 @@ if(!isset($_SESSION["username"])){
 }else {
     if(isset($_SESSION["usernameCercato"])) {
         $follower = $_SESSION["followerUsernameCercato"];
-        /*if(!isset($_SESSION["followerUsernameCercato"])) {
-            $follower = $dbh->contaFollower($_SESSION["usernameCercato"])[0]['numeroFollower'];
-        }else {
-            
-        }*/
         $userCercato = $_SESSION["usernameCercato"];
         $user = $dbh->getUser($userCercato);
         if(count($user) > 0) {
@@ -35,24 +30,22 @@ if(!isset($_SESSION["username"])){
             unset($_SESSION["usernameCercato"]);
         }
     }else {
-        if(!isset($templateParams["username"])){   
-            $templateParams["username"] = $_SESSION["username"];
-            $templateParams["nome"] = $_SESSION["nome"];
-            $templateParams["cognome"] = $_SESSION["cognome"];
-            $templateParams["mail"] = $_SESSION["mail"];
-            $templateParams["dataNascita"] = $_SESSION["dataNascita"];
-            $templateParams["follower"] = $dbh->contaFollower($_SESSION["username"])[0]['numeroFollower'];
-            $templateParams["seguito"] = false;
-            if(isset($_SESSION["biografia"])) {
-                $templateParams["biografia"] = $_SESSION["biografia"];
-            }else {
-                $templateParams["biografia"] = '';
-            }
-            if(isset($_SESSION["imgProfilo"])) {
-                $templateParams["imgProfilo"] = $_SESSION["imgProfilo"];
-            }else {
-                $templateParams["imgProfilo"] = "";
-            }
+        $templateParams["username"] = $_SESSION["username"];
+        $templateParams["nome"] = $_SESSION["nome"];
+        $templateParams["cognome"] = $_SESSION["cognome"];
+        $templateParams["mail"] = $_SESSION["mail"];
+        $templateParams["dataNascita"] = $_SESSION["dataNascita"];
+        $templateParams["follower"] = $dbh->contaFollower($_SESSION["username"])[0]['numeroFollower'];
+        $templateParams["seguito"] = false;
+        if(isset($_SESSION["biografia"])) {
+            $templateParams["biografia"] = $_SESSION["biografia"];
+        }else {
+            $templateParams["biografia"] = '';
+        }
+        if(isset($_SESSION["imgProfilo"])) {
+            $templateParams["imgProfilo"] = $_SESSION["imgProfilo"];
+        }else {
+            $templateParams["imgProfilo"] = "";
         }
     }
 }

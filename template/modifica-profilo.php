@@ -10,37 +10,47 @@
             <i class="close bi bi-x" id="close"></i>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <img class="profile-img-container" src="<?php 
+    <div class="row  h-100">
+        <div class="col d-flex align-items-center justify-content-center">
+            <img class="preview-img-container" src="<?php 
                 if($templateParams["imgProfilo"]!='') {
                     echo $templateParams["imgProfilo"];
                 }else {
                     echo "../altro/img_avatar.png";
                 }
             ?>"/>
-            <form method="post">
-                <input type="file" name="button image" class="getImage" value="Scegli immagine profilo">
-            </form>
         </div>
-    <div class="row">
-        <div class="col">
-            <span>Nome utente</span>
-            <input type="text" class="" name="newUsername" id="newUsername" value="<?php echo $templateParams["username"];?>">
-        </div>
-    </div>
 
     <div class="row">
+        <div class="col d-flex align-items-center justify-content-center">
+            <form method="post">
+                <input type="file" id="getImage" name="getImage" class="hide">
+                <label for="getImage" class="input-file-label"><span class="text">Scegli immagine profilo</span></label>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <span class="text input-label">Nome utente</span>
+            <input type="text" class="campo" name="newUsername" id="newUsername" value="<?php echo $templateParams["username"];?>">
+        </div>
+        <br><div class="text d-flex justify-content-center" id="new-user-availability-status"></div>
+    </div>
+    <div class="row">
         <div class="col hide">
-            <span>Nuova password</span>
-            <input type="text" class="" name="newPassword" id="newPassword">
+            <span class="text input-label">Nuova password</span>
+            <input type="text" class="campo" name="newPassword" id="newPassword">
         </div>
     </div>    
     <div class="row">
-        <div class="col">
-            <span>Biografia</span>
-            <textarea class="span6"  name="newBio" id="newBio" rows="3" placeholder="<?php echo $templateParams["biografia"];?>" required></textarea>
-            <!--<input type="text" class="" name="newBio" id="newBio" value="" multiple size="50"><br><br>-->
+        <div class="col d-flex justify-content-center">
+            <span class="text input-label">Biografia</span>
+            <textarea class="campo"  name="newBio" id="newBio" rows="5" required><?php echo $templateParams["biografia"];?></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <button type="button" id="salva" class="button" disabled>Salva</button>
         </div>
     </div>
 

@@ -18,32 +18,34 @@
     <link rel="icon" type="image/x-icon" href="../altro/favicon.png">
 </head>
 <body class="bgbody">
-<div class="my-container">
   <div class="child">
     <form action="#" method="POST">
-            <h1>WeGym</h1>
-            <?php if(isset($templateParams["errorelogin"])): ?>
-            <p><?php echo $templateParams["errorelogin"]; ?></p>
-            <?php endif; ?>
-
-            <ul>
-                <li>
-                    <input type="text" id="username" name="username" placeholder="Username:"/>
-                </li>
-                <li>
-                    <input type="password" id="password" name="password" placeholder="Password:"/>
-                </li>
-                <div id="login-error"></div>
-                <li>
-                    <button class="btn-login" type="button" id="login" name="login">Login</button>
-                </li>
-            </ul>
+        <div class="row">
             <div>
-                <p>Non hai un account? <a href="../template/registrazione-form.php">Registrati</a></p>
+                <h1 class="logo-centrato">WeGym</h1>
+                
+                <ul>
+                    <li>
+                        <input type="text" id="username" name="username" placeholder="Username:"/>
+                    </li>
+                    <li>
+                        <input type="password" id="password" name="password" placeholder="Password:"/>
+                    </li>
+                    <div id="login-error"></div>
+                    <li>
+                        <button class="btn-login" type="button" id="login" name="login">Login</button>
+                    </li>
+                </ul>
+                <div>
+                    <div class="green-row"></div>
+                    <p class="text">Non hai un account? <a href="../template/registrazione-form.php">Registrati</a></p>
+                </div>
             </div>
+            
+        </div>
+            
         </form>
   </div>
-</div>
 </body>
 <script src="../js/login.js"></script>
 </html>

@@ -101,4 +101,12 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function updateInfo($newUsername, $newBiografia, $username) {
+        $query = "UPDATE utente SET nomeUtente=?, biografia=? WHERE nomeUtente=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sss', $newUsername, $newBiografia, $username);
+        $stmt->execute();
+        return $stmt->error;
+    }
 }
