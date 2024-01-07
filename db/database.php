@@ -74,7 +74,7 @@ class DatabaseHelper{
         return $stmt->error;
     }
 
-    public function nonSeguireUtente($utenteSeguito, $utenteSeguente) {
+    public function nonSeguireUtente($utenteSeguente, $utenteSeguito) {
         $query = "DELETE FROM segue WHERE idUtenteSeguente=? AND idUtenteSeguito=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ss', $utenteSeguente, $utenteSeguito);

@@ -14,7 +14,12 @@ if(isset($_POST["eseguiFromAjax"]) && isset($_POST["seguitoFromAjax"])) {
         }
         
     }else {
-        $err = $dbh->nonSeguireUtente($utenteSeguito, $utenteSeguente);
+        $err = $dbh->nonSeguireUtente($utenteSeguente, $utenteSeguito);
+        $followers = $dbh->contaFollower($utenteSeguito);
+        if(empty($err)) {
+            $_SESSION["followerUsernameCercato"] = $followers[0]['numeroFollower'];
+            echo $_SESSION["followerUsernameCercato"];
+        }
     }
 }
 ?>

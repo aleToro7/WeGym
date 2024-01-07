@@ -18,7 +18,7 @@ function eventiProfilo() {
         });
     
         $("#segui").click(function(){
-            var esegui=$("#segui").val() == "Seguito" ? "smetti di seguire" : "segui";
+            var esegui=$("#segui").text() == "Seguito" ? "smetti di seguire" : "segui";
             $("#segui").toggleClass("Segui Seguito");
             var utenteSeguito = $("#username").text().substr(3);
             $("#segui").hasClass("Segui") ? $("#segui").html("Segui") : $("#segui").html("Seguito");
@@ -27,7 +27,9 @@ function eventiProfilo() {
                 url:'../segui.php',
                 data: {eseguiFromAjax: esegui, seguitoFromAjax: utenteSeguito},
                 success: function(data) {
-                    $("#follower").html(data);
+                    if(data!='') {
+                        $("#follower").html(data);
+                    }
                 }
             });
         });
