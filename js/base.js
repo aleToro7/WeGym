@@ -18,7 +18,7 @@ $(document).ready(function () {
     }
 });
 
-var waitForEl = function(selector, callback) {
+let waitForEl = function(selector, callback) {
     if (jQuery(selector).length) {
       callback();
     } else {

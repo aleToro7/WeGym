@@ -4,9 +4,9 @@ $("#continua, #indietro").click(function(){
     });
 });
 
-var username = "";
+let username = "";
 $("#username").keyup(function() {
-    var username = $("#username").val();
+    let username = $("#username").val();
     if(username.length > 3){
         $.ajax({
             type:'POST',
@@ -35,7 +35,7 @@ $("#username").keyup(function() {
 });
 
 $("#mail").focusout(function() {
-    var mail = $("#mail").val();
+    let mail = $("#mail").val();
     if(emailIsValid(mail)){
         $.ajax({
             type:'POST',
@@ -111,6 +111,6 @@ function manageBtnRegistrati() {
 }
 
 function emailIsValid(email) {
-    var regex_email_valida = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let regex_email_valida = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex_email_valida.test(email);
 }

@@ -1,6 +1,6 @@
 function eventiHomePage(){
     waitForEl("input.cerca", function() {
-        var valCercato = "";
+        let valCercato = "";
         $("#cerca").keyup(function(){
             $(".user-list").empty();
             valCercato = $("#cerca").val();
@@ -14,10 +14,10 @@ function eventiHomePage(){
                         if(data == "Nessun utente trovato"){
                             $("#risultatoRicerca").html(data);
                         }else {
-                            var users = JSON.parse(data);
-                            var sub_ul = $('<ul/>');
+                            let users = JSON.parse(data);
+                            let sub_ul = $('<ul/>');
                             $(users).each(function (val) {
-                                var sub_li = $('<li id="'+users[val]["nomeUtente"]+'" class="search-result"/>').html(users[val]["nomeUtente"]);
+                                let sub_li = $('<li id="'+users[val]["nomeUtente"]+'" class="search-result"/>').html(users[val]["nomeUtente"]);
                                 sub_ul.append(sub_li);
                             });
                             $(".user-list").append(sub_ul);
@@ -29,7 +29,7 @@ function eventiHomePage(){
         });
 
         $(".user-list").on('click', '.search-result', function() {
-            var idCercato = this.id
+            let idCercato = this.id
             $.ajax({
                 type:'POST',
                 url:'../home.php',
