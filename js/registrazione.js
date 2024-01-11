@@ -94,6 +94,11 @@ $('#showConfermaPwd').click(function(){
     }
 });
 
+$("#backLogin").click(function(){
+    
+});
+
+
 function manageBtnContinua() {
     if($("#nome").val() != "" && $("#cognome").val() != "" && $("#dataNascita").val() != ""){
         $("#continua").removeAttr("disabled");

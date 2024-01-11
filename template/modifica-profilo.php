@@ -74,7 +74,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>-->
                     <button type="button" class="button btn-primary" id="crop">Ritaglia</button>
                 </div>
                 <span><?php if(isset($templateParams['erroreImmagine'])) echo $templateParams['erroreImmagine'];?></span>
