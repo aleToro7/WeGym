@@ -26,13 +26,6 @@
     display: none;
 }
 
-.upload-post {
-    background-color: #636363;
-    margin: 2% 2% 30% 2%;
-    height: 50%;
-    position: relative;
-}
-
 .bottom-nav {
     background-color: #31B294;
     height: 100%;
@@ -111,6 +104,64 @@
     color: #A9A9A9;
     padding-top: 1%;
     margin-left: 3%;
+}
+
+.upload-post {
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    background-color: #636363;
+    margin: 3% 3% 30% 3%;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.profile-img-container-upload {
+    background: #373737;
+    border-radius: 50%;
+    background-size: 130%;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+.usrname {
+    font-weight: bold;
+    font-size: large;
+    color: #bbbbbb;
+    margin-left: 10px;
+}
+
+.post-text{
+    background-color: #636363;
+    color: #bbbbbb;
+    border: none;
+    outline: none;
+    margin: 10px 0px 0px 70px;
+    width: 75%;
+}
+
+.green-upload {
+    height: 2px;
+    background: #31B294;
+    margin: 20px 0px 10px 70px;
+    width: 75%;
+}
+
+.upload-icon {
+    color: #bbbbbb;
+    font-size: x-large;
+    margin-left: 80px;
+}
+
+.button-post {
+    width: 100px;
+    height: 30px;
+    font-size: large;
+    padding: 0;
+    vertical-align: middle;
+    float: right;
+    margin: 3px 10% 0px 0px;
 }
 
 .logo {
@@ -382,6 +433,7 @@ div > i {
     margin-left: 10%;
 }
 
+
 .preview-img-container {
     background: #373737;
     border-radius: 50%;
@@ -395,6 +447,7 @@ div > i {
     display: block;
     max-width: 100%;
 }
+
 .preview {
     overflow: hidden;
     margin: 10px;
