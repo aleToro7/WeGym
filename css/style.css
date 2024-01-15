@@ -164,6 +164,7 @@
     color: #bbbbbb;
     font-size: x-large;
     margin-left: 80px;
+    cursor: pointer;
 }
 
 .button-post {
@@ -443,6 +444,10 @@ div > i {
     height: 100px;
     overflow: hidden;
     margin-left: 10%;
+}
+
+.post-img-container {
+
 }
 
 
