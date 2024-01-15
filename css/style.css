@@ -66,6 +66,12 @@
     color: #fff;
     background-color: #636363;
     cursor: pointer;
+    border: none;
+    outline: none;
+    width: 96%;
+    display: block;
+    margin: auto;
+    height: 40px;
 }
 
 .search-result:hover {
@@ -260,6 +266,14 @@
     margin-right: 2%;
     cursor: pointer;
     color: #A9A9A9;
+}
+
+.user-list {
+    /*background-color: #636363;
+    width: 96%;
+    margin: 12px auto;
+    height: 40px;
+    padding-left: 22px;*/
 }
 
 ul {
