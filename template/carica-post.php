@@ -29,7 +29,7 @@
     <div class="green-upload"></div>    
     <div>
         <i class="upload-icon bi bi-image"></i>
-        <button type="button" class="button button-post" id="posta">Post <i class="bi bi-arrow-right"></i></button> 
+        <button type="button" class="button button-post" id="posta" disabled>Post <i class="bi bi-arrow-right"></i></button> 
     </div>
 </div>
 <?php
