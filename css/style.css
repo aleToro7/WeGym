@@ -70,6 +70,18 @@
     padding-left: 22px;
 }
 
+.posts-container {
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    background-color: #636363;
+    border: none;
+    outline: none;
+    width: 96%;
+    display: block;
+    margin: 12px auto;
+    padding: 11px 20px;
+}
+
 .search-result{
     color: #fff;
     background-color: #636363;

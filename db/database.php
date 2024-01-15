@@ -71,7 +71,12 @@ class DatabaseHelper{
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ss', $utenteSeguente, $utenteSeguito);
         $stmt->execute();
-        return $stmt->error;
+        if(empty($stmt->error)){
+            return $this->addNotification('follow', null, $utenteSeguito, $utenteSeguente);
+        }else {
+            return $stmt->error;
+        }
+        
     }
 
     public function nonSeguireUtente($utenteSeguente, $utenteSeguito) {
@@ -108,5 +113,25 @@ class DatabaseHelper{
         $stmt->bind_param('sss', $newUsername, $newBiografia, $username);
         $stmt->execute();
         return $stmt->error;
+    }
+
+    public function addNotification($tipo, $idPost, $utenteSeguito, $utenteSeguente){
+        $query = "INSERT INTO notifica (tipo, visto, idPost, idUtenteSeguito, idUtenteSeguente) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $visto = (int)false;
+        $stmt->bind_param('siiss', $tipo, $visto, $idPost, $utenteSeguito, $utenteSeguente);
+        $stmt->execute();
+        return $stmt->error;
+    }
+
+    public function getNewNotifications(){
+        $query = "SELECT tipo, idPost, idUtenteSeguito, idUtenteSeguente FROM notifica WHERE visto=?";
+        $stmt = $this->db->prepare($query);
+        $visto = (int)false;
+        $stmt->bind_param('i', $visto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 }

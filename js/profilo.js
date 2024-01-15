@@ -1,5 +1,11 @@
 function eventiProfilo() {
     waitForEl("a.middle-nav", function() {
+        setInterval(function(){
+            $.get("../notifiche.php",function(data){
+                let notifications = JSON.parse(data);
+            })
+        }, 5000);
+
         $("a.middle-nav").click(function(){
             if(!$(this).hasClass("bottom-selection") ) {
                 let id = $(this).children().attr("id");
@@ -14,6 +20,7 @@ function eventiProfilo() {
                 }else {
                     $('#'+id).addClass("selected");
                 }
+                //aggiungere caricamento php in load-profile-view
             }
         });
     
