@@ -12,13 +12,13 @@ function eventiModificaProfilo() {
             $("#getImage").val('');
         });
 
-        var bs_modal = $('#modal');
-        var image = document.getElementById('image');
-        var cropper,reader,file;
+        let bs_modal = $('#modal');
+        let image = document.getElementById('image');
+        let cropper,reader,file;
 
         $("#getImage").on("change", function(e) {
-            var files = e.target.files;
-            var done = function(url) {
+            let files = e.target.files;
+            let done = function(url) {
                 image.src = url;
                 bs_modal.modal('show');
             };
@@ -60,11 +60,11 @@ function eventiModificaProfilo() {
 
             canvas.toBlob(function(blob) {
                 url = URL.createObjectURL(blob);
-                var reader = new FileReader();
+                let reader = new FileReader();
                 reader.readAsDataURL(blob);
                 
                 reader.onloadend = function() {
-                    var base64data = reader.result;
+                    let base64data = reader.result;
                     $.ajax({
                         type: "POST",
                         url: "../modificaProfilo.php",

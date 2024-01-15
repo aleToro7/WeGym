@@ -20,7 +20,7 @@
     </div>
     <div class="child">
         <form action="#" method="POST" id="form-registrazione">
-            <h1>WeGym</h1>
+            <h1 class="logo">WeGym</h1>
             <ul>
                 <li>
                     <input type="text" id="nome" name="nome" placeholder="Nome:"/>
@@ -56,6 +56,7 @@
             </ul>
         </form>
     </div>
+    <div><a href="index.php"><i class="bi bi-arrow-bar-left back-arrow" id="backLogin"></i></a></div>
 </div>
 </body>
 <script src="../js/registrazione.js"></script>

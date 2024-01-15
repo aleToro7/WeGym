@@ -2,9 +2,9 @@ function eventiProfilo() {
     waitForEl("a.middle-nav", function() {
         $("a.middle-nav").click(function(){
             if(!$(this).hasClass("bottom-selection") ) {
-                var id = $(this).children().attr("id");
+                let id = $(this).children().attr("id");
                 $("#nav a[id]").map(function(){
-                    var idR = $(this).children().attr("id");
+                    let idR = $(this).children().attr("id");
                     $(this).removeClass("bottom-selection");
                     $('#'+idR).removeClass("selected filter-grey");
                 });
@@ -18,9 +18,9 @@ function eventiProfilo() {
         });
     
         $("#segui").click(function(){
-            var esegui=$("#segui").text() == "Seguito" ? "smetti di seguire" : "segui";
+            let esegui=$("#segui").text() == "Seguito" ? "smetti di seguire" : "segui";
             $("#segui").toggleClass("Segui Seguito");
-            var utenteSeguito = $("#username").text().substr(3);
+            let utenteSeguito = $("#username").text().substr(3);
             $("#segui").hasClass("Segui") ? $("#segui").html("Segui") : $("#segui").html("Seguito");
             $.ajax({
                 type:'POST',

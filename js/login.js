@@ -1,5 +1,5 @@
-var username = "";
-var password = "";
+let username = "";
+let password = "";
 
 $("#login").click(function(){
     username=$("#username").val();

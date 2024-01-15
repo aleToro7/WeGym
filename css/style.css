@@ -74,6 +74,12 @@
     color: #fff;
     background-color: #636363;
     cursor: pointer;
+    border: none;
+    outline: none;
+    width: 96%;
+    display: block;
+    margin: auto;
+    height: 40px;
 }
 
 .search-result:hover {
@@ -109,6 +115,7 @@
 
 .logo {
     font-family: "Mustard Smile";
+    color: #A9A9A9;
 }
 
 .logo-centrato {
@@ -258,6 +265,23 @@
     outline: none;
     margin-bottom: 2%;
     padding-left: 18px;
+}
+
+.back-arrow {
+    float: right;
+    font-size: x-large;
+    margin-top: 1%;
+    margin-right: 2%;
+    cursor: pointer;
+    color: #A9A9A9;
+}
+
+.user-list {
+    /*background-color: #636363;
+    width: 96%;
+    margin: 12px auto;
+    height: 40px;
+    padding-left: 22px;*/
 }
 
 ul {

@@ -5,6 +5,9 @@
             <input class="cerca" id="cerca" name="cerca" type="text"/>
         </div>
     </div>
+    <div class="row">
+        <div class="user-list"></div>
+    </div>
+    
 </div>
-<div class="user-list"></div>
 <div id="risultatoRicerca"></div>
