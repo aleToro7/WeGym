@@ -2,17 +2,17 @@ function eventiCaricaPost(){
     waitForEl("#posta", function() {
         $("#close").click(function(){
             $("#load").empty();
-            $("#load").load('./carica-post.php', eventiProfilo());
+            $("#load").load('./carica-post.php', eventiCaricaPost());
         });
     
         $("#close-crop").click(function(){
             bs_modal.modal('hide');
-            $("#getImage").val('');
+            $("#getPostImage").val('');
         });
     
         let bs_modal = $('#modal');
         let image = document.getElementById('image');
-        let cropper,reader,file;
+        let cropper,reader,file, base64data;
     
         $("#getPostImage").on("change", function(e) {
             let files = e.target.files;
@@ -47,13 +47,13 @@ function eventiCaricaPost(){
             cropper.destroy();
             cropper = null;
             bs_modal.modal('hide');
-            $("#getImage").val('');
+            $("#getPostImage").val('');
         });
     
         $("#crop").click(function() {
             canvas = cropper.getCroppedCanvas({
-                width: 160,
-                height: 160,
+                width: 600,
+                height: 600,
             });
     
             canvas.toBlob(function(blob) {
@@ -62,23 +62,42 @@ function eventiCaricaPost(){
                 reader.readAsDataURL(blob);
                 
                 reader.onloadend = function() {
-                    let base64data = reader.result;
-                    $.ajax({
-                        type: "POST",
-                        url: "../modificaProfilo.php",
-                        data: {imageFromAjax: base64data},
-                        success: function(data) {
-                            if(data == "ok") {
-                                bs_modal.modal('hide');
-                                $("#getImage").val('');
-                                $("#img-profile").attr('src', base64data);
-                                $(".preview-img-container").attr('src', base64data); 
-                            }
-                        }
-                    });
+                    base64data = reader.result;
+                    $("#getPostImage").val('');
+                    $("#postImage").removeClass("hidden");
+                    manageBtnPost();
+                    $("#postImage").attr('src', base64data);
+                    bs_modal.modal('hide');
                 }
             });
         });
+
+        $("#postText").keyup(function(){
+            manageBtnPost();
+        });
+
+        $("#posta").click(function(){
+            let testo = $("#postText").val().trim();
+            $.ajax({
+                type:'POST',
+                url:'../caricaPost.php',
+                data: {testoFromAjax: testo, imgFromAjax: base64data},
+                success: function(data) {
+                    $("#load").empty();
+                    $("#upload").toggleClass("bi-plus-square-fill bi-plus-square");
+                    $("#profile").toggleClass("bi-person bi-person-fill");
+                    $("#load").load('./profilo.php', eventiProfilo());
+                }
+            });
+        });
+
+        function manageBtnPost() {
+            if($("#postText").val().trim() != '' || !$("#postImage").hasClass("hidden")){
+                $("#posta").removeAttr("disabled");
+            }else{
+                $("#posta").attr('disabled','disabled');
+            }
+        }
+
     });
-    
 }

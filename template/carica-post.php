@@ -18,21 +18,23 @@
             </div>
         </div>
         <div class="row">
-            <div class="hidden" id="postImage"></div>
+            <img class="hidden preview-post-image" id="postImage"/>
         </div>
         <div class="row">
             <div name="text-post">
-                <textarea class="post-text" rows="8" placeholder="Scrivi.." required></textarea>
+                <textarea class="post-text" id="postText" rows="8" placeholder="Scrivi.." required></textarea>
             </div>
         </div>
     </div>
     <div class="green-upload"></div>    
     <div>
-        <input type="file" class="upload-icon bi bi-image" id="getPostImage">
-        
+        <input type="file" class="hide" id="getPostImage">
+        <label for="getPostImage" class="upload-icon bi bi-image "></label>
         <button type="button" class="button button-post" id="posta" disabled>Post <i class="bi bi-arrow-right"></i></button> 
     </div>
 </div>
+
+
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" style="background-color: #373737">

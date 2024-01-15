@@ -124,7 +124,7 @@ class DatabaseHelper{
         return $stmt->error;
     }
 
-    public function getNewNotifications(){
+    public function getNewNotifications() {
         $query = "SELECT tipo, idPost, idUtenteSeguito, idUtenteSeguente FROM notifica WHERE visto=?";
         $stmt = $this->db->prepare($query);
         $visto = (int)false;
@@ -133,5 +133,12 @@ class DatabaseHelper{
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function post($testo, $img, $idUtente) {
+        $query = "INSERT INTO post (testo, img, idUtente) VALUES ('".$testo."', '".$img."', '".$idUtente."')";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->error;
     }
 }

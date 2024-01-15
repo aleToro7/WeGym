@@ -446,8 +446,8 @@ div > i {
     margin-left: 10%;
 }
 
-.post-img-container {
-
+.preview-post-image {
+    scale: 90%;
 }
 
 
