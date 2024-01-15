@@ -2,6 +2,7 @@
     background-color: #373737;
 }
 
+
 .child {
     position: absolute;
     top: 50%;
@@ -23,6 +24,13 @@
 
 .hide {
     display: none;
+}
+
+.upload-post {
+    background-color: #636363;
+    margin: 2% 2% 30% 2%;
+    height: 50%;
+    position: relative;
 }
 
 .bottom-nav {
