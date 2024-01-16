@@ -27,8 +27,16 @@
                         </div>
                     </div>
                 </div>
-            <div class="green-post"></div>
-        </div>
+                <div class="green-post"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col" name="likeandcomm">
+                            <i class="like-icon bi bi-heart"></i>
+                            <i class="commento-icon bi bi-chat"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <?php
         }
     }

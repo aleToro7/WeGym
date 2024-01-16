@@ -21,7 +21,7 @@
             <div class="col-1">
             </div>
             <div class="col-1 counter" name="stats">
-                <span>13</span><br>
+                <span id="posts"><?php echo $templateParams["posts"];?></span><br>
                 <span>Post</span>
             </div>
             <div class="col-2">
@@ -50,7 +50,7 @@
                         <div class="col-1">   
                         </div>
                         <div class="col-6 d-grid gap-2">
-                            <button type="button" class="modifica-profilo " id="modificaProfilo">Modifica profilo</button>  
+                            <button type="button" class="modifica-profilo" id="modificaProfilo">Modifica profilo</button>  
                         </div>
                     </div>';
             }

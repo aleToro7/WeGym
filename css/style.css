@@ -76,6 +76,7 @@
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     background-color: #636363;
+    max-width: 800px;
     border: none;
     outline: none;
     width: 96%;
@@ -225,8 +226,24 @@
 .green-post {
     height: 2px;
     background: #31B294;
-    margin: 10px 0px 10px 30px;
-    width: 90%;
+    margin: 10px 0px 10px 10px;
+    width: 94%;
+}
+
+.like-icon {
+    color: #bbbbbb;
+    font-size: x-large;
+    margin-left: 20px;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 2px;
+}
+
+.commento-icon {
+    color: #bbbbbb;
+    font-size: x-large;
+    margin-left: 75px;
+    cursor: pointer;
 }
 
 .green-upload {
@@ -641,6 +658,10 @@ div[name="stats"] {
 
     .biobio {
         font-size: large;
+    }
+
+    .green-post {
+        width: 97%;
     }
     
 }
