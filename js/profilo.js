@@ -3,8 +3,33 @@ function eventiProfilo() {
         setInterval(function(){
             $.get("../notifiche.php",function(data){
                 let notifications = JSON.parse(data);
+                $("#loadNotifications").html("ciao");
             })
         }, 5000);
+
+        $(document).ready(function () {
+            if(sessionStorage.getItem("load-profile-view")!=null) {
+                if(sessionStorage.getItem("id-view")!="#lista-post") {
+                    $("#lista-post").removeClass("selected");
+                    $("#nav-lista-post").removeClass("bottom-selection");
+                }
+                $("#load-profile-view").load(sessionStorage.getItem("load-profile-view"));
+                $(sessionStorage.getItem("id-view")).addClass("selected");
+                $("#nav-"+sessionStorage.getItem("id-view").slice(1)).addClass("bottom-selection");
+                if(sessionStorage.getItem("id-view")=="#lista-notifiche"){
+                    eventiNotifiche();
+                }else if(sessionStorage.getItem("id-view")=="#lista-post" || sessionStorage.getItem("id-view")=="#lista-post-liked") {
+                    eventiListaPost();
+                }else {
+                    $(sessionStorage.getItem("id-view")).addClass("filter-grey");
+                }
+            }else {
+                sessionStorage.setItem("load-profile-view", "./lista-post.php");
+                sessionStorage.setItem("id-view", "#lista-post");
+                $("#lista-post").toggleClass("bi-house-door bi-house-door-fill");
+                $("#load-profile-view").load('./lista-post.php', eventiListaPost());
+            }
+        });
 
         $("a.middle-nav").click(function(){
             if(!$(this).hasClass("bottom-selection") ) {
@@ -18,12 +43,18 @@ function eventiProfilo() {
                 $("#load-profile-view").empty();
                 if(id == "my-info") {
                     $('#'+id).addClass("filter-grey");
+                    sessionStorage.setItem("load-profile-view", "./"+id+".php");
+                    sessionStorage.setItem("id-view", "#"+id);
                     $("#load-profile-view").load('./'+id+'.php');
                 }else {
                     $('#'+id).addClass("selected");
                     if(id == "lista-notifiche"){
+                        sessionStorage.setItem("load-profile-view", "./"+id+".php");
+                        sessionStorage.setItem("id-view", "#"+id);
                         $("#load-profile-view").load('./'+id+'.php', eventiNotifiche());
                     }else if(id == "lista-post" || id == "lista-post-liked") {
+                        sessionStorage.setItem("load-profile-view", "./lista-post.php");
+                        sessionStorage.setItem("id-view", "#"+id);
                         $("#load-profile-view").load('./lista-post.php', eventiListaPost());
                     }
                 }
