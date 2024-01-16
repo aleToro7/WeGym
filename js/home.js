@@ -29,7 +29,7 @@ function eventiHomePage(){
         });
 
         $(".user-list").on('click', '.search-result', function() {
-            let idCercato = this.id
+            let idCercato = this.id;
             $.ajax({
                 type:'POST',
                 url:'../home.php',
