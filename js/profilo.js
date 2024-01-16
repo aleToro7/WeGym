@@ -26,6 +26,8 @@ function eventiProfilo() {
             }else {
                 sessionStorage.setItem("load-profile-view", "./lista-post.php");
                 sessionStorage.setItem("id-view", "#lista-post");
+                $("#lista-post").addClass("selected");
+                $("#nav-lista-post").addClass("bottom-selection");
                 $("#lista-post").toggleClass("bi-house-door bi-house-door-fill");
                 $("#load-profile-view").load('./lista-post.php', eventiListaPost());
             }
