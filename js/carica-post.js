@@ -90,6 +90,7 @@ function eventiCaricaPost(){
                         sessionStorage.setItem("load", "./profilo.php");
                         sessionStorage.setItem("id", "#profile");
                         sessionStorage.setItem("class", "bi-person bi-person-fill");
+                        sessionStorage.removeItem("load-profile-view");
                         $("#load").load('./profilo.php', eventiProfilo());
                     }
                 }
