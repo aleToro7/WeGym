@@ -102,7 +102,7 @@
                 }
             ?>
         </nav>
-        
     </div>
+    <div class="spacing"></div>
 </div>
-<div id="load-profile-view"></div>
+<div class="bottom-pad" id="load-profile-view"></div>

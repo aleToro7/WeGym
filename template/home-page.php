@@ -8,5 +8,5 @@
     <div class="row">
         <div class="user-list"></div>
     </div>
-    <div><?php require_once 'lista-post.php'?></div>
+    <div class="bottom-pad"><?php require_once 'lista-post.php'?></div>
 </div>
