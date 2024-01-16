@@ -125,7 +125,7 @@ class DatabaseHelper{
     }
 
     public function getNewNotifications() {
-        $query = "SELECT tipo, idPost, idUtenteSeguito, idUtenteSeguente FROM notifica WHERE visto=?";
+        $query = "SELECT idNotifica, tipo, idPost, idUtenteSeguito, idUtenteSeguente FROM notifica WHERE visto=? ORDER BY idNotifica DESC";
         $stmt = $this->db->prepare($query);
         $visto = (int)false;
         $stmt->bind_param('i', $visto);

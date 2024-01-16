@@ -3,7 +3,11 @@ function eventiProfilo() {
         setInterval(function(){
             $.get("../notifiche.php",function(data){
                 let notifications = JSON.parse(data);
-                $("#loadNotifications").html("ciao");
+                $("#loadNotifications").empty();
+
+                notifications.forEach(notification => {
+                    $("#loadNotifications").append(notification['tipo']);
+                });
             })
         }, 5000);
 
