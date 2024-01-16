@@ -142,8 +142,18 @@ class DatabaseHelper{
         return $stmt->error;
     }
 
+    public function countPost($idUtente){
+        $query = "SELECT COUNT(*) as numeroPost FROM post WHERE idutente=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $idUtente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getMyPost($idUtente) {
-        $query = "SELECT testo, img FROM post WHERE idUtente=? ORDER BY idPost DESC";
+        $query = "SELECT p.testo, p.img, COUNT(m.idMiPiace) as numeroLike, COUNT(c.idCommento) as numeroCommenti FROM post p, mipiace m, commento c WHERE m.idPost=p.idPost AND c.idPost=p.idPost AND idUtente=? ORDER BY p.idPost DESC";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s', $idUtente);
         $stmt->execute();

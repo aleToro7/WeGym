@@ -6,6 +6,7 @@ if(!isset($_SESSION["username"])){
     exit;
 }else {
     if(isset($_SESSION["usernameCercato"])) {
+        $posts = $_SESSION["postsUsernameCercato"];
         $follower = $_SESSION["followerUsernameCercato"];
         $userCercato = $_SESSION["usernameCercato"];
         $user = $dbh->getUser($userCercato);
@@ -15,6 +16,7 @@ if(!isset($_SESSION["username"])){
             $templateParams["cognome"] = $user[0]["cognome"];
             $templateParams["mail"] = $user[0]["mail"];
             $templateParams["dataNascita"] = $user[0]["dataNascita"];
+            $templateParams["posts"] = $posts;
             $templateParams["follower"] = $follower;
             $templateParams["seguito"] = $dbh->controllaFollow($_SESSION["username"], $userCercato)[0]['follow'] > 0 ? true : false;
             if(isset($user[0]["biografia"])) {
@@ -35,6 +37,7 @@ if(!isset($_SESSION["username"])){
         $templateParams["cognome"] = $_SESSION["cognome"];
         $templateParams["mail"] = $_SESSION["mail"];
         $templateParams["dataNascita"] = $_SESSION["dataNascita"];
+        $templateParams["posts"] = $dbh->countPost($_SESSION["username"])[0]['numeroPost'];
         $templateParams["follower"] = $dbh->contaFollower($_SESSION["username"])[0]['numeroFollower'];
         $templateParams["seguito"] = false;
         if(isset($_SESSION["biografia"])) {

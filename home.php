@@ -14,7 +14,11 @@ if(isset($_POST["cercaFromAjax"])) {
 if(isset($_POST["idCercatoFromAjax"])) {
     $userCercato = $_POST['idCercatoFromAjax'];
     $_SESSION["usernameCercato"] = $userCercato;
+    $posts = $dbh->countPost($userCercato);
     $followers = $dbh->contaFollower($userCercato);
+    if(count($followers) > 0) {
+        $_SESSION["postsUsernameCercato"] = $posts[0]['numeroPost'];
+    }
     if(count($followers) > 0) {
         $_SESSION["followerUsernameCercato"] = $followers[0]['numeroFollower'];
     }
