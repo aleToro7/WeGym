@@ -141,4 +141,38 @@ class DatabaseHelper{
         $stmt->execute();
         return $stmt->error;
     }
+
+    public function getMyPost($idUtente) {
+        $query = "SELECT testo, img FROM post WHERE idUtente=? ORDER BY idPost DESC";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $idUtente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getFollowingPost($idUtente) {
+        $query = "SELECT u.imgProfilo, p.idUtente, p.testo, p.img FROM post p, utente u WHERE p.idUtente IN (SELECT idUtenteSeguito FROM segue WHERE idUtenteSeguente=?)
+        AND u.nomeUtente=p.idUtente ORDER BY idPost DESC";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $idUtente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getLikedPost($idUtente) {
+        $query = "SELECT u.imgProfilo, p.idUtente, p.testo, p.img FROM post p, utente u WHERE p.idPost IN (SELECT idPost FROM mipiace WHERE idUtente=?)
+        AND u.nomeUtente=? ORDER BY idPost DESC";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $idUtente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
 }

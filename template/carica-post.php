@@ -22,7 +22,7 @@
         </div>
         <div class="row">
             <div name="text-post">
-                <textarea class="post-text" id="postText" rows="8" placeholder="Scrivi.." required></textarea>
+                <textarea class="upload-post-text" id="postText" rows="8" placeholder="Scrivi.." required></textarea>
             </div>
         </div>
     </div>

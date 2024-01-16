@@ -21,8 +21,8 @@
 <body class="bgbody">
     
     <div id="load"></div>
-    <div>
-        <nav class=" d-flex bd-highlight fixed-bottom">
+    <div class="sticky-bottom">
+        <nav class="d-flex bd-highlight">
             <a class="nav bottom-nav p-2 flex-fill bd-highlight" id="nav-home">
                 <i class="centra-icona bi bi-house-door fa-2x" id="home"></i>
             </a>
@@ -40,6 +40,4 @@
 <script src="../js/profilo.js"></script>
 <script src="../js/carica-post.js"></script>
 <script src="../js/modifica-profilo.js"></script>
-<script src="../js/lista-notifiche.js"></script>
-<script src="../js/lista-post.js"></script>
 </html>

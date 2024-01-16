@@ -1,7 +1,18 @@
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.sticky-bottom {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+}
+
 .bgbody {
     background-color: #373737;
 }
-
 
 .child {
     position: absolute;
@@ -67,6 +78,7 @@
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     background-color: #636363;
+
     border: none;
     outline: none;
     width: 96%;
@@ -137,6 +149,16 @@
     overflow: hidden;
 }
 
+.profile-img-container-post {
+    background: #373737;
+    border-radius: 50%;
+    background-size: 130%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin: 5px 0px 10px -15px;
+}
+
 .usrname {
     font-weight: bold;
     font-size: large;
@@ -144,12 +166,20 @@
     margin-left: 10px;
 }
 
-.post-text{
+.upload-post-text{
     background-color: #636363;
     color: #bbbbbb;
     border: none;
     outline: none;
     margin: 10px 0px 0px 70px;
+    width: 75%;
+}
+
+.post-text{
+    background-color: #636363;
+    color: #bbbbbb;
+    border: none;
+    outline: none;
     width: 75%;
 }
 

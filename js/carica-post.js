@@ -83,10 +83,15 @@ function eventiCaricaPost(){
                 url:'../caricaPost.php',
                 data: {testoFromAjax: testo, imgFromAjax: base64data},
                 success: function(data) {
-                    $("#load").empty();
-                    $("#upload").toggleClass("bi-plus-square-fill bi-plus-square");
-                    $("#profile").toggleClass("bi-person bi-person-fill");
-                    $("#load").load('./profilo.php', eventiProfilo());
+                    if(data == "ok"){
+                        $("#load").empty();
+                        $("#upload").toggleClass("bi-plus-square-fill bi-plus-square");
+                        $("#profile").toggleClass("bi-person bi-person-fill");
+                        sessionStorage.setItem("load", "./profilo.php");
+                        sessionStorage.setItem("id", "#profile");
+                        sessionStorage.setItem("class", "bi-person bi-person-fill");
+                        $("#load").load('./profilo.php', eventiProfilo());
+                    }
                 }
             });
         });
