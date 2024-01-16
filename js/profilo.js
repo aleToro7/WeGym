@@ -6,7 +6,7 @@ function eventiProfilo() {
                 let notifications = JSON.parse(data);
                 $("#loadNotifications").empty();
                 notifications.forEach(notification => {
-                    let id = notification['tipo']+"-"+notification['idUtenteSeguente'];
+                    let id = notification['tipo']+"-"+notification['idUtenteSeguente']+"-"+notification['idNotifica'];
                     let img, testo;
                     if(notification['imgProfilo']!= null) {
                         img = notification['imgProfilo']
@@ -21,7 +21,7 @@ function eventiProfilo() {
                         testo = notification['idUtenteSeguente'] + " ha commentato a un tuo post";
                     }
                     
-                    $("#loadNotifications").append("<div class='notification-container' id='"+id+"'><img class='profile-img-container-post' id='img-profile-notification' src='"+img+"'/>"+testo+"</div>");
+                    $("#loadNotifications").append("<div class='notification-container' id='"+id+"'><img class='profile-img-container-post' id='img-profile-notification' src='"+img+"'/>"+testo+"<span class='new'></span></div>");
                 });
             });
         }, 5000);
@@ -119,10 +119,11 @@ function eventiProfilo() {
         waitForEl(".notification-container", function() {
             $(".notification-container").click(function(){
                 let idCercato = this.id.split("-")[1];
+                let idNotifica = this.id.split("-")[2]
                 $.ajax({
                     type:'POST',
                     url:'../home.php',
-                    data: 'idCercatoFromAjax=' + idCercato,
+                    data: {idCercatoFromAjax: idCercato, idNotifica: idNotifica},
                     success: function() {
                         $("#home").removeClass("bi-house-door");
                         $("#home").addClass("bi-house-door-fill");

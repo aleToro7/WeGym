@@ -88,7 +88,7 @@
             <?php
                 if($templateParams["username"] == $_SESSION["username"]){
                     echo '<a class="nav middle-nav p-2 flex-fill bd-highlight" id="nav-lista-notifiche">
-                            <i class="centra-icona bi bi-stopwatch-fill fa-2x" id="lista-notifiche"></i>
+                            <i class="centra-icona bi bi-stopwatch-fill fa-2x" id="lista-notifiche"><span class="new-general"></span></i>
                         </a>';
                 }
                 if($templateParams["username"] == $_SESSION["username"]){
