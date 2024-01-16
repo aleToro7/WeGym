@@ -1,16 +1,30 @@
 function eventiProfilo() {
     waitForEl("a.middle-nav", function() {
         setInterval(function(){
+            waitNewNotifications();
             $.get("../notifiche.php",function(data){
                 let notifications = JSON.parse(data);
                 $("#loadNotifications").empty();
-
                 notifications.forEach(notification => {
-                    $("#loadNotifications").append(notification['tipo']);
+                    let id = notification['tipo']+"-"+notification['idUtenteSeguente'];
+                    let img, testo;
+                    if(notification['imgProfilo']!= null) {
+                        img = notification['imgProfilo']
+                    }else {
+                        img = "../altro/img_avatar.png";
+                    }
+                    if(notification['tipo'] == 'follow') {
+                        testo = notification['idUtenteSeguente'] + " ha iniziato a seguirti";
+                    }else if(notification['tipo'] == 'like') {
+                        testo = notification['idUtenteSeguente'] + " ha messo like a un tuo post";
+                    }else {
+                        testo = notification['idUtenteSeguente'] + " ha commentato a un tuo post";
+                    }
+                    
+                    $("#loadNotifications").append("<div class='notification-container' id='"+id+"'><img class='profile-img-container-post' id='img-profile-notification' src='"+img+"'/>"+testo+"</div>");
                 });
-            })
+            });
         }, 5000);
-
         $(document).ready(function () {
             if(sessionStorage.getItem("load-profile-view")!=null) {
                 if(sessionStorage.getItem("id-view")!="#lista-post") {
@@ -100,4 +114,24 @@ function eventiProfilo() {
             $("#load").load('./home-page.php', eventiHomePage());
         });
     });
+
+    function waitNewNotifications() {
+        waitForEl(".notification-container", function() {
+            $(".notification-container").click(function(){
+                let idCercato = this.id.split("-")[1];
+                $.ajax({
+                    type:'POST',
+                    url:'../home.php',
+                    data: 'idCercatoFromAjax=' + idCercato,
+                    success: function() {
+                        $("#home").removeClass("bi-house-door");
+                        $("#home").addClass("bi-house-door-fill");
+                        $("#profile").toggleClass("bi-person bi-person-fill");
+                        $("#load").empty();
+                        $("#load").load('./profilo.php', eventiProfilo());
+                    }
+                });
+            });
+        });
+    }
 }

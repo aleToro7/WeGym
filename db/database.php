@@ -124,11 +124,11 @@ class DatabaseHelper{
         return $stmt->error;
     }
 
-    public function getNewNotifications() {
-        $query = "SELECT idNotifica, tipo, idPost, idUtenteSeguito, idUtenteSeguente FROM notifica WHERE visto=? ORDER BY idNotifica DESC";
+    public function getNewNotifications($idUtente) {
+        $query = "SELECT u.imgProfilo, n.idNotifica, n.tipo, n.idPost, n.idUtenteSeguito, n.idUtenteSeguente FROM notifica n, utente u WHERE u.nomeUtente=n.idUtenteSeguente AND visto=? AND idUtenteSeguito=? ORDER BY idNotifica DESC";
         $stmt = $this->db->prepare($query);
         $visto = (int)false;
-        $stmt->bind_param('i', $visto);
+        $stmt->bind_param('is', $visto, $idUtente);
         $stmt->execute();
         $result = $stmt->get_result();
 

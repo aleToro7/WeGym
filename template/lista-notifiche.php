@@ -1,2 +1,2 @@
-<div class="nome-utente" id="loadNotifications">ciao</div>
+<div class="" id="loadNotifications"></div>
 <!-- stampare sotto quelli gia visti -->
