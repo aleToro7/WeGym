@@ -1,5 +1,5 @@
 function eventiListaPost(){
-    waitForEl("#posta", function() {
+    waitForEl("#img-profile-post", function() {
         
     });
 }
