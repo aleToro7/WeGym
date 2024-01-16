@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-            <div class="green-upload"></div>
+            <div class="green-post"></div>
         </div>
         <?php
         }

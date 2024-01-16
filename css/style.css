@@ -183,6 +183,13 @@
     width: 75%;
 }
 
+.green-post {
+    height: 2px;
+    background: #31B294;
+    margin: 10px 0px 10px 30px;
+    width: 90%;
+}
+
 .green-upload {
     height: 2px;
     background: #31B294;
