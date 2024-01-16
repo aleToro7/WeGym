@@ -1,5 +1,7 @@
 function eventiNotifiche(){
-    waitForEl("#posta", function() {
-        
+    waitForEl("#loadNotifications", function() {
+        $(document).ready(function () {
+            loadNewNotifications();
+        });
     });
 }

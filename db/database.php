@@ -135,11 +135,10 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getOldNotifications($idUtente) {
-        $query = "SELECT u.imgProfilo, n.idNotifica, n.tipo, n.idPost, n.idUtenteSeguito, n.idUtenteSeguente FROM notifica n, utente u WHERE u.nomeUtente=n.idUtenteSeguente AND visto=? AND idUtenteSeguito=? ORDER BY idNotifica DESC LIMIT 10-(SELECT COUNT(*) FROM notifica WHERE visto=0 AND idUtenteSeguito=?)";
+    public function getAllNotifications($idUtente) {
+        $query = "SELECT u.imgProfilo, n.idNotifica, n.tipo, n.visto, n.idPost, n.idUtenteSeguito, n.idUtenteSeguente FROM notifica n, utente u WHERE u.nomeUtente=n.idUtenteSeguente AND idUtenteSeguito=? ORDER BY idNotifica DESC LIMIT 10";
         $stmt = $this->db->prepare($query);
-        $visto = (int)true;
-        $stmt->bind_param('iss', $visto, $idUtente, $idUtente);
+        $stmt->bind_param('s', $idUtente);
         $stmt->execute();
         $result = $stmt->get_result();
 

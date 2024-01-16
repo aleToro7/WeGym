@@ -23,7 +23,6 @@ function eventiModificaProfilo() {
                 bs_modal.modal('show');
             };
 
-
             if (files && files.length > 0) {
                 file = files[0];
 
@@ -135,7 +134,6 @@ function eventiModificaProfilo() {
             }
             manageBtnSalva();
         });
-
 
         function manageBtnSalva() {
             if(($("#newUsername").hasClass("border-success") && $("#newUsername").val() != username) || $("#newBio").val() != biografia) {
