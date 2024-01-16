@@ -15,12 +15,18 @@ function eventiProfilo() {
                     $('#'+idR).removeClass("selected filter-grey");
                 });
                 $(this).addClass("bottom-selection");
-                if(id == "info") {
+                $("#load-profile-view").empty();
+                if(id == "my-info") {
                     $('#'+id).addClass("filter-grey");
+                    $("#load-profile-view").load('./'+id+'.php');
                 }else {
                     $('#'+id).addClass("selected");
+                    if(id == "lista-notifiche"){
+                        $("#load-profile-view").load('./'+id+'.php', eventiNotifiche());
+                    }else if(id == "lista-post" || id == "lista-post-liked") {
+                        $("#load-profile-view").load('./lista-post.php', eventiListaPost());
+                    }
                 }
-                //aggiungere caricamento php in load-profile-view
             }
         });
     

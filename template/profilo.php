@@ -83,21 +83,21 @@
         <?php
             if($templateParams["username"] == $_SESSION["username"]){
                 echo '<a class="nav middle-nav bottom-selection p-2 flex-fill bd-highlight" id="nav-notify">
-                        <i class="selected centra-icona bi bi-stopwatch-fill fa-2x" id="notify"></i>
+                        <i class="selected centra-icona bi bi-stopwatch-fill fa-2x" id="lista-notifiche"></i>
                     </a>';
             }
         ?>
         <a class="<?php if($templateParams["username"] != $_SESSION["username"]) echo 'bottom-selection ';?>nav middle-nav p-2 flex-fill bd-highlight" id="nav-posted">
-            <i class="<?php if($templateParams["username"] != $_SESSION["username"]) echo 'selected ';?>centra-icona bi bi-image fa-2x" id="posted"></i>
+            <i class="<?php if($templateParams["username"] != $_SESSION["username"]) echo 'selected ';?>centra-icona bi bi-image fa-2x" id="lista-post"></i>
         </a>
         <?php 
             if($templateParams["username"] == $_SESSION["username"]){
                 echo '<a class="nav middle-nav p-2 flex-fill bd-highlight" id="nav-likes">
-                        <i class="centra-icona bi bi-heart-pulse-fill fa-2x" id="likes"></i>
+                        <i class="centra-icona bi bi-heart-pulse-fill fa-2x" id="lista-post-liked"></i>
                     </a>';
             } else{
                 echo '<a class="middle-nav p-2 flex-fill bd-highlight" id="nav-info">
-                        <img src="../altro/dumbbell-solid.svg" alt="" class="img-nav barrell filter-dark-grey" id="info"/>
+                        <img src="../altro/dumbbell-solid.svg" alt="" class="img-nav barrell filter-dark-grey" id="my-info"/>
                     </a>';
             }
         ?>
