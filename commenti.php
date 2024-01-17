@@ -1,12 +1,15 @@
 <?php
 require_once 'bootstrap.php';
 
-if(isset($_POST['testoCommentoFromAjax']) && isset($_POST['idPostFromAjax'])) {
+if(isset($_POST['testoCommentoFromAjax']) && isset($_POST['idPostFromAjax']) && isset($_POST['ownerPostFromAjax'])) {
     $testoCommento = $_POST['testoCommentoFromAjax'];
     $idPost = $_POST['idPostFromAjax'];
-    $err = $dbh->inserisciCommento($testoCommento, $_SESSION['username'], $idPost);
+    $ownerPost = $_POST['ownerPostFromAjax'];
+    $err = $dbh->inserisciCommento($testoCommento, $_SESSION['username'], $idPost, $ownerPost);
     if($err=='') {
         echo json_encode($dbh->searchUser($_SESSION['username']));
+    }else {
+        echo $err;
     }
 }
 

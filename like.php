@@ -1,14 +1,16 @@
 <?php
 require_once 'bootstrap.php';
 
-if(isset($_POST["mettiLike"])){
+if(isset($_POST["mettiLike"]) && isset($_POST["ownerPostLike"])){
     $idPost = $_POST["mettiLike"];
-    $error = $dbh->mettiLike($_SESSION["username"], $idPost);
+    $ownerPost = $_POST["ownerPostLike"];
+    $error = $dbh->mettiLike($_SESSION["username"], $idPost, $ownerPost);
     echo $error;
 }
-if(isset($_POST["togliLike"])){
+if(isset($_POST["togliLike"]) && isset($_POST["ownerPostLiked"])){
     $idPost = $_POST["togliLike"];
-    $error = $dbh->togliLike($_SESSION["username"], $idPost);
+    $ownerPost = $_POST["ownerPostLiked"];
+    $error = $dbh->togliLike($_SESSION["username"], $idPost, $ownerPost);
     echo $error;
 }
 
