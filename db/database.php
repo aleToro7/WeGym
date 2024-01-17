@@ -211,7 +211,7 @@ class DatabaseHelper{
         $stmt->execute();
         return $stmt->error;
     }
-    
+
     public function mettiLike($idUtente, $idPost){
         $query = "INSERT INTO mipiace (idUtente, idPost) VALUES (?, ?)";
         $stmt = $this->db->prepare($query);
@@ -227,6 +227,4 @@ class DatabaseHelper{
         $stmt->execute();
         return $stmt->error;
     }
-
-
 }
