@@ -4,6 +4,7 @@
 
 <div class="">
     <div class="container">
+    <i class="close bi bi-x" id="closeCommenti"></i>
     <div id="load-new-comment"></div>
     <?php
     if(isset($templateParams["comment"])){
@@ -27,5 +28,5 @@
     }
 ?>
     </div>
-    <textarea class="commenta fixed-bottom" id="commento" placeholder="Commenta..."></textarea><i class="bi bi-send invia fixed-bottom" id="invia"></i>
+    <textarea class="commenta fixed-bottom" id="commento" rows="2" placeholder="Commenta..."></textarea><i class="bi bi-send invia fixed-bottom" id="invia"></i>
 </div>

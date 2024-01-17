@@ -1,12 +1,12 @@
 function eventiListaPost(){
     waitForEl("#last", function() {
-        $(".commento-icon").click(function(){
-            sessionStorage.setItem('idPost', $(this).attr('id'));
+        $('[id*="commenta-"]').click(function(){
+            sessionStorage.setItem('idPost', $(this).attr('id').split("-")[1]);
             sessionStorage.setItem('ownerPost', $("#usrname").html());
             $.ajax({
                 type:'POST',
                 url:'../posts.php',
-                data: 'loadCommentsOf=' + $(this).attr('id')
+                data: 'loadCommentsOf=' + $(this).attr('id').split("-")[1]
             });
             $("#load").empty();
             $("#load").load('./commenti-post.php', eventiCommenti());

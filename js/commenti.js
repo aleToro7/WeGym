@@ -18,5 +18,10 @@ function eventiCommenti(){
                 });
             }
         });
+
+        $("#closeCommenti").click(function(){
+            $("#load").empty();
+            $("#load").load('./home-page.php', eventiHomePage());
+        });
     });
 }
