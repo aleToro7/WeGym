@@ -183,10 +183,10 @@ class DatabaseHelper{
     }
 
     public function getFollowingPost($idUtente) {
-        $query = "SELECT u.imgProfilo, p.idUtente, p.idPost, p.testo, p.img FROM post p, utente u WHERE p.idUtente IN (SELECT idUtenteSeguito FROM segue WHERE idUtenteSeguente=?)
-        AND u.nomeUtente=p.idUtente ORDER BY idPost DESC";
+        $query = "SELECT u.imgProfilo, p.idUtente, p.idPost, p.testo, p.img, CASE WHEN m.idUtente IS NOT NULL THEN TRUE ELSE FALSE END AS messoLike FROM post p JOIN utente u ON u.nomeUtente = p.idUtente 
+        LEFT JOIN mipiace m ON p.idPost = m.idPost AND m.idUtente = ? WHERE p.idUtente IN (SELECT idUtenteSeguito FROM segue WHERE idUtenteSeguente = ?) ORDER BY p.idPost DESC;";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('s', $idUtente);
+        $stmt->bind_param('ss', $idUtente, $idUtente);
         $stmt->execute();
         $result = $stmt->get_result();
 
