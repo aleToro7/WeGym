@@ -351,7 +351,20 @@
 .logo-centrato {
     font-family: "Mustard Smile";
     color: #E0E0E0;
-    margin-left: 25%;
+    text-align: center;
+    font-size: 38px;
+}
+
+.occhio {
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
+}
+
+.occhi {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
 }
 
 .button {
@@ -481,9 +494,10 @@
 }
 
 .green-row {
-    height: 1px;
+    height: 2px;
     background: #31B294;
     width: 95%;
+    margin-top: 10px;
 }
 
 .campo {

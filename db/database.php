@@ -204,12 +204,5 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function inserisciCommento($testo, $idUtente, $idPost) {
-        $query = "INSERT INTO commento (testo, idUtente, idPost) VALUES (?, ?, ?)";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssi', $testo, $idUtente, $idPost);
-        $stmt->execute();
-        return $stmt->error;
-    }
 
 }

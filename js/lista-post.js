@@ -6,4 +6,6 @@ function eventiListaPost(){
             $("#load").load('./commenti-post.php', eventiCommenti());
         });
     });
+
+    
 }
