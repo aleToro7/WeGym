@@ -14,7 +14,7 @@ function eventiProfilo() {
                     data: 'ottieniPostProfilo=' + true,
                 });
                 $("#load-profile-view").load(sessionStorage.getItem("load-search-profile-view"));
-
+                eventiListaPost();
             }else if(sessionStorage.getItem("load-profile-view")!=null) {
                 if(sessionStorage.getItem("id-view")!="#lista-post") {
                     $("#lista-post").removeClass("selected");

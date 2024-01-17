@@ -3,6 +3,7 @@ function eventiListaPost(){
         $('[id*="commenta-"]').click(function(){
             sessionStorage.setItem('idPost', $(this).attr('id').split("-")[1]);
             sessionStorage.setItem('ownerPost', $("#usrname").html());
+            sessionStorage.setItem('locationCommento', $(this).attr('id').split("-")[2]);
             $.ajax({
                 type:'POST',
                 url:'../posts.php',

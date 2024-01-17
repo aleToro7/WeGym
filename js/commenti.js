@@ -20,8 +20,13 @@ function eventiCommenti(){
         });
 
         $("#closeCommenti").click(function(){
-            $("#load").empty();
-            $("#load").load('./home-page.php', eventiHomePage());
+            if(sessionStorage.getItem('locationCommento') == 'home') {
+                $("#load").empty();
+                $("#load").load('./home-page.php', eventiHomePage());
+            }else {
+                $("#load").empty();
+                $("#load").load('./profilo.php', eventiProfilo());
+            }
         });
     });
 }
