@@ -34,8 +34,15 @@
                             <?php if(isset($_SESSION["location"]) && $_SESSION["location"] == "profilo"){
                                 echo '<span class="like-value">'.$post["numMiPiace"].' like</span>';
                                 echo '<span class="commento-value">'.$post["numCommenti"].' <i class="commento-icon-value bi bi-chat" id="'.$post["idPost"].'"></i></span>';
-                            }else {
-                                echo '<i class="like-icon bi bi-heart"></i>';
+                            }else if(isset($_SESSION["location"]) && $_SESSION["location"] == "like"){
+                                echo '<i class="liked-icon bi bi-heart-fill"></i>';
+                                echo '<i class="commento-icon bi bi-chat" id="'.$post["idPost"].'"></i>';
+                            }else{
+                                if($post["messoLike"]){
+                                    echo '<i class="liked-icon bi bi-heart-fill"></i>';
+                                }else{
+                                    echo '<i class="like-icon bi bi-heart"></i>';
+                                }
                                 echo '<i class="commento-icon bi bi-chat" id="'.$post["idPost"].'"></i>';
                             } ?>
                         </div>

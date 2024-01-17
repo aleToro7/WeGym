@@ -13,7 +13,7 @@ if(isset($_SESSION["location"])){
 
     }else if($_SESSION["location"] == "cercato"){
         if(isset($_SESSION["usernameCercato"])){
-            $results = $dbh->getMyPost($_SESSION["usernameCercato"]);
+            $results = $dbh->getSearchedUserPost($_SESSION["username"], $_SESSION["usernameCercato"]);
         }else {
             $results = $dbh->getMyPost($_SESSION["username"]);
         }

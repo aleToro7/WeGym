@@ -299,7 +299,17 @@
     margin-left: 20px;
     cursor: pointer;
     position: absolute;
-    margin-top: 2px;}
+    margin-top: 2px;
+}
+
+.liked-icon {
+    color: red;
+    font-size: x-large;
+    margin-left: 20px;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 2px;
+}
 
 .commento-value {
     color: #E0E0E0;
@@ -362,7 +372,7 @@
 
 .occhio {
     position: absolute;
-    right: 25px;
+    right: 10px;
     cursor: pointer;
 }
 
@@ -708,6 +718,12 @@ div[name="stats"] {
     background-color: #666;
     border: 1px solid #eee;
     -webkit-border-radius: 16px;
+}
+
+@media screen and (min-width:409px){
+    .occhio{
+        right: 25px;
+    }
 }
 
 @media screen and (min-width:768px){
