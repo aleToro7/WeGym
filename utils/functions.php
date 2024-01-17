@@ -2,6 +2,7 @@
 
 function registerLoggedUser($user){
     $_SESSION["username"] = $user["nomeUtente"];
+    $_SESSION["location"] = "home";
     $_SESSION["nome"] = $user["nome"];
     $_SESSION["cognome"] = $user["cognome"];
     $_SESSION["mail"] = $user["mail"];
