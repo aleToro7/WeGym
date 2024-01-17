@@ -121,12 +121,13 @@
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     background-color: #636363;
+    color: #E0E0E0;
     border: none;
     outline: none;
     width: 96%;
     display: block;
     margin: 12px auto;
-    padding: 11px 20px;
+    padding: 6px 0px 0px 25px;
     cursor: pointer;
     position: relative;
 }
