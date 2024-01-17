@@ -30,6 +30,17 @@ function eventiProfilo() {
                 if(sessionStorage.getItem("id-view")!="#lista-post") {
                     $("#lista-post").removeClass("selected");
                     $("#nav-lista-post").removeClass("bottom-selection");
+                    if(sessionStorage.getItem("id-view")=="#lista-post-liked"){
+                        $.ajax({
+                            type:'POST',
+                            url:'../cercaPost.php',
+                            data: 'ottieniPostLike=' + true,
+                            success: function(data) {
+                    
+                            },
+                            error: function() { }
+                        });
+                    }
                 }
                 $("#load-profile-view").load(sessionStorage.getItem("load-profile-view"));
                 $(sessionStorage.getItem("id-view")).addClass("selected");
@@ -37,11 +48,41 @@ function eventiProfilo() {
                 if(sessionStorage.getItem("id-view")=="#lista-notifiche"){
                     eventiNotifiche();
                 }else if(sessionStorage.getItem("id-view")=="#lista-post" || sessionStorage.getItem("id-view")=="#lista-post-liked") {
+                    if(sessionStorage.getItem("id-view")=="#lista-post"){
+                        $.ajax({
+                            type:'POST',
+                            url:'../cercaPost.php',
+                            data: 'ottieniPostProfilo=' + true,
+                            success: function(data) {
+                    
+                            },
+                            error: function() { }
+                        });
+                    }else{
+                        $.ajax({
+                            type:'POST',
+                            url:'../cercaPost.php',
+                            data: 'ottieniPostLike=' + true,
+                            success: function(data) {
+                    
+                            },
+                            error: function() { }
+                        });
+                    }
                     eventiListaPost();
                 }else {
                     $(sessionStorage.getItem("id-view")).addClass("filter-grey");
                 }
             }else {
+                $.ajax({
+                    type:'POST',
+                    url:'../cercaPost.php',
+                    data: 'ottieniPostProfilo=' + true,
+                    success: function(data) {
+            
+                    },
+                    error: function() { }
+                });
                 sessionStorage.setItem("load-profile-view", "./lista-post.php");
                 sessionStorage.setItem("id-view", "#lista-post");
                 $("#lista-post").addClass("selected");
@@ -73,6 +114,27 @@ function eventiProfilo() {
                         sessionStorage.setItem("id-view", "#"+id);
                         $("#load-profile-view").load('./'+id+'.php', eventiNotifiche());
                     }else if(id == "lista-post" || id == "lista-post-liked") {
+                        if(id == "lista-post"){
+                            $.ajax({
+                                type:'POST',
+                                url:'../cercaPost.php',
+                                data: 'ottieniPostProfilo=' + true,
+                                success: function(data) {
+                        
+                                },
+                                error: function() { }
+                            });
+                        }else{
+                            $.ajax({
+                                type:'POST',
+                                url:'../cercaPost.php',
+                                data: 'ottieniPostLike=' + true,
+                                success: function(data) {
+                        
+                                },
+                                error: function() { }
+                            });
+                        }
                         sessionStorage.setItem("load-profile-view", "./lista-post.php");
                         sessionStorage.setItem("id-view", "#"+id);
                         $("#load-profile-view").load('./lista-post.php', eventiListaPost());

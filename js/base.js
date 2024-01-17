@@ -44,6 +44,14 @@ $("#nav-upload").click(function(){
 });
 
 $("#nav-profile").click(function(){
+    $.ajax({
+        type:'POST',
+        url:'../cercaPost.php',
+        data: 'ottieniPostProfilo=' + true,
+        success: function(data) {
+        },
+        error: function() { }
+    });
     if($("#profile").hasClass("bi-person")) {
         $("#profile").toggleClass("bi-person bi-person-fill");
         $("#upload").removeClass("bi-plus-square-fill");
@@ -59,6 +67,14 @@ $("#nav-profile").click(function(){
 });
 
 $("#nav-home").click(function(){
+    $.ajax({
+        type:'POST',
+        url:'../cercaPost.php',
+        data: 'ottieniPostHome=' + true,
+        success: function(data) {
+        },
+        error: function() { }
+    });
     if($("#home").hasClass("bi-house-door")) {
         $("#home").toggleClass("bi-house-door bi-house-door-fill");
         $("#upload").removeClass("bi-plus-square-fill");

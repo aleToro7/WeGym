@@ -31,8 +31,13 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col" name="likeandcomm">
-                            <i class="like-icon bi bi-heart"></i>
-                            <i class="commento-icon bi bi-chat"></i>
+                            <?php if(isset($_SESSION["location"]) && $_SESSION["location"] == "profilo"){
+                                echo '<span class="like-value">'.$post["numMiPiace"].' like</span>';
+                                echo '<span class="commento-value">'.$post["numCommenti"].' <i class="commento-icon-value bi bi-chat"></i></span>';
+                            }else {
+                                echo '<i class="like-icon bi bi-heart"></i>';
+                                echo '<i class="commento-icon bi bi-chat"></i>';
+                            } ?>
                         </div>
                     </div>
                 </div>

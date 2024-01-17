@@ -28,6 +28,17 @@ function eventiHomePage(){
             }
         });
 
+        $(document).ready(function(){
+            $.ajax({
+                type:'POST',
+                url:'../cercaPost.php',
+                data: 'ottieniPostHome=' + true,
+                success: function(data) {
+                },
+                error: function() { }
+            });
+        });
+
         $(".user-list").on('click', '.search-result', function() {
             let idCercato = this.id;
             $.ajax({

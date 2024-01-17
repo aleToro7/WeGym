@@ -153,7 +153,9 @@ class DatabaseHelper{
     }
 
     public function getMyPost($idUtente) {
-        $query = "SELECT p.testo, p.img, COUNT(m.idMiPiace) as numeroLike, COUNT(c.idCommento) as numeroCommenti FROM post p, mipiace m, commento c WHERE m.idPost=p.idPost AND c.idPost=p.idPost AND idUtente=? ORDER BY p.idPost DESC";
+        $query = "SELECT u.imgProfilo, p.idUtente, p.idPost, p.testo, p.img, COUNT(m.idMiPiace) AS numMiPiace, COUNT(c.idCommento) AS numCommenti FROM utente u JOIN post p ON u.nomeUtente = p.idUtente LEFT JOIN
+        mipiace m ON p.idPost = m.idPost LEFT JOIN commento c ON p.idPost = c.idPost WHERE u.nomeUtente = ? GROUP BY
+        u.nomeUtente, u.imgProfilo, p.idPost, p.testo, p.img ORDER BY p.idPost DESC;";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s', $idUtente);
         $stmt->execute();
@@ -174,10 +176,10 @@ class DatabaseHelper{
     }
 
     public function getLikedPost($idUtente) {
-        $query = "SELECT u.imgProfilo, p.idUtente, p.testo, p.img FROM post p, utente u WHERE p.idPost IN (SELECT idPost FROM mipiace WHERE idUtente=?)
-        AND u.nomeUtente=? ORDER BY idPost DESC";
+        $query = "SELECT uu.imgProfilo, p.idUtente, p.testo, p.img FROM post p, utente u, utente uu WHERE p.idPost IN (SELECT idPost FROM mipiace WHERE idUtente=?)
+        AND u.nomeUtente=? AND uu.nomeUtente = p.idUtente ORDER BY idPost DESC";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('s', $idUtente);
+        $stmt->bind_param('ss', $idUtente, $idUtente);
         $stmt->execute();
         $result = $stmt->get_result();
 

@@ -54,14 +54,14 @@
 }
 
 .selected {
-    color:#A9A9A9;
+    color:#E0E0E0;
 }
 
 .cerca {
     -moz-border-radius: 30px 30px 30px 30px;
     -webkit-border-radius: 30px 30px 30px 30px;
     background-color: #636363;
-    color:#A9A9A9;
+    color:#E0E0E0;
     border: none;
     outline: none;
     width: 96%;
@@ -128,14 +128,13 @@
     opacity: .5;
     transition: opacity .6s ease;
     border-radius: 100%; /* add border-radius */
-    background-color: #fff;
     display: flex;
 }
 
 .nome-utente {
     font-weight: bold;
     font-size: x-large;
-    color: #A9A9A9;
+    color: #E0E0E0;
     padding-top: 1%;
     margin-left: 3%;
 }
@@ -172,13 +171,13 @@
 .usrname {
     font-weight: bold;
     font-size: large;
-    color: #bbbbbb;
+    color: #E0E0E0;
     margin-left: 10px;
 }
 
 .upload-post-text{
     background-color: #636363;
-    color: #bbbbbb;
+    color: #E0E0E0;
     border: none;
     outline: none;
     margin: 10px 0px 0px 70px;
@@ -187,7 +186,7 @@
 
 .post-text{
     background-color: #636363;
-    color: #bbbbbb;
+    color: #E0E0E0;
     border: none;
     outline: none;
     width: 75%;
@@ -200,19 +199,37 @@
     width: 94%;
 }
 
+.like-value {
+    color: #E0E0E0;
+    font-size: x-large;
+    margin-left: 20px;
+    position: absolute;
+}
+
 .like-icon {
-    color: #bbbbbb;
+    color: #E0E0E0;
     font-size: x-large;
     margin-left: 20px;
     cursor: pointer;
     position: absolute;
-    margin-top: 2px;
+    margin-top: 2px;}
+
+.commento-value {
+    color: #E0E0E0;
+    font-size: x-large;
+    margin-left: 150px;
 }
 
 .commento-icon {
-    color: #bbbbbb;
+    color: #E0E0E0;
     font-size: x-large;
     margin-left: 75px;
+    cursor: pointer;
+}
+
+.commento-icon-value {
+    color: #E0E0E0;
+    font-size: x-large;
     cursor: pointer;
 }
 
@@ -224,7 +241,7 @@
 }
 
 .upload-icon {
-    color: #bbbbbb;
+    color: #E0E0E0;
     font-size: x-large;
     margin-left: 80px;
     cursor: pointer;
@@ -242,12 +259,12 @@
 
 .logo {
     font-family: "Mustard Smile";
-    color: #A9A9A9;
+    color: #E0E0E0;
 }
 
 .logo-centrato {
     font-family: "Mustard Smile";
-    color: #A9A9A9;
+    color: #E0E0E0;
     margin-left: 25%;
 }
 
@@ -301,7 +318,7 @@
 }
 
 .bio {
-    color: #A9A9A9;
+    color: #E0E0E0;
     padding-top: 1%;
     margin-left: 3%;
     position: relative;
@@ -374,7 +391,7 @@
 }
 
 .text {
-    color: #A9A9A9;
+    color: #E0E0E0;
 }
 
 .green-row {
@@ -387,7 +404,7 @@
     -moz-border-radius: 30px 30px 30px 30px;
     -webkit-border-radius: 30px 30px 30px 30px;
     background-color: #636363;
-    color: #A9A9A9;
+    color: #E0E0E0;
     border: none;
     outline: none;
     margin-bottom: 2%;
@@ -400,7 +417,7 @@
     margin-top: 1%;
     margin-right: 2%;
     cursor: pointer;
-    color: #A9A9A9;
+    color: #E0E0E0;
 }
 
 .user-list {
@@ -419,7 +436,7 @@ ul li input {
     -moz-border-radius: 30px 30px 30px 30px;
     -webkit-border-radius: 30px 30px 30px 30px;
     background-color: #636363;
-    color: #A9A9A9;
+    color: #E0E0E0;
     border: none;
     outline: none;
     margin-bottom: 7%;
@@ -427,29 +444,29 @@ ul li input {
 }
 
 ul li input:focus {
-    color: #A9A9A9
+    color: #E0E0E0
 }
 
 ::-webkit-input-placeholder {
     /* WebKit browsers (Safari, Google Chrome, Opera 15+) */
-    color: #A9A9A9;
+    color: #E0E0E0;
 }
 
 :-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    color: #A9A9A9;
+    color: #E0E0E0;
     opacity: 1;
 }
 
 ::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    color: #A9A9A9;
+    color: #E0E0E0;
     opacity: 1;
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10+ */
-    color: #A9A9A9;
+    color: #E0E0E0;
 }
 
 ul li button {
@@ -465,11 +482,11 @@ ul li button:hover {
 }
 
 li i {
-    color: #A9A9A9;
+    color: #E0E0E0;
 }
 
 ul>div {
-    color: #A9A9A9;
+    color: #E0E0E0;
 }
 
 a i {
@@ -478,7 +495,7 @@ a i {
 }
 
 div > i {
-    color: #A9A9A9;
+    color: #E0E0E0;
 }
 
 /* enable absolute positioning */
@@ -540,7 +557,7 @@ div > i {
 div[name="stats"] {
     font-weight: bold;
     font-size: x-large;
-    color: #A9A9A9;
+    color: #E0E0E0;
     padding-top: 1%;
     margin-left: 3%;
     text-align: center;
