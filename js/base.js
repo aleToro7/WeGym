@@ -144,6 +144,7 @@ function loadNewNotifications() {
                 $("#novita").html(count);
             }else { 
                 $("#novita").removeClass("new-general");
+                $("#novita").html('');
             }
         }
         
