@@ -238,7 +238,7 @@ class DatabaseHelper{
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssi', $testo, $idUtente, $idPost);
         $stmt->execute();
-        if(empty($stmt->error)){
+        if(empty($stmt->error) && $idUtente != $ownerPost){
             return $this->addNotification('commento', $idPost, $ownerPost, $idUtente);
         }else {
             return $stmt->error;
