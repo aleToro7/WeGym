@@ -29,7 +29,6 @@ if(!isset($_SESSION["username"])){
             }else {
                 $templateParams["imgProfilo"] = "";
             }
-            unset($_SESSION["usernameCercato"]);
         }
     }else {
         $templateParams["username"] = $_SESSION["username"];

@@ -14,9 +14,6 @@ function eventiProfilo() {
                             type:'POST',
                             url:'../cercaPost.php',
                             data: 'ottieniPostLike=' + true,
-                            success: function(data) {
-                            },
-                            error: function() { }
                         });
                     }
                 }
@@ -31,18 +28,12 @@ function eventiProfilo() {
                             type:'POST',
                             url:'../cercaPost.php',
                             data: 'ottieniPostProfilo=' + true,
-                            success: function(data) {
-                            },
-                            error: function() { }
                         });
                     }else{
                         $.ajax({
                             type:'POST',
                             url:'../cercaPost.php',
                             data: 'ottieniPostLike=' + true,
-                            success: function(data) {
-                            },
-                            error: function() { }
                         });
                     }
                     eventiListaPost();
@@ -54,9 +45,6 @@ function eventiProfilo() {
                     type:'POST',
                     url:'../cercaPost.php',
                     data: 'ottieniPostProfilo=' + true,
-                    success: function(data) {
-                    },
-                    error: function() { }
                 });
                 sessionStorage.setItem("load-profile-view", "./lista-post.php");
                 sessionStorage.setItem("id-view", "#lista-post");
@@ -95,20 +83,12 @@ function eventiProfilo() {
                                 type:'POST',
                                 url:'../cercaPost.php',
                                 data: 'ottieniPostProfilo=' + true,
-                                success: function(data) {
-                        
-                                },
-                                error: function() { }
                             });
                         }else{
                             $.ajax({
                                 type:'POST',
                                 url:'../cercaPost.php',
                                 data: 'ottieniPostLike=' + true,
-                                success: function(data) {
-                        
-                                },
-                                error: function() { }
                             });
                         }
                         sessionStorage.setItem("load-profile-view", "./lista-post.php");
@@ -148,6 +128,11 @@ function eventiProfilo() {
         });
 
         $("#close").click(function(){
+            $.ajax({
+                type:'POST',
+                url:'../cercaPost.php',
+                data: 'ottieniPostHome=' + "chiudi",
+            });
             $("#load").empty();
             $("#load").load('./home-page.php', eventiHomePage());
         });
