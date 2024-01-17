@@ -135,6 +135,24 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getAllNotifications($idUtente) {
+        $query = "SELECT u.imgProfilo, n.idNotifica, n.tipo, n.visto, n.idPost, n.idUtenteSeguito, n.idUtenteSeguente FROM notifica n, utente u WHERE u.nomeUtente=n.idUtenteSeguente AND idUtenteSeguito=? ORDER BY idNotifica DESC LIMIT 10";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $idUtente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function viewNotification($idNotification){
+        $query = "UPDATE notifica SET visto=1 WHERE idNotifica=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $idNotification);
+        $stmt->execute();
+        return $stmt->error;
+    }
+
     public function post($testo, $img, $idUtente) {
         $query = "INSERT INTO post (testo, img, idUtente) VALUES ('".$testo."', '".$img."', '".$idUtente."')";
         $stmt = $this->db->prepare($query);

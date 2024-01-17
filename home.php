@@ -12,6 +12,9 @@ if(isset($_POST["cercaFromAjax"])) {
 }
 
 if(isset($_POST["idCercatoFromAjax"])) {
+    if(isset($_POST["idNotifica"])){
+        $dbh->viewNotification($_POST["idNotifica"]);
+    }
     $userCercato = $_POST['idCercatoFromAjax'];
     $_SESSION["usernameCercato"] = $userCercato;
     $posts = $dbh->countPost($userCercato);
