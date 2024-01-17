@@ -59,8 +59,9 @@
 }
 
 .cerca {
-    -moz-border-radius: 30px 30px 30px 30px;
-    -webkit-border-radius: 30px 30px 30px 30px;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
     background-color: #636363;
     color:#E0E0E0;
     border: none;
@@ -70,6 +71,12 @@
     margin: 12px auto;
     height: 40px;
     padding-left: 22px;
+}
+
+.focus-cerca {
+    border-radius: 15px 15px 0 0;
+    -moz-border-radius: 15px 15px 0 0;
+    -webkit-border-radius: 15px 15px 0 0;
 }
 
 .posts-container {
@@ -138,10 +145,23 @@
     display: block;
     margin: auto;
     height: 40px;
+    padding-left: 40px;
+}
+
+.last-element {
+    border-radius: 0 0 15px 15px;
+    -moz-border-radius: 0 0 15px 15px;
+    -webkit-border-radius: 0 0 15px 15px;
 }
 
 .search-result:hover {
     background-color: #757575;
+}
+
+.less-points {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .carousel-indicators li {
@@ -195,6 +215,16 @@
     background-size: 130%;
     width: 50px;
     height: 50px;
+    overflow: hidden;
+    margin: 5px 0px 10px -15px;
+}
+
+.profile-img-container-search {
+    background: #373737;
+    border-radius: 50%;
+    background-size: 130%;
+    width: 30px;
+    height: 30px;
     overflow: hidden;
     margin: 5px 0px 10px -15px;
 }
@@ -452,15 +482,11 @@
 }
 
 .user-list {
-    /*background-color: #636363;
-    width: 96%;
-    margin: 12px auto;
-    height: 40px;
-    padding-left: 22px;*/
+    margin-top: -12px;
 }
 
 ul {
-    list-style: none;
+    list-style-type: none;
 }
 
 ul li input {

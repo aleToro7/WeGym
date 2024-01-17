@@ -5,6 +5,7 @@ function eventiHomePage(){
             $(".user-list").empty();
             valCercato = $("#cerca").val();
             $("#risultatoRicerca").html("");
+            $("#cerca").removeClass("focus-cerca");
             if(valCercato!="") {
                 $.ajax({
                     type:'POST',
@@ -13,17 +14,25 @@ function eventiHomePage(){
                     success: function(data) {
                         if(data == "Nessun utente trovato"){
                             $("#risultatoRicerca").html(data);
+                            $("#cerca").removeClass("focus-cerca");
                         }else {
                             let users = JSON.parse(data);
-                            let sub_ul = $('<ul/>');
+                            let sub_ul = $('<ul class="less-points"/>');
+                            let lastClass;
+                            $("#cerca").addClass("focus-cerca");
                             $(users).each(function (val) {
-                                let sub_li = $('<li id="'+users[val]["nomeUtente"]+'" class="search-result"/>').html(users[val]["nomeUtente"]);
+                                if (val == $(users).length - 1){ 
+                                    lastClass = "last-element";
+                                }
+                                if(users[val]["imgProfilo"]==null){
+                                    users[val]["imgProfilo"] = "../altro/img_avatar.png";
+                                }
+                                let sub_li = $('<li id="'+users[val]["nomeUtente"]+'" class="search-result '+lastClass+'"><img class="profile-img-container-search" src="'+users[val]["imgProfilo"]+'"/> '+users[val]["nomeUtente"]+'</li>');
                                 sub_ul.append(sub_li);
                             });
                             $(".user-list").append(sub_ul);
                         }
-                    },
-                    error: function() { }
+                    }
                 });
             }
         });
@@ -33,9 +42,6 @@ function eventiHomePage(){
                 type:'POST',
                 url:'../cercaPost.php',
                 data: 'ottieniPostHome=' + true,
-                success: function(data) {
-                },
-                error: function() { }
             });
         });
 
@@ -64,14 +70,15 @@ function eventiHomePage(){
         $("#cerca").focus(function(){
             if(!$("#cerca").val() != "") {
                 $("#lente").toggleClass("hide");
+                $("#cerca").removeClass("focus-cerca");
             }
         });
 
         $("#cerca").focusout(function(){
             if(!$("#cerca").val() != "") {
                 $("#lente").toggleClass("hide");
+                $("#cerca").removeClass("focus-cerca");
             }
         });
     });
-    
 }

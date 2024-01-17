@@ -51,7 +51,7 @@ class DatabaseHelper{
     }
 
     public function searchUser($username) {
-        $query = "SELECT nomeUtente FROM utente WHERE nomeUtente LIKE '".$username."%' LIMIT 4";
+        $query = "SELECT nomeUtente, imgProfilo FROM utente WHERE nomeUtente LIKE '".$username."%' LIMIT 4";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
