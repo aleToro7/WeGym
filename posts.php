@@ -14,12 +14,16 @@ if(isset($_SESSION["location"])){
     }else if($_SESSION["location"] == "cercato" && isset($_SESSION["usernameCercato"])){
         $results = $dbh->getMyPost($_SESSION["usernameCercato"]);
     }
+    
+    $i = 0;
+    foreach ($results as $row){
+        $templateParams["post"][$i] = $row;
+        $i++;
+    }
 }
 
-$i = 0;
-foreach ($results as $row){
-    $templateParams["post"][$i] = $row;
-    $i++;
+if(isset($_POST['loadCommentsOf'])) {
+    echo $_POST['loadCommentsOf'];
+    $_SESSION['idPost'] = $_POST['loadCommentsOf'];
 }
-
 ?>

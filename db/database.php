@@ -227,4 +227,14 @@ class DatabaseHelper{
         $stmt->execute();
         return $stmt->error;
     }
+
+    public function getComments($idPost) {
+        $query = "SELECT u.imgProfilo, c.testo, c.idUtente FROM commento c, utente u WHERE u.nomeUtente=c.idUtente AND c.idPost=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $idPost);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }

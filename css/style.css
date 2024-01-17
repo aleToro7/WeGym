@@ -319,6 +319,10 @@
     cursor: pointer;
 }
 
+.commento {
+    margin-top: 100px;
+}
+
 .green-upload {
     height: 2px;
     background: #31B294;
