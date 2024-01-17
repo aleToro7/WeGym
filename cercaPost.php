@@ -2,7 +2,7 @@
 require_once 'bootstrap.php';
 
 if(isset($_POST["ottieniPostProfilo"])){
-    if (isset($_SESSION['usernameCercato'])){
+    if (isset($_SESSION['usernameCercato']) && $_SESSION['usernameCercato'] != $_SESSION['username']){
         $_SESSION["location"] = "cercato";
     }else {
         $_SESSION["location"] = "profilo";
