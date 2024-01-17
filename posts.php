@@ -1,6 +1,6 @@
 <?php
 require_once 'bootstrap.php';
-
+$results='';
 if(isset($_SESSION["location"])){
     if($_SESSION["location"] == "profilo"){
         $results = $dbh->getMyPost($_SESSION["username"]);
@@ -11,8 +11,12 @@ if(isset($_SESSION["location"])){
     }else if($_SESSION["location"] == "home"){
         $results = $dbh->getFollowingPost($_SESSION["username"]);
 
-    }else if($_SESSION["location"] == "cercato" && isset($_SESSION["usernameCercato"])){
-        $results = $dbh->getMyPost($_SESSION["usernameCercato"]);
+    }else if($_SESSION["location"] == "cercato"){
+        if(isset($_SESSION["usernameCercato"])){
+            $results = $dbh->getMyPost($_SESSION["usernameCercato"]);
+        }else {
+            $results = $dbh->getMyPost($_SESSION["username"]);
+        }
     }
     
     $i = 0;

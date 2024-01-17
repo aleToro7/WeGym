@@ -5,7 +5,17 @@ function eventiProfilo() {
         }, 5000);
 
         $(document).ready(function () {
-            if(sessionStorage.getItem("load-profile-view")!=null) {
+            if(sessionStorage.getItem("load-search-profile-view")!=null) {
+                $("#lista-post").addClass("selected");
+                $("#nav-lista-post").addClass("bottom-selection");
+                $.ajax({
+                    type:'POST',
+                    url:'../cercaPost.php',
+                    data: 'ottieniPostProfilo=' + true,
+                });
+                $("#load-profile-view").load(sessionStorage.getItem("load-search-profile-view"));
+
+            }else if(sessionStorage.getItem("load-profile-view")!=null) {
                 if(sessionStorage.getItem("id-view")!="#lista-post") {
                     $("#lista-post").removeClass("selected");
                     $("#nav-lista-post").removeClass("bottom-selection");
@@ -37,8 +47,6 @@ function eventiProfilo() {
                         });
                     }
                     eventiListaPost();
-                }else {
-                    $(sessionStorage.getItem("id-view")).addClass("filter-grey");
                 }
             }else {
                 $.ajax({
@@ -68,8 +76,8 @@ function eventiProfilo() {
                 $("#load-profile-view").empty();
                 if(id == "my-info") {
                     $('#'+id).addClass("filter-grey");
-                    sessionStorage.setItem("load-profile-view", "./"+id+".php");
-                    sessionStorage.setItem("id-view", "#"+id);
+                    sessionStorage.setItem("load-search-profile-view", "./"+id+".php");
+                    sessionStorage.setItem("id-search-view", "#"+id);
                     $("#load-profile-view").load('./'+id+'.php');
                 }else {
                     $('#'+id).addClass("selected");
@@ -91,8 +99,13 @@ function eventiProfilo() {
                                 data: 'ottieniPostLike=' + true,
                             });
                         }
-                        sessionStorage.setItem("load-profile-view", "./lista-post.php");
-                        sessionStorage.setItem("id-view", "#"+id);
+                        if(sessionStorage.getItem("load-search-profile-view")!=null) {
+                            sessionStorage.setItem("load-search-profile-view", "./lista-post.php");
+                            sessionStorage.setItem("id-search-view", "#"+id);
+                        }else{
+                            sessionStorage.setItem("load-profile-view", "./lista-post.php");
+                            sessionStorage.setItem("id-view", "#"+id);
+                        }
                         $("#load-profile-view").load('./lista-post.php', eventiListaPost());
                     }
                 }

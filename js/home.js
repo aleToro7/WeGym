@@ -61,6 +61,9 @@ function eventiHomePage(){
                         sessionStorage.setItem("load", "./profilo.php");
                         sessionStorage.setItem("id", "#profile");
                         sessionStorage.setItem("class", "bi-person bi-person-fill");
+                    }else{
+                        sessionStorage.setItem("load-search-profile-view", "./lista-post.php");
+                        sessionStorage.setItem("id-search-view", "#lista-post");
                     }
                     $("#load").empty();
                     $("#load").load('./profilo.php', eventiProfilo());

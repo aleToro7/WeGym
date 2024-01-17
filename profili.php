@@ -1,11 +1,14 @@
 <?php
 require_once 'bootstrap.php';
+if(isset($_POST['unsetFromAjax'])) {
+    unset($_SESSION["usernameCercato"]);
+}
 
 if(!isset($_SESSION["username"])){
     header("location: index.php");
     exit;
 }else {
-    if(isset($_SESSION["usernameCercato"])) {
+    if(isset($_SESSION["usernameCercato"]) && $_SESSION["usernameCercato"]!=$_SESSION["username"]) {
         $posts = $_SESSION["postsUsernameCercato"];
         $follower = $_SESSION["followerUsernameCercato"];
         $follow = $_SESSION["followUsernameCercato"];

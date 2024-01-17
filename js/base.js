@@ -47,10 +47,7 @@ $("#nav-profile").click(function(){
     $.ajax({
         type:'POST',
         url:'../cercaPost.php',
-        data: 'ottieniPostProfilo=' + true,
-        success: function(data) {
-        },
-        error: function() { }
+        data: 'ottieniPostProfilo=' + true
     });
     if($("#profile").hasClass("bi-person")) {
         $("#profile").toggleClass("bi-person bi-person-fill");
@@ -62,6 +59,13 @@ $("#nav-profile").click(function(){
         sessionStorage.setItem("load", "./profilo.php");
         sessionStorage.setItem("id", "#profile");
         sessionStorage.setItem("class", "bi-person bi-person-fill");
+        $.ajax({
+            type:'POST',
+            url:'../profili.php',
+            data: 'unsetFromAjax=' + true
+        });
+        sessionStorage.removeItem("load-search-profile-view");
+        sessionStorage.removeItem("id-search-view");
         $("#load").load('./profilo.php', eventiProfilo());
     }
 });

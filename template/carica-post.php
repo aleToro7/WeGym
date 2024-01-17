@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col" name="profile-img">
                 <img class="profile-img-container-upload" id="img-profile-upload-post" src="<?php 
-                    if($templateParams["imgProfilo"]!='') {
-                        echo $templateParams["imgProfilo"];
+                    if(isset($_SESSION["imgProfilo"])) {
+                        echo $_SESSION["imgProfilo"];
                     }else {
                         echo "../altro/img_avatar.png";
                     }
                 ?>"/>
-                <span class="usrname" id="usrname"><?php echo $templateParams["username"];?></span><br>
+                <span class="usrname" id="usrname"><?php echo $_SESSION["username"];?></span><br>
             </div>
         </div>
         <div class="row">
