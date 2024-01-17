@@ -3,7 +3,7 @@ function eventiProfilo() {
         setInterval(function(){
             loadNewNotifications();
         }, 5000);
-        
+
         $(document).ready(function () {
             if(sessionStorage.getItem("load-profile-view")!=null) {
                 if(sessionStorage.getItem("id-view")!="#lista-post") {
@@ -15,7 +15,6 @@ function eventiProfilo() {
                             url:'../cercaPost.php',
                             data: 'ottieniPostLike=' + true,
                             success: function(data) {
-                    
                             },
                             error: function() { }
                         });
@@ -33,7 +32,6 @@ function eventiProfilo() {
                             url:'../cercaPost.php',
                             data: 'ottieniPostProfilo=' + true,
                             success: function(data) {
-                    
                             },
                             error: function() { }
                         });
@@ -43,7 +41,6 @@ function eventiProfilo() {
                             url:'../cercaPost.php',
                             data: 'ottieniPostLike=' + true,
                             success: function(data) {
-                    
                             },
                             error: function() { }
                         });
@@ -58,7 +55,6 @@ function eventiProfilo() {
                     url:'../cercaPost.php',
                     data: 'ottieniPostProfilo=' + true,
                     success: function(data) {
-            
                     },
                     error: function() { }
                 });
