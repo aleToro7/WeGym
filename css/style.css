@@ -451,11 +451,11 @@
 
 
 .filter-dark-grey{
-    filter: invert(14%) sepia(1%) saturate(0%) hue-rotate(317deg) brightness(96%) contrast(102%);
+    filter: invert(17%) sepia(74%) saturate(0%) hue-rotate(217deg) brightness(62%) contrast(94%);
 }
 
 .filter-grey{
-    filter: invert(84%) sepia(0%) saturate(0%) hue-rotate(220deg) brightness(82%) contrast(86%);
+    filter: invert(76%) sepia(65%) saturate(1%) hue-rotate(314deg) brightness(118%) contrast(98%);
 }
 
 .barrell {
