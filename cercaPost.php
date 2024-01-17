@@ -8,6 +8,9 @@ if(isset($_POST["ottieniPostProfilo"])){
         $_SESSION["location"] = "profilo";
     }
 
+}else if(isset($_POST["ottieniPostMioProfilo"])){
+    $_SESSION["location"] = "profilo";
+    
 }else if(isset($_POST["ottieniPostLike"])){
     $_SESSION["location"] = "like";
 

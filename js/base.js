@@ -47,7 +47,7 @@ $("#nav-profile").click(function(){
     $.ajax({
         type:'POST',
         url:'../cercaPost.php',
-        data: 'ottieniPostProfilo=' + true
+        data: 'ottieniPostMioProfilo=' + true
     });
     if($("#profile").hasClass("bi-person")) {
         $("#profile").toggleClass("bi-person bi-person-fill");
