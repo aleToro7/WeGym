@@ -116,7 +116,7 @@ function loadNewNotifications() {
                     novita=true;
                     count++;
                 }
-                $("#loadNotifications").append("<div class='notification-container' id='"+id+"'><img class='profile-img-container-post' id='img-profile-notification' src='"+img+"'/>"+testo+"<span class='"+attr+"'></span></div>");
+                $("#loadNotifications").append("<div class='notification-container' id='"+id+"'><img class='profile-img-container-post' id='img-profile-notification' src='"+img+"'/> &nbsp&nbsp"+testo+"<span class='"+attr+"'></span></div>");
                 $("#"+CSS.escape(id)).click(function(){
                     let idCercato = this.id.split("-")[1];
                     let idNotifica = this.id.split("-")[2];

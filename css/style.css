@@ -121,12 +121,13 @@
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     background-color: #636363;
+    color: #E0E0E0;
     border: none;
     outline: none;
     width: 96%;
     display: block;
     margin: 12px auto;
-    padding: 11px 20px;
+    padding: 6px 0px 0px 25px;
     cursor: pointer;
     position: relative;
 }
@@ -413,6 +414,10 @@
     background-color: #31B294;
 }
 
+.counter-text {
+    font-size: 15px;
+}
+
 .bio-title {
     font-weight: bold;
     font-size: x-large;
@@ -623,7 +628,6 @@ div > i {
     width: 100px;
     height: 100px;
     overflow: hidden;
-    margin-left: 10%;
 }
 
 .preview-post-image {
@@ -715,6 +719,7 @@ div[name="stats"] {
     .profile-img-container {
         width: 150px;
         height: 150px;
+        margin-left: 10%;
     }
 
     .logout-button {
@@ -737,6 +742,10 @@ div[name="stats"] {
         position: relative;
         left: 3%;
         top: 25px;
+    }
+
+    .counter-text {
+        font-size: 20px;
     }
 
     .bio-title{

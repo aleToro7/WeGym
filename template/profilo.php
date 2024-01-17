@@ -22,19 +22,26 @@
             </div>
             <div class="col-1 counter" name="stats">
                 <span id="posts"><?php echo $templateParams["posts"];?></span><br>
-                <span>Post</span>
+                <span class="counter-text">Post</span>
             </div>
-            <div class="col-2">
+            <div class="col-1">
+                <p></p>
+            </div>
+            <div class="col-1 counter" name="stats">
+                <span id="follow"><?php echo $templateParams["follow"];?></span><br>
+                <span class="counter-text">Seguiti</span>
+            </div>
+            <div class="col-1">
                 <p></p>
             </div>
             <div class="col-1 counter" name="stats">
                 <span id="follower"><?php echo $templateParams["follower"];?></span><br>
-                <span>Follower</span>
+                <span class="counter-text">Follower</span>
             </div>
-            <div class="col-2">
+            <div class="col-1">
                 <p></p>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <img class="profile-img-container" id="img-profile" src="<?php 
                     if($templateParams["imgProfilo"]!='') {
                         echo $templateParams["imgProfilo"];
