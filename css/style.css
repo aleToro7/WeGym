@@ -6,6 +6,29 @@
     padding-bottom: 70px;
 }
 
+.bottom-pad-commenti {
+    padding-bottom: 140px;
+}
+
+.container-commenti {
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    margin-top: 3%;
+    background-color: #636363;
+}
+
+.comment-container {
+    margin-left: 20px; /* Modifica questo valore secondo le tue esigenze */
+}
+
+.testo-commento {
+    color: #E0E0E0;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+
 .child {
     position: absolute;
     top: 50%;
@@ -81,7 +104,7 @@
     color:#E0E0E0;
     border: none;
     outline: none;
-    width: 80%;
+    width: 92%;
     display: block;
     height: 40px;
     padding-top: 7px;
@@ -95,7 +118,7 @@
     position: absolute;
     margin-bottom: 87px;
     cursor: pointer;
-    margin-left: 84%;
+    margin-left: 88%;
 }
 
 .focus-cerca {
@@ -443,6 +466,7 @@
     right:20px; 
 }
 
+
 .biobio{
     font-size: medium;
 }
@@ -777,7 +801,7 @@ div[name="stats"] {
     }
 
     .invia {
-        margin-left: 87%;
+        margin-left: 92%;
     }
     
 }
@@ -801,6 +825,6 @@ div[name="stats"] {
     }
 
     .invia {
-        margin-left: 88.5%;
+        margin-left: 94%;
     }
 }
