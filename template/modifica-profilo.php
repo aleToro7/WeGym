@@ -45,7 +45,7 @@
     <div class="row">
         <div class="col d-flex justify-content-center">
             <span class="text input-label">Biografia</span>
-            <textarea class="campo"  name="newBio" id="newBio" rows="5" required><?php echo $templateParams["biografia"];?></textarea>
+            <textarea class="campo" name="newBio" id="newBio" rows="5" required><?php echo $templateParams["biografia"];?></textarea>
         </div>
     </div>
     <div class="row">

@@ -183,7 +183,7 @@ class DatabaseHelper{
     }
 
     public function getFollowingPost($idUtente) {
-        $query = "SELECT u.imgProfilo, p.idUtente, p.testo, p.img FROM post p, utente u WHERE p.idUtente IN (SELECT idUtenteSeguito FROM segue WHERE idUtenteSeguente=?)
+        $query = "SELECT u.imgProfilo, p.idUtente, p.idPost, p.testo, p.img FROM post p, utente u WHERE p.idUtente IN (SELECT idUtenteSeguito FROM segue WHERE idUtenteSeguente=?)
         AND u.nomeUtente=p.idUtente ORDER BY idPost DESC";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s', $idUtente);
@@ -194,7 +194,7 @@ class DatabaseHelper{
     }
 
     public function getLikedPost($idUtente) {
-        $query = "SELECT uu.imgProfilo, p.idUtente, p.testo, p.img FROM post p, utente u, utente uu WHERE p.idPost IN (SELECT idPost FROM mipiace WHERE idUtente=?)
+        $query = "SELECT uu.imgProfilo, p.idUtente, p.idPost, p.testo, p.img FROM post p, utente u, utente uu WHERE p.idPost IN (SELECT idPost FROM mipiace WHERE idUtente=?)
         AND u.nomeUtente=? AND uu.nomeUtente = p.idUtente ORDER BY idPost DESC";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ss', $idUtente, $idUtente);
@@ -204,5 +204,12 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function inserisciCommento($testo, $idUtente, $idPost) {
+        $query = "INSERT INTO commento (testo, idUtente, idPost) VALUES (?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssi', $testo, $idUtente, $idPost);
+        $stmt->execute();
+        return $stmt->error;
+    }
 
 }

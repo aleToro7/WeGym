@@ -73,6 +73,31 @@
     padding-left: 22px;
 }
 
+.commenta {
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    background-color: #636363;
+    color:#E0E0E0;
+    border: none;
+    outline: none;
+    width: 80%;
+    display: block;
+    height: 40px;
+    padding-top: 7px;
+    padding-left: 22px;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+.invia {
+    color: #E0E0E0;
+    position: absolute;
+    margin-bottom: 87px;
+    cursor: pointer;
+    margin-left: 84%;
+}
+
 .focus-cerca {
     border-radius: 15px 15px 0 0;
     -moz-border-radius: 15px 15px 0 0;
@@ -707,6 +732,10 @@ div[name="stats"] {
     .green-post {
         width: 97%;
     }
+
+    .invia {
+        margin-left: 87%;
+    }
     
 }
 
@@ -726,5 +755,9 @@ div[name="stats"] {
 
     .input-file-label {
         margin: 1% 8px;
+    }
+
+    .invia {
+        margin-left: 88.5%;
     }
 }

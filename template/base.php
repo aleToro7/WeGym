@@ -41,4 +41,5 @@
 <script src="../js/modifica-profilo.js"></script>
 <script src="../js/lista-post.js"></script>
 <script src="../js/lista-notifiche.js"></script>
+<script src="../js/commenti.js"></script>
 </html>

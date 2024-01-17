@@ -43,6 +43,8 @@ function eventiHomePage(){
                 url:'../cercaPost.php',
                 data: 'ottieniPostHome=' + true,
             });
+            $("#load-posts").empty();
+            $("#load-posts").load('./lista-post.php', eventiListaPost());
         });
 
         $(".user-list").on('click', '.search-result', function() {
