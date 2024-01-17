@@ -409,6 +409,10 @@
     background-color: #31B294;
 }
 
+.counter-text {
+    font-size: 15px;
+}
+
 .bio-title {
     font-weight: bold;
     font-size: x-large;
@@ -619,7 +623,6 @@ div > i {
     width: 100px;
     height: 100px;
     overflow: hidden;
-    margin-left: 10%;
 }
 
 .preview-post-image {
@@ -711,6 +714,7 @@ div[name="stats"] {
     .profile-img-container {
         width: 150px;
         height: 150px;
+        margin-left: 10%;
     }
 
     .logout-button {
@@ -733,6 +737,10 @@ div[name="stats"] {
         position: relative;
         left: 3%;
         top: 25px;
+    }
+
+    .counter-text {
+        font-size: 20px;
     }
 
     .bio-title{
