@@ -20,32 +20,32 @@
     </div>
     <div class="child">
         <form action="#" method="POST" id="form-registrazione">
-            <h1 class="logo">WeGym</h1>
-            <ul>
+            <h1 class="logo-centrato">WeGym</h1>
+            <ul class="less-points">
                 <li>
-                    <input type="text" id="nome" name="nome" placeholder="Nome:"/>
+                    <input type="text" id="nome" name="nome" placeholder="Nome"/>
                 </li>
                 <li>
-                    <input type="text" id="cognome" name="cognome" placeholder="Cognome:"/>
+                    <input type="text" id="cognome" name="cognome" placeholder="Cognome"/>
                 </li>
                 <li>
                     <input type="date" id="dataNascita" name="dataNascita"/>
                 </li>
                 <li>
-                    <input class="hide" type="text" id="mail" name="mail" placeholder="Mail:"/>
+                    <input class="hide" type="text" id="mail" name="mail" placeholder="Mail"/>
                     <div class="hide" id="mail-availability-status"></div>
                 </li>
                 <li>
-                    <input class="hide" type="text" id="username" name="username" placeholder="Username:"/>
+                    <input class="hide" type="text" id="username" name="username" placeholder="Username"/>
                     <div class="hide" id="user-availability-status"></div>
                 </li>
                 <li>
-                    <input class="hide" type="password" id="pwd" name="pwd" placeholder="Password:"/>
-                    <i class="hide bi bi-eye-slash" id="showPwd"></i>
+                    <input class="hide" type="password" id="pwd" name="pwd" placeholder="Password"/>
+                    <i class="occhi hide bi bi-eye-slash" id="showPwd"></i>
                 </li>
                 <li>
-                    <input class="hide" type="password" id="confermaPwd" name="confermaPwd" placeholder="Conferma password:"/>
-                    <i class="hide bi bi-eye-slash" id="showConfermaPwd"></i>
+                    <input class="hide" type="password" id="confermaPwd" name="confermaPwd" placeholder="Conferma password"/>
+                    <i class="occhi hide bi bi-eye-slash" id="showConfermaPwd"></i>
                 </li>
                 <li>
                     <button type="button" class="hide" id="indietro">Indietro</button>

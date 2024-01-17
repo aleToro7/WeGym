@@ -5,6 +5,7 @@
             <input class="cerca" id="cerca" name="cerca" type="text"/>
             <div class="user-list"></div>
         </div>
+        <div class="spacing"></div>
     </div>
     <div class="bottom-pad"><?php require_once 'lista-post.php'?></div>
 </div>
