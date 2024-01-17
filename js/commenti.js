@@ -6,7 +6,7 @@ function eventiCommenti(){
                 $.ajax({
                     type:'POST',
                     url:'../commenti.php',
-                    data: {testoCommentoFromAjax: testoCommento, idPostFromAjax: sessionStorage.getItem('idPost')},
+                    data: {testoCommentoFromAjax: testoCommento, idPostFromAjax: sessionStorage.getItem('idPost'), ownerPostFromAjax: sessionStorage.getItem('ownerPost')},
                     success: function(data) {
                         if(data!=''){
                             let dati = JSON.parse(data)[0];

@@ -76,7 +76,6 @@ class DatabaseHelper{
         }else {
             return $stmt->error;
         }
-        
     }
 
     public function nonSeguireUtente($utenteSeguente, $utenteSeguito) {
@@ -130,6 +129,15 @@ class DatabaseHelper{
         $stmt = $this->db->prepare($query);
         $visto = (int)false;
         $stmt->bind_param('siiss', $tipo, $visto, $idPost, $utenteSeguito, $utenteSeguente);
+        $stmt->execute();
+        return $stmt->error;
+    }
+
+    public function removeNotification($tipo, $idPost, $utenteSeguito, $utenteSeguente){
+        $query = "DELETE FROM notifica WHERE tipo=? AND idPost=? AND idUtenteSeguito=? AND idUtenteSeguente=?";
+        $stmt = $this->db->prepare($query);
+        $visto = (int)false;
+        $stmt->bind_param('siss', $tipo, $idPost, $utenteSeguito, $utenteSeguente);
         $stmt->execute();
         return $stmt->error;
     }
@@ -225,28 +233,40 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function inserisciCommento($testo, $idUtente, $idPost) {
+    public function inserisciCommento($testo, $idUtente, $idPost, $ownerPost) {
         $query = "INSERT INTO commento (testo, idUtente, idPost) VALUES (?, ?, ?)";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssi', $testo, $idUtente, $idPost);
         $stmt->execute();
-        return $stmt->error;
+        if(empty($stmt->error)){
+            return $this->addNotification('commento', $idPost, $ownerPost, $idUtente);
+        }else {
+            return $stmt->error;
+        }
     }
 
-    public function mettiLike($idUtente, $idPost){
+    public function mettiLike($idUtente, $idPost, $ownerPost){
         $query = "INSERT INTO mipiace (idUtente, idPost) VALUES (?, ?)";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('si', $idUtente, $idPost);
         $stmt->execute();
-        return $stmt->error;
+        if(empty($stmt->error)){
+            return $this->addNotification('like', $idPost, $ownerPost, $idUtente);
+        }else {
+            return $stmt->error;
+        }
     }
 
-    public function togliLike($idUtente, $idPost){
+    public function togliLike($idUtente, $idPost, $ownerPost){
         $query = "DELETE FROM mipiace WHERE idUtente=? AND idPost=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('si', $idUtente, $idPost);
         $stmt->execute();
-        return $stmt->error;
+        if(empty($stmt->error)){
+            return $this->removeNotification('like', $idPost, $ownerPost, $idUtente);
+        }else {
+            return $stmt->error;
+        }
     }
 
     public function getComments($idPost) {
