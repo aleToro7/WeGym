@@ -24,6 +24,7 @@ $("#login").click(function(){
                 window.location.replace("./base.php");
             }else {
                 $("#login-error").html(data);
+                $('#login-error').addClass("border-error-container");
             }
         },
         error: function() {}

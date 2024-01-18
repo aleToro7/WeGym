@@ -24,7 +24,6 @@
         <div class="row">
             <div>
                 <h1 class="logo-centrato">WeGym</h1>
-                
                 <ul class="less-points">
                     <li>
                         <input type="text" id="username" name="username" placeholder="Username"/>
@@ -33,7 +32,9 @@
                         <input type="password" id="password" name="password" placeholder="Password"/>
                         <i class="occhio bi bi-eye-slash" id="showPassword"></i>
                     </li>
-                    <div id="login-error"></div>
+                    <li class="max-errore">
+                        <div class="container error-container" id="login-error"></div>
+                    </li>
                     <li>
                         <button class="btn-login" type="button" id="login" name="login">Login</button>
                     </li>

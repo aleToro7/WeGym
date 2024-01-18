@@ -612,6 +612,10 @@ ul li input {
     border: 1px solid #31B294;
 }
 
+.max-errore {
+    max-width: 200px;;
+}
+
 ul li input:focus {
     color: #E0E0E0
 }

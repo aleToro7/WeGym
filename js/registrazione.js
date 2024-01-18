@@ -15,10 +15,10 @@ $("#username").keyup(function() {
             success: function(data) {
                 $("#user-availability-status").html(data);
                 $("#user-availability-status").addClass("border-error-container");
-                if(data == "Username available"){
+                if(data == "Username disponibile"){
                     $("#username").removeClass("border border-2 border-danger");
                     $("#username").addClass("border border-2 border-success");
-                }else if(data == "Username not available" || $("#username").val() == ""){
+                }else if(data == "Username non disponibile" || $("#username").val() == ""){
                     $("#username").removeClass("border border-2 border-success");
                     $("#username").addClass("border border-2 border-danger");
                 }
@@ -27,7 +27,7 @@ $("#username").keyup(function() {
         });
     }else if(username.length == 0){
         $("#user-availability-status").html("");
-        $("#user-availability-status").addClass("border-error-container");
+        $("#user-availability-status").removeClass("border-error-container");
         $("#username").removeClass("border border-2 border-danger");
     }else{
         $("#user-availability-status").html("Il nome utente deve avere un numero di caratteri compreso tra 4 e 25");
@@ -47,10 +47,10 @@ $("#mail").focusout(function() {
             success: function(data) {
                 $("#mail-availability-status").html(data);
                 $("#mail-availability-status").addClass("border-error-container");
-                if(data == "Mail available"){
+                if(data == "Mail disponibile"){
                     $("#mail").removeClass("border border-2 border-danger");
                     $("#mail").addClass("border border-2 border-success");
-                }else if(data == "Mail not available" || $("#mail").val() == ""){
+                }else if(data == "Mail non disponibile" || $("#mail").val() == ""){
                     $("#mail").removeClass("border border-2 border-success");
                     $("#mail").addClass("border border-2 border-danger");
                 }

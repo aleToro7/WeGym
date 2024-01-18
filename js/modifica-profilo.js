@@ -37,12 +37,14 @@ function eventiModificaProfilo() {
             if(passwordIsValid($("#newPassword").val())) {
                 $("#newPassword").removeClass("border border-2 border-danger");
                 $("#newPassword").addClass("border border-2 border-success");
+                $("#newPasswordStatus").removeClass("border-error-container");
                 $("#newPasswordStatus").html('');
                 
             }else {
                 $("#newPassword").removeClass("border border-2 border-success");
                 $("#newPassword").addClass("border border-2 border-danger");
-                $("#newPasswordStatus").html('La password deve contenere almeno 8 caratteri di almeno: una lettera minuscola, una lettera maiuscola, un numero e un carattere speciale (@$!%*?&)');
+                $("#newPasswordStatus").addClass("border-error-container");
+                $("#newPasswordStatus").html('La password deve contenere almeno 8 caratteri di almeno: una lettera minuscola, una lettera maiuscola, un numero e un carattere speciale (@$!%*?&) &nbsp&nbsp');
             }
             manageBtnAggiornaPsw();
         });
