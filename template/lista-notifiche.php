@@ -1,1 +1,1 @@
-<div class="" id="loadNotifications"></div>
+<div class="container" id="loadNotifications"></div>
