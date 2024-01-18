@@ -33,16 +33,22 @@
                 </li>
                 <li>
                     <input class="hide" type="text" id="mail" name="mail" placeholder="Mail"/>
-                    <div class="hide" id="mail-availability-status"></div>
+                </li>
+                <li>
+                    <div class="container error-container hide" id="mail-availability-status"></div>
                 </li>
                 <li>
                     <input class="hide" type="text" id="username" name="username" placeholder="Username"/>
-                    <div class="hide" id="user-availability-status"></div>
+                </li>
+                <li>
+                    <div class="container error-container hide" id="user-availability-status"></div>
                 </li>
                 <li>
                     <input class="hide" type="password" id="pwd" name="pwd" placeholder="Password"/>
                     <i class="occhi hide bi bi-eye-slash" id="showPwd"></i>
-                    <span id="pwdStatus"></span>
+                </li>
+                <li>
+                    <div class="container error-container hide" id="pwdStatus"></div>
                 </li>
                 <li>
                     <input class="hide" type="password" id="confermaPwd" name="confermaPwd" placeholder="Conferma password"/>
