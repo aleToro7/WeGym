@@ -101,26 +101,27 @@ function loadNewNotifications() {
             $("#loadNotifications").empty();
             notifications.forEach(notification => {
                 let id = notification['tipo']+"-"+notification['idUtenteSeguente']+"-"+notification['idNotifica'];
-                let img, testo, attr='';
-                
+                let img, utente, testo, attr='';
+                utente = testo = notification['idUtenteSeguente'];
+
                 if(notification['imgProfilo']!= null) {
                     img = notification['imgProfilo']
                 }else {
                     img = "../altro/img_avatar.png";
                 }
                 if(notification['tipo'] == 'follow') {
-                    testo = notification['idUtenteSeguente'] + " ha iniziato a seguirti";
+                    testo = "ha iniziato a seguirti";
                 }else if(notification['tipo'] == 'like') {
-                    testo = notification['idUtenteSeguente'] + " ha messo like a un tuo post";
+                    testo = "ha messo like ad un tuo post";
                 }else {
-                    testo = notification['idUtenteSeguente'] + " ha commentato a un tuo post";
+                    testo = "ha commentato un tuo post";
                 }
                 if(notification['visto']==0){
                     attr='new';
                     novita=true;
                     count++;
                 }
-                $("#loadNotifications").append("<div class='notification-container' id='"+id+"'><img class='profile-img-container-post' id='img-profile-notification' src='"+img+"'/> &nbsp&nbsp"+testo+"<span class='"+attr+"'></span></div>");
+                $("#loadNotifications").append("<div class='notification-container' id='"+id+"'><div calss='row'><div calss='col'><img class='profile-img-container-post' id='img-profile-notification' src='"+img+"'/><span class='usrname'>"+utente+"</span></diV></diV><div calss='row'><span class='notification-text'>"+testo+"</span></diV><div class='row'><p> </p></div><span class='"+attr+"'></span></div>");
                 $("#"+CSS.escape(id)).click(function(){
                     let idCercato = this.id.split("-")[1];
                     let idNotifica = this.id.split("-")[2];
