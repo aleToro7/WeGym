@@ -156,14 +156,24 @@ function eventiModificaProfilo() {
 
         let username = $("#newUsername").val();
         let biografia = $("#newBio").val();
+        let frequenza = $("#frequenzaAllenamenti").val();
+        let obbiettivo = $("#obbiettivo").val();
+        let esercizioPreferito = $("#esercizioPreferito").val();
+        let muscoloPreferito = $("#muscoloPreferito").val();
+        let alimentoPreferito = $("#alimentoPreferito").val();
 
         $("#salva").click(function(){
             username = $("#newUsername").val();
             biografia = $("#newBio").val();
+            frequenza = $("#frequenzaAllenamenti").val();
+            obbiettivo = $("#obbiettivo").val();
+            esercizioPreferito = $("#esercizioPreferito").val();
+            muscoloPreferito = $("#muscoloPreferito").val();
+            alimentoPreferito = $("#alimentoPreferito").val();
             $.ajax({
                 type: "POST",
                 url: "../modificaProfilo.php",
-                data: {usernameFromAjax: username, biografiaFromAjax: biografia},
+                data: {usernameFromAjax: username, biografiaFromAjax: biografia, frequenzaFromAjax: frequenza, obbiettivoFromAjax: obbiettivo, esercizioPreferitoFromAjax: esercizioPreferito, muscoloPreferitoFromAjax: muscoloPreferito, alimentoPreferitoFromAjax: alimentoPreferito},
                 success: function(data) {
                     if(data == "ok") {
                         $("#salva").attr('disabled','disabled');
@@ -204,8 +214,18 @@ function eventiModificaProfilo() {
             manageBtnSalva();
         });
 
+        $("#frequenzaAllenamenti").change(function(){
+            manageBtnSalva();
+        });
+
+        $('input').each(function(){
+            $(this).keyup(function(){
+                manageBtnSalva();
+            });
+        })
+
         function manageBtnSalva() {
-            if((!$("#newUsername").hasClass("border-danger") && $("#newUsername").val() != username) || (!$("#newUsername").hasClass("border-danger") && $("#newBio").val() != biografia)) {
+            if((!$("#newUsername").hasClass("border-danger") && $("#newUsername").val() != username) || (!$("#newUsername").hasClass("border-danger") && $("#newBio").val() != biografia) || ($("#frequenzaAllenamenti").val()!=frequenza) || ($("#obbiettivo").val()!=obbiettivo) || ($("#esercizioPreferito").val()!=esercizioPreferito) || ($("#muscoloPreferito").val()!=muscoloPreferito) || ($("#alimentoPreferito").val()!=alimentoPreferito)) {
                 $("#salva").removeAttr("disabled");
             }else {
                 $("#salva").attr('disabled','disabled');

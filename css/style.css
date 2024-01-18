@@ -19,6 +19,17 @@
     min-height: 82vh;
 }
 
+.container-modifica-profilo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.flexible-div {
+    max-width: 100%;
+}
+
 .comment-container {
     margin-left: 30px;
 }
@@ -485,6 +496,10 @@
     font-size: medium;
 }
 
+.modifica-bio {
+    margin-left: 35px;
+}
+
 .logout-button {
     float: right;
     font-size: x-large;
@@ -496,7 +511,6 @@
     cursor: pointer;
     color: #299279;
 }
-
 
 .filter-dark-grey{
     filter: invert(17%) sepia(74%) saturate(0%) hue-rotate(217deg) brightness(62%) contrast(94%);
