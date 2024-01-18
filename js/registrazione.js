@@ -94,10 +94,18 @@ $('#showConfermaPwd').click(function(){
     }
 });
 
-$("#backLogin").click(function(){
-    
+$("#pwd").keyup(function(){
+    if(passwordIsValid($("#pwd").val())) {
+        $("#pwd").removeClass("border border-2 border-danger");
+        $("#pwd").addClass("border border-2 border-success");
+        $("#pwdStatus").html('');
+        
+    }else {
+        $("#pwd").removeClass("border border-2 border-success");
+        $("#pwd").addClass("border border-2 border-danger");
+        $("#pwdStatus").html('La password deve contenere almeno 8 caratteri di almeno: una lettera minuscola, una lettera maiuscola, un numero e un carattere speciale (@$!%*?&)');
+    }
 });
-
 
 function manageBtnContinua() {
     if($("#nome").val() != "" && $("#cognome").val() != "" && $("#dataNascita").val() != ""){
@@ -108,7 +116,7 @@ function manageBtnContinua() {
 }
 
 function manageBtnRegistrati() {
-    if($("#mail").hasClass("border-success") && $("#username").hasClass("border-success") && $("#pwd").val() != "" && $("#confermaPwd").val() != "" && $("#pwd").val() == $("#confermaPwd").val()) {
+    if($("#mail").hasClass("border-success") && $("#username").hasClass("border-success") && $("#pwd").hasClass("border-success") && $("#confermaPwd").val() != "" && $("#pwd").val() == $("#confermaPwd").val()) {
         $("#registrati").removeAttr("disabled");
     }else{
         $("#registrati").attr('disabled','disabled');
@@ -118,4 +126,9 @@ function manageBtnRegistrati() {
 function emailIsValid(email) {
     let regex_email_valida = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex_email_valida.test(email);
+}
+
+function passwordIsValid(password) {
+    let regex_password_valida = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return regex_password_valida.test(password);
 }
