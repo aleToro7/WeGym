@@ -4,7 +4,7 @@
         foreach($templateParams["myinfo"] as $myinfo){
         ?>
             <div class="info-container">
-                <img class="my-info-profilo" src="../altro/myinfo-gray.png" alt="MyInfo">
+                <img class="my-info-profilo" src="../altro/myinfo.png" alt="MyInfo">
                 <div class="row">
                     <div>
                         <ul class="less-points">

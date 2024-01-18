@@ -23,7 +23,7 @@
     <form action="#" method="POST">
         <div class="row">
             <div>
-                <h1 class="logo-centrato">WeGym</h1>
+                <img class="logo" src="../altro/wegym.png" alt="WeGym">
                 <ul class="less-points">
                     <li>
                         <input type="text" id="username" name="username" placeholder="Username"/>
