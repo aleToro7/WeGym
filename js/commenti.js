@@ -20,6 +20,8 @@ function eventiCommenti(){
                 $("#load").empty();
                 $("#load").load('./lista-post.php', eventiListaPost());
             }else {
+                $("#home").removeClass("bi-house-door-fill");
+                $("#home").addClass("bi-house-door");
                 $("#profile").removeClass("bi-person");
                 $("#profile").addClass("bi-person-fill");
                 $("#load").empty();
