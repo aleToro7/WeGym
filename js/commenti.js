@@ -10,8 +10,8 @@ function eventiCommenti(){
                     success: function(data) {
                         if(data!=''){
                             let dati = JSON.parse(data)[0];
-                            if(dati["imgProfilo"]=='') dati["imgProfilo"]="../altro/img_avatar.png";
-                            $("#load-new-comment").prepend('<div class="row"><div class="col"><img class="profile-img-container-post" id="img-profile-comment" src="'+dati["imgProfilo"]+'"/><span class="usrname" id="usrnameCommento">'+dati["nomeUtente"]+'</span><br><span class="bio" id="testoComento">'+testoCommento+'</span></div></div>');
+                            if(dati["imgProfilo"]== null) dati["imgProfilo"]="../altro/img_avatar.png";
+                            $("#load-new-comment").prepend('<div class="comment-container nuovo-commento"><div class="row"><div class="col"><img class="profile-img-container-post" id="img-profile-comment" src="'+dati["imgProfilo"]+'"/><span class="usrname" id="usrnameCommento">'+dati["nomeUtente"]+'</span><br><span class="testo-commento " id="testoComento">'+testoCommento+'</span></div></div></div>');
                             $("#commento").val('');
                         }
                     }
