@@ -132,6 +132,14 @@ class DatabaseHelper{
         return $stmt->error;
     }
 
+    public function getMyInfo($usernameCercato) {
+        $query = "SELECT frequenzaAllenamenti, obbiettivo, esercizioPreferito, muscoloPreferito, alimentoPreferit WHERE nomeUtente=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $usernameCercato);
+        $stmt->execute();
+        return $stmt->error;
+    }
+
     public function addNotification($tipo, $idPost, $utenteSeguito, $utenteSeguente){
         $query = "INSERT INTO notifica (tipo, visto, idPost, idUtenteSeguito, idUtenteSeguente) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->db->prepare($query);
