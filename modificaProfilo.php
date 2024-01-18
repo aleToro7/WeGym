@@ -22,7 +22,7 @@ if(isset($_POST['usernameFromAjax']) && isset($_POST['biografiaFromAjax'])){
     $muscoloPreferito = $_POST['muscoloPreferitoFromAjax'];
     $alimentoPreferito = $_POST['alimentoPreferitoFromAjax'];
 
-    $error = $dbh->updateInfo($newUsername, $newBiografia, $_SESSION['username'], $frequenza, $obbiettivo, $esercizioPreferito, $muscoloPreferito, $alimentoPreferito);
+    $error = $dbh->updateInfo($newUsername, $newBiografia, $frequenza, $obbiettivo, $esercizioPreferito, $muscoloPreferito, $alimentoPreferito, $_SESSION['username']);
     if($error==''){
         $_SESSION["username"] = $newUsername;
         $_SESSION["biografia"] = $newBiografia;
