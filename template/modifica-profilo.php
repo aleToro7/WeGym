@@ -31,17 +31,32 @@
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center">
+            <span class="hide text input-label" id="oldPasswordLabel">Vecchia password</span>
+            <input type="password" class="hide campo" name="oldPassword" id="oldPassword">
+            <i class="hide occhio bi bi-eye-slash" id="oldPasswordEye"></i>
+        </div>
+        <div class="row"><span class="hide" id="oldPasswordStatus"></span></div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <span class="hide text input-label" id="newPasswordLabel">Nuova password</span>
+            <input type="password" class="hide campo" name="newPassword" id="newPassword">
+            <i class="hide occhio bi bi-eye-slash" id="newPasswordEye"></i>
+        </div>
+        <div class="row"><span class="hide" id="newPasswordStatus"></span></div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <button type="button" id="newPasswordUpdateBtn" class="hide button" disabled>Aggiorna password</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
             <span class="text input-label">Nome utente</span>
             <input type="text" class="campo" name="newUsername" id="newUsername" value="<?php echo $templateParams["username"];?>">
         </div>
         <br><div class="text d-flex justify-content-center" id="new-user-availability-status"></div>
-    </div>
-    <div class="row">
-        <div class="col hide">
-            <span class="text input-label">Nuova password</span>
-            <input type="text" class="campo" name="newPassword" id="newPassword">
-        </div>
-    </div>    
+    </div>  
     <div class="row">
         <div class="col d-flex justify-content-center">
             <span class="text input-label">Biografia</span>
@@ -53,7 +68,7 @@
             <button type="button" id="salva" class="button" disabled>Salva</button>
         </div>
     </div>
-
+    
     <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content" style="background-color: #373737">

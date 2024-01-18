@@ -15,22 +15,22 @@ $("#username").keyup(function() {
             success: function(data) {
                 $("#user-availability-status").html(data);
                 if(data == "Username available"){
-                    $("#username").removeClass("border border-3 border-danger");
-                    $("#username").addClass("border border-3 border-success");
+                    $("#username").removeClass("border border-2 border-danger");
+                    $("#username").addClass("border border-2 border-success");
                 }else if(data == "Username not available" || $("#username").val() == ""){
-                    $("#username").removeClass("border border-3 border-success");
-                    $("#username").addClass("border border-3 border-danger");
+                    $("#username").removeClass("border border-2 border-success");
+                    $("#username").addClass("border border-2 border-danger");
                 }
             },
             error: function() { }
         });
     }else if(username.length == 0){
         $("#user-availability-status").html("");
-        $("#username").removeClass("border border-3 border-danger");
+        $("#username").removeClass("border border-2 border-danger");
     }else{
         $("#user-availability-status").html("Il nome utente deve avere un numero di caratteri compreso tra 4 e 25");
-        $("#username").removeClass("border border-3 border-success");
-        $("#username").addClass("border border-3 border-danger");
+        $("#username").removeClass("border border-2 border-success");
+        $("#username").addClass("border border-2 border-danger");
     }
 });
 
@@ -44,19 +44,19 @@ $("#mail").focusout(function() {
             success: function(data) {
                 $("#mail-availability-status").html(data);
                 if(data == "Mail available"){
-                    $("#mail").removeClass("border border-3 border-danger");
-                    $("#mail").addClass("border border-3 border-success");
+                    $("#mail").removeClass("border border-2 border-danger");
+                    $("#mail").addClass("border border-2 border-success");
                 }else if(data == "Mail not available" || $("#mail").val() == ""){
-                    $("#mail").removeClass("border border-3 border-success");
-                    $("#mail").addClass("border border-3 border-danger");
+                    $("#mail").removeClass("border border-2 border-success");
+                    $("#mail").addClass("border border-2 border-danger");
                 }
             },
             error: function() { }
         });
     }else{
         $("#mail-availability-status").html("Formato mail non valido");
-        $("#mail").removeClass("border border-3 border-success");
-        $("#mail").addClass("border border-3 border-danger");
+        $("#mail").removeClass("border border-2 border-success");
+        $("#mail").addClass("border border-2 border-danger");
     }
 });
 

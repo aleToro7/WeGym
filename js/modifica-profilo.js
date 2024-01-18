@@ -1,8 +1,75 @@
 
 function eventiModificaProfilo() {
     waitForEl("#getImage", function() {
+
+        $("#cambiaPassword").click(function(){
+            $('[id*="newPassword"]').toggleClass("hide");
+            $('[id*="oldPassword"]').toggleClass("hide");
+            if($('#newPassword').hasClass("hide")) {
+                $("#cambiaPassword").html('Cambia password');
+            }else {
+                $("#cambiaPassword").html('Annulla');
+            }
+        });
+
+        $("#newPasswordUpdateBtn").click(function(){
+            let oldPsw = $("#oldPassword").val();
+            let newPsw = $("#newPassword").val()
+            $.ajax({
+                type:'POST',
+                url:'../modificaProfilo.php',
+                data: {aggiornaOldPswFromAjax: oldPsw, newPasswordFromAjax: newPsw},
+                success: function(data){
+                    if(data == 'ok') {
+                        $("#newPasswordStatus").html('Password aggiornata con successo');
+                    }else {
+                        $("#newPasswordStatus").html('Password errata');
+                    }
+                }
+            });
+        });
+
+        $("#oldPassword").keyup(function(){
+            manageBtnAggiornaPsw();
+        });
+        
+        $("#newPassword").keyup(function(){
+            if(passwordIsValid($("#newPassword").val())) {
+                $("#newPassword").removeClass("border border-2 border-danger");
+                $("#newPassword").addClass("border border-2 border-success");
+                $("#newPasswordStatus").html('');
+                
+            }else {
+                $("#newPassword").removeClass("border border-2 border-success");
+                $("#newPassword").addClass("border border-2 border-danger");
+                $("#newPasswordStatus").html('La password deve contenere almeno 6 caratteri di almeno: una lettera minuscola, una lettera maiuscola, un numero e un carattere speciale (@$!%*?&#)');
+            }
+            manageBtnAggiornaPsw();
+        });
+
+        $('#oldPasswordEye').click(function(){
+            if($('#oldPassword').attr('type') == 'password') {
+                $('#oldPassword').attr('type', 'text');
+                $('#oldPasswordEye').toggleClass("bi-eye-slash bi-eye");
+            }else {
+                $('#oldPassword').attr('type', 'password');
+                $('#oldPasswordEye').toggleClass("bi-eye bi-eye-slash");
+            }
+        });
+
+        $('#newPasswordEye').click(function(){
+            if($('#newPassword').attr('type') == 'password') {
+                $('#newPassword').attr('type', 'text');
+                $('#newPasswordEye').toggleClass("bi-eye-slash bi-eye");
+            }else {
+                $('#newPassword').attr('type', 'password');
+                $('#newPasswordEye').toggleClass("bi-eye bi-eye-slash");
+            }
+        });
         
         $("#close").click(function(){
+            $('[id*="newPassword"]').addClass("hide");
+            $('[id*="oldPassword"]').addClass("hide");
             $("#load").empty();
             $("#load").load('./profilo.php', eventiProfilo());
         });
@@ -114,33 +181,46 @@ function eventiModificaProfilo() {
                     success: function(data) {
                         $("#new-user-availability-status").html(data);
                         if(data == "Username available"){
-                            $("#newUsername").removeClass("border border-3 border-danger");
-                            $("#newUsername").addClass("border border-3 border-success");
+                            $("#newUsername").removeClass("border border-2 border-danger");
+                            $("#newUsername").addClass("border border-2 border-success");
                             manageBtnSalva();
                         }else if(data == "Username not available" || $("#username").val() == ""){
-                            $("#newUsername").removeClass("border border-3 border-success");
-                            $("#newUsername").addClass("border border-3 border-danger");
+                            $("#newUsername").removeClass("border border-2 border-success");
+                            $("#newUsername").addClass("border border-2 border-danger");
                         }
                     },
                     error: function() { }
                 });
             }else if(newUsername == username){
                 $("#new-user-availability-status").html("");
-                $("#newUsername").removeClass("border border-3 border-danger");
+                $("#newUsername").removeClass("border border-2 border-danger");
             }else{
                 $("#user-availability-status").html("Il nome utente deve avere un numero di caratteri compreso tra 4 e 25");
-                $("#newUsername").removeClass("border border-3 border-success");
-                $("#newUsername").addClass("border border-3 border-danger");
+                $("#newUsername").removeClass("border border-2 border-success");
+                $("#newUsername").addClass("border border-2 border-danger");
             }
             manageBtnSalva();
         });
 
         function manageBtnSalva() {
-            if(($("#newUsername").hasClass("border-success") && $("#newUsername").val() != username) || $("#newBio").val() != biografia) {
+            if((!$("#newUsername").hasClass("border-danger") && $("#newUsername").val() != username) || (!$("#newUsername").hasClass("border-danger") && $("#newBio").val() != biografia)) {
                 $("#salva").removeAttr("disabled");
             }else {
                 $("#salva").attr('disabled','disabled');
             }
+        }
+
+        function manageBtnAggiornaPsw() {
+            if($("#oldPassword").val()!='' && $("#newPassword").hasClass("border-success") && $("#newPassword").val()!=$("#oldPassword").val()) {
+                $("#newPasswordUpdateBtn").removeAttr("disabled");
+            }else {
+                $("#newPasswordUpdateBtn").attr('disabled','disabled');
+            }
+        }
+        
+        function passwordIsValid(password) {
+            let regex_password_valida = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            return regex_password_valida.test(password);
         }
     });
     

@@ -26,4 +26,20 @@ if(isset($_POST['usernameFromAjax']) && isset($_POST['biografiaFromAjax'])){
         echo "errore";
     }
 }
+
+if(isset($_POST['aggiornaOldPswFromAjax']) && isset($_POST['newPasswordFromAjax'])) {
+    $oldPsw = strip_tags(trim($_POST['aggiornaOldPswFromAjax']));
+    $newPsw = strip_tags(trim($_POST['newPasswordFromAjax']));
+    $hash = $dbh->getUser($_SESSION['username'])[0]['password'];
+    if(password_verify($oldPsw, $hash)) {
+        $hash = password_hash($newPsw, PASSWORD_BCRYPT);
+        $err = $dbh->updatePassword($hash, $_SESSION['username']);
+        if(empty($err)) {
+            echo 'ok';
+        }
+    }else {
+        echo "Errore! Password non corretta.";
+    }
+}
+
 ?>

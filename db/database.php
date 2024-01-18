@@ -50,6 +50,14 @@ class DatabaseHelper{
         return $stmt->error;
     }
 
+    public function updatePassword($password, $username) {
+        $query = "UPDATE utente SET password=? WHERE nomeUtente=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss',$password, $username);
+        $stmt->execute();
+        return $stmt->error;
+    }
+
     public function searchUser($username) {
         $query = "SELECT nomeUtente, imgProfilo FROM utente WHERE nomeUtente LIKE '".$username."%' LIMIT 4";
         $stmt = $this->db->prepare($query);
