@@ -65,6 +65,51 @@
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center">
+            <span class="text input-label">Frequenza allenamenti</span>
+            <select class="campo" name="frequenzaAllenamenti" id="frequenzaAllenamenti">
+                <option value="">--scegli frequenza allenamenti--</option>
+                <option value="0">0 a settimana</option>
+                <option value="1">1 a settimana</option>
+                <option value="2">2 a settimana</option>
+                <option value="3">3 a settimana</option>
+                <option value="4">4 a settimana</option>
+                <option value="5">5 a settimana</option>
+                <option value="6">6 a settimana</option>
+                <option value="7">7 a settimana</option>
+            </select>
+        </div>
+        <br><div class="text d-flex justify-content-center" id="new-user-availability-status"></div>
+    </div> 
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <span class="text input-label">Obbiettivo</span>
+            <input type="text" class="campo" name="obbiettivo" id="obbiettivo" value="<?php if(isset($templateParams["obbiettivo"])) echo $templateParams["obbiettivo"];?>">
+        </div>
+        <br><div class="text d-flex justify-content-center" id="new-user-availability-status"></div>
+    </div> 
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <span class="text input-label">Esercizio preferito</span>
+            <input type="text" class="campo" name="esercizioPreferito" id="esercizioPreferito" value="<?php if(isset($templateParams["esercizioPreferito"])) echo $templateParams["esercizioPreferito"];?>">
+        </div>
+        <br><div class="text d-flex justify-content-center" id="new-user-availability-status"></div>
+    </div> 
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <span class="text input-label">Muscolo preferito</span>
+            <input type="text" class="campo" name="muscoloPreferito" id="muscoloPreferito" value="<?php if(isset($templateParams["muscoloPreferito"])) echo $templateParams["muscoloPreferito"];?>">
+        </div>
+        <br><div class="text d-flex justify-content-center" id="new-user-availability-status"></div>
+    </div> 
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <span class="text input-label">Alimento preferito</span>
+            <input type="text" class="campo" name="alimentoPreferito" id="alimentoPreferito" value="<?php if(isset($templateParams["alimentoPreferito"])) echo $templateParams["alimentoPreferito"];?>">
+        </div>
+        <br><div class="text d-flex justify-content-center" id="new-user-availability-status"></div>
+    </div> 
+    <div class="row">
+        <div class="col d-flex justify-content-center">
             <button type="button" id="salva" class="button" disabled>Salva</button>
         </div>
     </div>

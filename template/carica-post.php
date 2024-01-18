@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <br>
         <div class="row">
-            <div class="col" name="profile-img">
+            <div class="col" id="profile-img">
                 <img class="profile-img-container-upload" id="img-profile-upload-post" src="<?php 
                     if(isset($_SESSION["imgProfilo"])) {
                         echo $_SESSION["imgProfilo"];
@@ -34,7 +34,6 @@
     </div>
 </div>
 
-
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" style="background-color: #373737">
@@ -61,6 +60,3 @@
         </div>
     </div>
 </div>
-<?php
-
-?>
