@@ -16,7 +16,7 @@
     -webkit-border-radius: 15px;
     margin-top: 3%;
     background-color: #636363;
-    height: 82vh;
+    min-height: 82vh;
 }
 
 .comment-container {
@@ -29,6 +29,10 @@
     margin-bottom: 10px;
 }
 
+.nuovo-commento{
+    right: 10px;
+    margin-bottom: 10px;
+}
 
 .child {
     position: absolute;
@@ -154,6 +158,10 @@
     padding: 6px 0px 0px 25px;
     cursor: pointer;
     position: relative;
+}
+
+.notification-text{
+    margin: 0px 0px 20px 45px;
 }
 
 .new {

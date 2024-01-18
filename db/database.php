@@ -180,8 +180,9 @@ class DatabaseHelper{
     }
 
     public function post($testo, $img, $idUtente) {
-        $query = "INSERT INTO post (testo, img, idUtente) VALUES ('".$testo."', '".$img."', '".$idUtente."')";
+        $query = "INSERT INTO post (testo, img, idUtente) VALUES (?, '".$img."', ?)";
         $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $testo, $idUtente);
         $stmt->execute();
         return $stmt->error;
     }
