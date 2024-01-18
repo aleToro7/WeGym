@@ -16,10 +16,11 @@
     -webkit-border-radius: 15px;
     margin-top: 3%;
     background-color: #636363;
+    height: 82vh;
 }
 
 .comment-container {
-    margin-left: 20px; /* Modifica questo valore secondo le tue esigenze */
+    margin-left: 20px;
 }
 
 .testo-commento {
