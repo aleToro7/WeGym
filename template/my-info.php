@@ -13,16 +13,20 @@
                                 <span><?php echo $myinfo["frequenzaAllenamenti"]; ?></span>
                             </li>
                             <li>
-                                <span>a</span>
+                                <h6 class="myinfo-text">Il mio obbiettivo: </h6>
                                 <span><?php echo $myinfo["obbiettivo"]; ?></span>
                             </li>
                             <li>
-                                <span></span>
+                                <h6 class="myinfo-text">Il mio esercizio preferito: </h6>
                                 <span><?php echo $myinfo["esercizioPreferito"]; ?></span>
                             </li>
                             <li>
-                                <span></span>
-                                <span></span>
+                                <h6 class="myinfo-text">Il mio muscolo preferito: </h6>
+                                <span><?php echo $myinfo["muscoloPreferito"]; ?></span>
+                            </li>
+                            <li>
+                                <h6 class="myinfo-text">Il alimento preferito: </h6>
+                                <span><?php echo $myinfo["alimentoPreferito"]; ?></span>
                             </li>
                         </ul>
                     </div>
