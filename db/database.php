@@ -209,6 +209,18 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getSinglePost($idUtente, $idPost) {
+        $query = "SELECT u.imgProfilo, p.idUtente, p.idPost, p.testo, p.img, COUNT(DISTINCT m.idMiPiace) AS numMiPiace, COUNT(DISTINCT c.idCommento) AS numCommenti FROM
+        utente u JOIN post p ON u.nomeUtente = p.idUtente LEFT JOIN mipiace m ON p.idPost = m.idPost LEFT JOIN commento c ON p.idPost = c.idPost WHERE u.nomeUtente = ? 
+        AND p.idPost = ? GROUP BY u.nomeUtente, u.imgProfilo, p.idPost, p.testo, p.img ORDER BY p.idPost DESC";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si', $idUtente, $idPost);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getFollowingPost($idUtente) {
         $query = "SELECT u.imgProfilo, p.idUtente, p.idPost, p.testo, p.img, CASE WHEN m.idUtente IS NOT NULL THEN TRUE ELSE FALSE END AS messoLike FROM post p JOIN utente u ON u.nomeUtente = p.idUtente 
         LEFT JOIN mipiace m ON p.idPost = m.idPost AND m.idUtente = ? WHERE p.idUtente IN (SELECT idUtenteSeguito FROM segue WHERE idUtenteSeguente = ?) ORDER BY p.idPost DESC";
