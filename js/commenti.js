@@ -17,13 +17,13 @@ function eventiCommenti(){
                 $("#load").empty();
                 $("#load").load('./home-page.php', eventiHomePage());
             }else if(sessionStorage.getItem('locationCommento') == 'singlePost') {
-                $("#load").empty();
-                $("#load").load('./lista-post.php', eventiListaPost());
-            }else {
                 $("#home").removeClass("bi-house-door-fill");
                 $("#home").addClass("bi-house-door");
                 $("#profile").removeClass("bi-person");
                 $("#profile").addClass("bi-person-fill");
+                $("#load").empty();
+                $("#load").load('./lista-post.php', eventiListaPost());
+            }else {
                 $("#load").empty();
                 $("#load").load('./profilo.php', eventiProfilo());
             }
