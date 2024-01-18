@@ -43,7 +43,11 @@
             <input type="password" class="hide campo" name="newPassword" id="newPassword">
             <i class="hide occhio bi bi-eye-slash" id="newPasswordEye"></i>
         </div>
-        <div class="row"><span class="hide" id="newPasswordStatus"></span></div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <div class="max-errore error-container hide" id="newPasswordStatus"></div>
+        </div>
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center">

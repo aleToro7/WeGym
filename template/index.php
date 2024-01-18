@@ -32,7 +32,7 @@
                         <input type="password" id="password" name="password" placeholder="Password"/>
                         <i class="occhio bi bi-eye-slash" id="showPassword"></i>
                     </li>
-                    <li>
+                    <li class="max-errore">
                         <div class="container error-container" id="login-error"></div>
                     </li>
                     <li>

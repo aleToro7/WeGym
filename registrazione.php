@@ -32,9 +32,9 @@ if(isset($_POST["registrati"])) {
       }else{
          $already_taken = $dbh->checkUserName($username);
          if (count($already_taken) > 0) {
-            echo "Username not available";
+            echo "Username non disponibile";
          } else {
-            echo "Username available";
+            echo "Username disponibile";
          }
       }
    }
@@ -46,9 +46,9 @@ if(isset($_POST["registrati"])) {
 
       $already_used = $dbh->checkMail($mail);
       if (count($already_used) > 0) {
-         echo "Mail not available";
+         echo "Mail non disponibile";
       } else {
-         echo "Mail available";
+         echo "Mail disponibile";
       }
    }
 }

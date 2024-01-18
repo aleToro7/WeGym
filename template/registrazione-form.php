@@ -34,20 +34,20 @@
                 <li>
                     <input class="hide" type="text" id="mail" name="mail" placeholder="Mail"/>
                 </li>
-                <li>
+                <li class="max-errore">
                     <div class="container error-container hide" id="mail-availability-status"></div>
                 </li>
                 <li>
                     <input class="hide" type="text" id="username" name="username" placeholder="Username"/>
                 </li>
-                <li>
+                <li class="max-errore">
                     <div class="container error-container hide" id="user-availability-status"></div>
                 </li>
                 <li>
                     <input class="hide" type="password" id="pwd" name="pwd" placeholder="Password"/>
                     <i class="occhi hide bi bi-eye-slash" id="showPwd"></i>
                 </li>
-                <li>
+                <li class="max-errore">
                     <div class="container error-container hide" id="pwdStatus"></div>
                 </li>
                 <li>
