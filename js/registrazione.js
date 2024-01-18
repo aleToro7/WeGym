@@ -14,6 +14,7 @@ $("#username").keyup(function() {
             data: 'usernameFromAjax=' + username,
             success: function(data) {
                 $("#user-availability-status").html(data);
+                $("#user-availability-status").addClass("border-error-container");
                 if(data == "Username available"){
                     $("#username").removeClass("border border-2 border-danger");
                     $("#username").addClass("border border-2 border-success");
@@ -26,10 +27,12 @@ $("#username").keyup(function() {
         });
     }else if(username.length == 0){
         $("#user-availability-status").html("");
+        $("#user-availability-status").addClass("border-error-container");
         $("#username").removeClass("border border-2 border-danger");
     }else{
         $("#user-availability-status").html("Il nome utente deve avere un numero di caratteri compreso tra 4 e 25");
         $("#username").removeClass("border border-2 border-success");
+        $("#user-availability-status").addClass("border-error-container");
         $("#username").addClass("border border-2 border-danger");
     }
 });
@@ -43,6 +46,7 @@ $("#mail").focusout(function() {
             data: 'mailFromAjax=' + mail,
             success: function(data) {
                 $("#mail-availability-status").html(data);
+                $("#mail-availability-status").addClass("border-error-container");
                 if(data == "Mail available"){
                     $("#mail").removeClass("border border-2 border-danger");
                     $("#mail").addClass("border border-2 border-success");
@@ -56,6 +60,7 @@ $("#mail").focusout(function() {
     }else{
         $("#mail-availability-status").html("Formato mail non valido");
         $("#mail").removeClass("border border-2 border-success");
+        $("#mail-availability-status").addClass("border-error-container");
         $("#mail").addClass("border border-2 border-danger");
     }
 });
@@ -98,11 +103,13 @@ $("#pwd").keyup(function(){
     if(passwordIsValid($("#pwd").val())) {
         $("#pwd").removeClass("border border-2 border-danger");
         $("#pwd").addClass("border border-2 border-success");
+        $("#pwdStatus").removeClass("border-error-container");
         $("#pwdStatus").html('');
         
     }else {
         $("#pwd").removeClass("border border-2 border-success");
         $("#pwd").addClass("border border-2 border-danger");
+        $("#pwdStatus").addClass("border-error-container");
         $("#pwdStatus").html('La password deve contenere almeno 8 caratteri di almeno: una lettera minuscola, una lettera maiuscola, un numero e un carattere speciale (@$!%*?&)');
     }
 });

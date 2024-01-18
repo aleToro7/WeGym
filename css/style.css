@@ -603,10 +603,13 @@ ul li input {
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
-    border: 1px solid #31B294;
     outline: none;
     margin-bottom: 7%;
     padding-left: 18px;
+}
+
+.border-error-container {
+    border: 1px solid #31B294;
 }
 
 ul li input:focus {
