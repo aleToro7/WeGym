@@ -16,11 +16,11 @@ if(isset($_POST['imageFromAjax'])) {
 if(isset($_POST['usernameFromAjax']) && isset($_POST['biografiaFromAjax'])){
     $newUsername = $_POST['usernameFromAjax'];
     $newBiografia = $_POST['biografiaFromAjax'];
-    $frequenza = $_POST['frequenza'];
-    $obbiettivo = $_POST['obbiettivo'];
-    $esercizioPreferito = $_POST['esercizioPreferito'];
-    $muscoloPreferito = $_POST['muscoloPreferito'];
-    $alimentoPreferito = $_POST['alimentoPreferito'];
+    $frequenza = $_POST['frequenzaFromAjax'];
+    $obbiettivo = $_POST['obbiettivoFromAjax'];
+    $esercizioPreferito = $_POST['esercizioPreferitoFromAjax'];
+    $muscoloPreferito = $_POST['muscoloPreferitoFromAjax'];
+    $alimentoPreferito = $_POST['alimentoPreferitoFromAjax'];
 
     $error = $dbh->updateInfo($newUsername, $newBiografia, $_SESSION['username'], $frequenza, $obbiettivo, $esercizioPreferito, $muscoloPreferito, $alimentoPreferito);
     if($error==''){

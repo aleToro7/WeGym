@@ -177,6 +177,10 @@ function eventiModificaProfilo() {
                 success: function(data) {
                     if(data == "ok") {
                         $("#salva").attr('disabled','disabled');
+                        $('[id*="newPassword"]').addClass("hide");
+                        $('[id*="oldPassword"]').addClass("hide");
+                        $("#load").empty();
+                        $("#load").load('./profilo.php', eventiProfilo());
                     }
                 }
             });
