@@ -146,6 +146,7 @@ function eventiProfilo() {
                 url:'../cercaPost.php',
                 data: 'ottieniPostHome=' + "chiudi",
             });
+            sessionStorage.removeItem("load-search-profile-view");
             $("#load").empty();
             $("#load").load('./home-page.php', eventiHomePage());
         });
