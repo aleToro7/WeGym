@@ -43,7 +43,7 @@
                     <div class="col">
                         <span class="hide text input-label" id="oldPasswordLabel">Vecchia password</span>
                         <input type="password" class="hide campo" name="oldPassword" id="oldPassword">
-                        <i class="hide occhio bi bi-eye-slash" id="oldPasswordEye"></i>
+                        <i class="hide occhi-modifica bi bi-eye-slash" id="oldPasswordEye"></i>
                     </div>
                     <div class="row"><span class="hide" id="oldPasswordStatus"></span></div>
                 </div>
@@ -51,17 +51,17 @@
                     <div class="col">
                         <span class="hide text input-label" id="newPasswordLabel">Nuova password</span>
                         <input type="password" class="hide campo" name="newPassword" id="newPassword">
-                        <i class="hide occhio bi bi-eye-slash" id="newPasswordEye"></i>
+                        <i class="hide occhi-modifica bi bi-eye-slash" id="newPasswordEye"></i>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="max-errore error-container hide" id="newPasswordStatus"></div>
+                        <div class="max-errore error-container-modifica hide" id="newPasswordStatus"></div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <button type="button" id="newPasswordUpdateBtn" class="hide button" disabled>Aggiorna password</button>
+                        <button type="button" id="newPasswordUpdateBtn" class="hide button-modifica" disabled>Aggiorna password</button>
                     </div>
                 </div>
                 <div class="row">
@@ -125,7 +125,7 @@
                 </div> 
                 <div class="row">
                     <div class="col">
-                        <button type="button" id="salva" class="button" disabled>Salva</button>
+                        <button type="button" id="salva" class="button-modifica" disabled>Salva</button>
                     </div>
                 </div>
             </div>
