@@ -23,7 +23,12 @@ function eventiCommenti(){
             if(sessionStorage.getItem('locationCommento') == 'home') {
                 $("#load").empty();
                 $("#load").load('./home-page.php', eventiHomePage());
+            }else if(sessionStorage.getItem('locationCommento') == 'singlePost') {
+                $("#load").empty();
+                $("#load").load('./lista-post.php', eventiListaPost());
             }else {
+                $("#profile").removeClass("bi-person");
+                $("#profile").addClass("bi-person-fill");
                 $("#load").empty();
                 $("#load").load('./profilo.php', eventiProfilo());
             }

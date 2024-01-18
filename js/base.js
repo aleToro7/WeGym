@@ -100,7 +100,7 @@ function loadNewNotifications() {
             let notifications = JSON.parse(data);
             $("#loadNotifications").empty();
             notifications.forEach(notification => {
-                let id = notification['tipo']+"-"+notification['idUtenteSeguente']+"-"+notification['idNotifica'];
+                let id;
                 let img, utente, testo, attr='';
                 utente = testo = notification['idUtenteSeguente'];
 
@@ -111,10 +111,13 @@ function loadNewNotifications() {
                 }
                 if(notification['tipo'] == 'follow') {
                     testo = "ha iniziato a seguirti";
+                    id = notification['tipo']+"-"+notification['idUtenteSeguente']+"-"+notification['idNotifica'];
                 }else if(notification['tipo'] == 'like') {
                     testo = "ha messo like ad un tuo post";
+                    id = notification['tipo']+"-"+notification['idUtenteSeguente']+"-"+notification['idNotifica']+"-"+notification['idPost'];
                 }else {
                     testo = "ha commentato un tuo post";
+                    id = notification['tipo']+"-"+notification['idUtenteSeguente']+"-"+notification['idNotifica']+"-"+notification['idPost'];
                 }
                 if(notification['visto']==0){
                     attr='new';
@@ -123,21 +126,38 @@ function loadNewNotifications() {
                 }
                 $("#loadNotifications").append("<div class='notification-container' id='"+id+"'><div calss='row'><div calss='col'><img class='profile-img-container-post' id='img-profile-notification' src='"+img+"'/><span class='usrname'>"+utente+"</span></diV></diV><div calss='row'><span class='notification-text'>"+testo+"</span></diV><div class='row'><p> </p></div><span class='"+attr+"'></span></div>");
                 $("#"+CSS.escape(id)).click(function(){
-                    let idCercato = this.id.split("-")[1];
+                    let tipoNotifica = this.id.split("-")[0];
                     let idNotifica = this.id.split("-")[2];
-                    $.ajax({
-                        type:'POST',
-                        url:'../home.php',
-                        data: {idCercatoFromAjax: idCercato, idNotifica: idNotifica},
-                        success: function() {
-                            $("#home").removeClass("bi-house-door");
-                            $("#home").addClass("bi-house-door-fill");
-                            $("#profile").toggleClass("bi-person bi-person-fill");
-                            sessionStorage.removeItem("load-profile-view");
-                            $("#load").empty();
-                            $("#load").load('./profilo.php', eventiProfilo());
-                        }
-                    });
+
+                    if(tipoNotifica=='follow'){
+                        let idCercato = this.id.split("-")[1];
+                        $.ajax({
+                            type:'POST',
+                            url:'../home.php',
+                            data: {idCercatoFromAjax: idCercato, idNotificaFromAjax: idNotifica},
+                            success: function() {
+                                $("#home").removeClass("bi-house-door");
+                                $("#home").addClass("bi-house-door-fill");
+                                $("#profile").toggleClass("bi-person bi-person-fill");
+                                sessionStorage.removeItem("load-profile-view");
+                                $("#load").empty();
+                                $("#load").load('./profilo.php', eventiProfilo());
+                            }
+                        });
+                    }else {
+                        let idPost = this.id.split("-")[3];
+                        $.ajax({
+                            type:'POST',
+                            url:'../cercaPost.php',
+                            data: {idNotificaFromAjax: idNotifica, idPostFromAjax: idPost},
+                            success: function() {
+                                $("#profile").toggleClass("bi-person bi-person-fill");
+                                $("#load").empty();
+                                $("#load").load('./lista-post.php', eventiListaPost());
+                            }
+                        });
+                    }
+                    
                 });
             });
             if(novita==true) {

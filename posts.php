@@ -17,6 +17,9 @@ if(isset($_SESSION["location"])){
         }else {
             $results = $dbh->getMyPost($_SESSION["username"]);
         }
+    }else if($_SESSION["location"] == "singlePost") {
+        $results = $dbh->getSinglePost($_SESSION["username"], $_SESSION["idPost"]);
+        unset($_SESSION["idPost"]);
     }
     
     $i = 0;
