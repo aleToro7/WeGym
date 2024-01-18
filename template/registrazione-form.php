@@ -42,6 +42,7 @@
                 <li>
                     <input class="hide" type="password" id="pwd" name="pwd" placeholder="Password"/>
                     <i class="occhi hide bi bi-eye-slash" id="showPwd"></i>
+                    <span id="pwdStatus"></span>
                 </li>
                 <li>
                     <input class="hide" type="password" id="confermaPwd" name="confermaPwd" placeholder="Conferma password"/>

@@ -42,7 +42,7 @@ function eventiModificaProfilo() {
             }else {
                 $("#newPassword").removeClass("border border-2 border-success");
                 $("#newPassword").addClass("border border-2 border-danger");
-                $("#newPasswordStatus").html('La password deve contenere almeno 6 caratteri di almeno: una lettera minuscola, una lettera maiuscola, un numero e un carattere speciale (@$!%*?&#)');
+                $("#newPasswordStatus").html('La password deve contenere almeno 8 caratteri di almeno: una lettera minuscola, una lettera maiuscola, un numero e un carattere speciale (@$!%*?&)');
             }
             manageBtnAggiornaPsw();
         });
