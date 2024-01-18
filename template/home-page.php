@@ -7,5 +7,5 @@
         </div>
         <div class="spacing"></div>
     </div>
-    <div class="bottom-pad" id="load-posts"></div>
+    <div id="load-posts"></div>
 </div>

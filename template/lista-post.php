@@ -61,4 +61,4 @@
     }
     
 ?>
-<div id="last"></div>
+<div class="bottom-pad" id="last"></div>

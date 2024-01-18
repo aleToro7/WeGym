@@ -587,9 +587,11 @@
 }
 
 .cambia-password {
+    position: absolute;
     color: #31B294;
     font-weight: bold;
     cursor: pointer;
+    margin: 10px 0 0 5px;
 }
 
 .cambia-password:hover {
