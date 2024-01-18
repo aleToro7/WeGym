@@ -443,6 +443,13 @@
     cursor: pointer;
 }
 
+.occhi-modifica {
+    position: absolute;
+    float: left;
+    cursor: pointer;
+    margin-left: -25px;
+}
+
 .button {
     border-radius: 30px;
     -moz-border-radius: 30px 30px 30px 30px;
@@ -453,6 +460,21 @@
 }
 
 .button:hover {
+    background-color: #299279;
+}
+
+.button-modifica {
+    border-radius: 30px;
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    background-color: #31B294;
+    border: none;
+    outline: none;
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+
+.button-modifica:hover {
     background-color: #299279;
 }
 
@@ -636,12 +658,23 @@ ul li input {
     padding-left: 18px;
 }
 
+.error-container-modifica {
+    color: #E0E0E0;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    outline: none;
+    padding-left: 18px;
+    margin-left: 130px;
+}
+
 .border-error-container {
     border: 1px solid #31B294;
+    margin-bottom: 15px;
 }
 
 .max-errore {
-    max-width: 200px;;
+    max-width: 200px;
 }
 
 .my-info {
