@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-4 nome-utente">
-                <p id="username" ><span class="logo">W</span>&nbsp&nbsp<?php echo $templateParams["username"];?></p>
+                <img class="w" src="../altro/w.png" alt="w"><span class="w-text"><?php echo $templateParams["username"];?></span>
             </div>
             <div class="col">
                 <?php if($templateParams["username"] != $_SESSION["username"]) {

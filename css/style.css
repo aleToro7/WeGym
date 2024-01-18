@@ -419,6 +419,17 @@
     margin: 3px 10% 0px 0px;
 }
 
+.w {
+    position: absolute;
+    max-width: 10%;
+    max-height: 10%;
+    margin-top: 2px;
+}
+
+.w-text{
+    margin-left: 35px;
+}
+
 .logo {
     font-family: "Mustard Smile";
     color: #E0E0E0;
