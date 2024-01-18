@@ -77,9 +77,7 @@
                         <textarea class="modifica-bio campo" name="newBio" id="newBio" rows="5" required><?php echo $templateParams["biografia"];?></textarea>
                     </div>
                 </div>
-                <div class="row">
-                    
-                </div>
+                <img class="my-info" src="../altro/myinfo-gray.png" alt="MyInfo">
                 <div class="row">
                     <div class="col">
                         <span class="text input-label">Frequenza allenamenti</span>

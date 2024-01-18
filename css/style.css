@@ -506,7 +506,6 @@
     right:20px; 
 }
 
-
 .biobio{
     font-size: medium;
 }
@@ -643,6 +642,12 @@ ul li input {
 
 .max-errore {
     max-width: 200px;;
+}
+
+.my-info {
+    margin: 10px 0 10px 150px;
+    max-width: 20%;
+    max-height: 20%;
 }
 
 ul li input:focus {
@@ -883,10 +888,6 @@ div[name="stats"] {
     .modifica-profilo {
         font-size: large;
         height: 45px;
-    }
-
-    .input-file-label {
-        margin: 1% 8px;
     }
 
     .invia {
