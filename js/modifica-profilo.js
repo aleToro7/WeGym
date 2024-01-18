@@ -6,6 +6,8 @@ function eventiModificaProfilo() {
             $('[id*="newPassword"]').toggleClass("hide");
             $('[id*="oldPassword"]').toggleClass("hide");
             if($('#newPassword').hasClass("hide")) {
+                $("#oldPassword").val('');
+                $("#newPassword").val('');
                 $("#cambiaPassword").html('Cambia password');
             }else {
                 $("#cambiaPassword").html('Annulla');
@@ -25,6 +27,7 @@ function eventiModificaProfilo() {
                     }else {
                         $("#newPasswordStatus").html('Password errata');
                     }
+                    $("#newPasswordUpdateBtn").attr('disabled','disabled');
                 }
             });
         });
