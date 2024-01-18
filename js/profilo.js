@@ -115,7 +115,7 @@ function eventiProfilo() {
         $("#segui").click(function(){
             let esegui=$("#segui").text() == "Seguito" ? "smetti di seguire" : "segui";
             $("#segui").toggleClass("Segui Seguito");
-            let utenteSeguito = $("#username").text().substr(3);
+            let utenteSeguito = $("#username").text();
             $("#segui").hasClass("Segui") ? $("#segui").html("Segui") : $("#segui").html("Seguito");
             $.ajax({
                 type:'POST',
