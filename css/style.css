@@ -421,8 +421,8 @@
 
 .w {
     position: absolute;
-    max-width: 10%;
-    max-height: 10%;
+    max-width: 35px;
+    max-height: 35px;
     margin-top: 2px;
 }
 
@@ -431,15 +431,9 @@
 }
 
 .logo {
-    font-family: "Mustard Smile";
-    color: #E0E0E0;
-}
-
-.logo-centrato {
-    font-family: "Mustard Smile";
-    color: #E0E0E0;
-    text-align: center;
-    font-size: 38px;
+    max-width: 150px;
+    max-height: 150px;
+    margin-left: 26px;
 }
 
 .occhio {

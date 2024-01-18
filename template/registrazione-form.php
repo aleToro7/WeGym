@@ -20,7 +20,7 @@
     </div>
     <div class="child">
         <form action="#" method="POST" id="form-registrazione">
-            <h1 class="logo-centrato">WeGym</h1>
+            <img class="logo" src="../altro/wegym.png" alt="WeGym">
             <ul class="less-points">
                 <li>
                     <input type="text" id="nome" name="nome" placeholder="Nome"/>
