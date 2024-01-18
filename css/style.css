@@ -650,6 +650,13 @@ ul li input {
     max-height: 20%;
 }
 
+.my-info-profilo {
+    max-width: 25%;
+    max-height: 25%;
+    margin-left: 38%;
+    margin-bottom: 15px;
+}
+
 ul li input:focus {
     color: #E0E0E0
 }
